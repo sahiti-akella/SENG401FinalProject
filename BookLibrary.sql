@@ -17,7 +17,9 @@ VALUES
 ('Marissa Meyer'), 
 ('Jane Austen'), 
 ('Arthur Conan Doyle'), 
-('Adalyn Grace');
+('Adalyn Grace'),
+('James Dashner'),
+('Oscar Wilde'); 
 
 -- BOOKS IN THE DATABASE
 DROP TABLE IF EXISTS BOOKS;
@@ -37,60 +39,52 @@ VALUES
 (2, 'Percy Jackson and The Sea of Monsters', 'Rick Riordan', 'Fantasy', 2006), 
 (3, 'Percy Jackson and The Titans Curse', 'Rick Riordan', 'Fantasy', 2007), 
 (4, 'Percy Jackson and The Battle of the Labyrinth', 'Rick Riordan', 'Fantasy', 2008), 
-(5, 'Percy Jackson and The Last Olympian', 'Rick Riordan', 'Fantasy', 2009);
+(5, 'Percy Jackson and The Last Olympian', 'Rick Riordan', 'Fantasy', 2009),
+(6, 'Belladonna', 'Adalyn Grace', 'Murder Mystery', 2022),
+(7, 'Harry Potter and The Philosopher\'s Stone', 'JK Rowling', 'Fantasy', 1998), 
+(8, 'The Hunger Games', 'Suzanne Collins', 'Science Fiction', 2008), 
+(9, 'Cinder', 'Marissa Meyer', 'Science Fiction', 2011), 
+(10, 'The Maze Runner', 'James Dashner', 'Science Fiction', 2014), 
+(11, 'Pride and Prejudice', 'Jane Austen', 'Romance', 1813),
+(12, 'Dorian Gray', 'Oscar Wilde', 'Horror', 1891); 
 
--- MOVIE RECOMMENDATIONS
-DROP TABLE IF EXISTS MOVIES;
-CREATE TABLE MOVIES (
-    Movie_ID int not null AUTO_INCREMENT,
-    Title VARCHAR(100),
-    Genre VARCHAR(60),
+-- COMMUNITIES 
+DROP TABLE IF EXISTS CLUBS;
+CREATE TABLE CLUBS (
+    Club_ID INT NOT NULL AUTO_INCREMENT,
+    Topic VARCHAR(100),
     Year_Made INT,
-    PRIMARY KEY (Movie_ID)
+    PRIMARY KEY (Club_ID)
 );
 
-INSERT INTO MOVIES (Movie_ID, Title, Genre, Year_Made)
+INSERT INTO CLUBS(Club_ID, Topic, Year_Made)
 VALUES
-(1, 'Percy Jackson and The Lightning Thief', 'Fantasy', 2010),
-(2, 'Percy Jackson and The Sea of Monsters', 'Fantasy', 2013),
-(3, 'Harry Potter and The Philosopher\'s Stone', 'Fantasy', 2001);
+(1, 'Percy Jackson Club', 2018), 
+(2, 'Harry Potter Club', 2010), 
+(3, 'Hunger Games Club', 2010), 
+(4, 'The Lunar Chronicles Club', 2018); 
 
-DROP TABLE IF EXISTS BOOK_MOVIE_RECOMMENDATIONS;
-CREATE TABLE BOOK_MOVIE_RECOMMENDATIONS (
-    Book_ID INT,
-    Movie_Rec INT,
-    FOREIGN KEY (Book_ID) REFERENCES BOOKS(Book_ID),
-    FOREIGN KEY (Movie_Rec) REFERENCES MOVIES(Movie_ID)
+-- READERS AND AUTHORS LOG IN
+
+DROP TABLE IF EXISTS USER_ACCOUNT;
+CREATE TABLE USER_ACCOUNT (
+	User_Email			varchar(100) not null,
+	Login_Password		varchar(100) not null,
+    primary key (User_Email)
 );
 
-INSERT INTO BOOK_MOVIE_RECOMMENDATIONS (Book_ID, Movie_Rec)
-VALUES
-(1, 1),
-(1, 2),
-(1, 3);
-
--- TV SHOW RECOMMENDATIONS 
-DROP TABLE IF EXISTS TV_SHOWS;
-CREATE TABLE TV_SHOWS (
-    Show_ID INT NOT NULL AUTO_INCREMENT,
-    Title VARCHAR(100),
-    Genre VARCHAR(60),
-    Year_Made INT,
-    PRIMARY KEY (Show_ID)
+DROP TABLE IF EXISTS AUTHOR_LOGIN;
+CREATE TABLE AUTHOR_LOGIN (
+	Login_Password		varchar(100) not null,
+    primary key (Login_Password)
 );
 
-INSERT INTO TV_SHOWS (Show_ID, Title, Genre, Year_Made)
+INSERT INTO AUTHOR_LOGIN (Login_Password)
 VALUES
-(1, 'Percy Jackson and The Olympians: Season 1', 'Fantasy', 2023);
+('sY7he5oP83bt3Q');
 
-DROP TABLE IF EXISTS BOOK_TV_SHOW_RECOMMENDATIONS;
-CREATE TABLE BOOK_TV_SHOW_RECOMMENDATIONS (
-    Book_ID INT,
-    Show_Rec INT,
-    FOREIGN KEY (Book_ID) REFERENCES BOOKS(Book_ID),
-    FOREIGN KEY (Show_Rec) REFERENCES TV_SHOWS(Show_ID)
-);
-
-INSERT INTO BOOK_TV_SHOW_RECOMMENDATIONS (Book_ID, Show_Rec)
+INSERT INTO USER_ACCOUNT (User_Email, Login_Password)
 VALUES
-(1, 1);
+('hooriya624@gmail.com', 'coolpassword'); 
+
+
