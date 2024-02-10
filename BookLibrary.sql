@@ -87,4 +87,25 @@ INSERT INTO USER_ACCOUNT (User_Email, Login_Password)
 VALUES
 ('hooriya624@gmail.com', 'coolpassword'); 
 
+DROP TABLE IF EXISTS GENRE;
+CREATE TABLE GENRE
+(
+	ID INT NOT NULL AUTO_INCREMENT,
+    Genre_Name varchar(100),
+    PRIMARY KEY (ID)
+);
 
+INSERT INTO GENRE (Genre_Name)
+VALUES('Fantasy'), 
+('Fiction'), 
+('Sci-Fi'),
+('Adventure'),
+('Horror'),
+('Romance'),
+('Mystery'),
+('Graphic Novel'),
+('Non-Fiction'),
+('Thriller'),
+('Memoir'),
+('Poetry'),
+('Young Adult');
