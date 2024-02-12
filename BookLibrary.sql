@@ -47,7 +47,8 @@ CREATE TABLE GENRE
 );
 
 INSERT INTO GENRE (Genre_Name)
-VALUES('Fantasy'), 
+VALUES
+('Fantasy'), 
 ('Fiction'), 
 ('Sci-Fi'),
 ('Adventure'),
@@ -131,6 +132,8 @@ VALUES
 
 DROP TABLE IF EXISTS USER_ACCOUNT;
 CREATE TABLE USER_ACCOUNT (
+    First_Name          varchar(100) not null,
+    Last_Name          varchar(100) not null,
 	User_Email			varchar(100) not null,
 	Login_Password		varchar(100) not null,
     Is_Author			boolean,
@@ -147,6 +150,6 @@ INSERT INTO AUTHOR_LOGIN (Login_Password)
 VALUES
 ('sY7he5oP83bt3Q');
 
-INSERT INTO USER_ACCOUNT (User_Email, Login_Password)
+INSERT INTO USER_ACCOUNT (First_Name, Last_Name, User_Email, Login_Password, Is_Author)
 VALUES
-('hooriya624@gmail.com', 'coolpassword');
+('hooriya', 'amjad', 'hooriya624@gmail.com', 'coolpassword', false);
