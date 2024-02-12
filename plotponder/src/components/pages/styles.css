@@ -1,0 +1,48 @@
+/* styles.css */
+
+.flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .gap-5 {
+    gap: 1.25rem;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .pr-7 {
+    padding-right: 1.75rem;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .text-black {
+    color: #000;
+  }
+  
+  .text-5xl {
+    font-size: 3.25rem;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  .text-rose-950 {
+    color: #d12771;
+  }
+  
+  .mt-48 {
+    margin-top: 12rem;
+  }
+  
+  /* Add more styles based on your specific needs */
+  
