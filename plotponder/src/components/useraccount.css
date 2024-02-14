@@ -1,0 +1,205 @@
+/* useraccount.css */
+
+.MacbookPro14UserAccount {
+    width: 1512px;
+    height: 982px;
+    position: relative;
+    background: white;
+  }
+  
+  .ViewAccount,
+  .Recommendations,
+  .Community,
+  .Plotponder,
+  .HiUsername,
+  .YourRatings,
+  .AddBook,
+  .YourCommunities,
+  .Romance,
+  .Comedy,
+  .Fantasy {
+    position: absolute;
+    font-family: 'Inika';
+  }
+  
+  .ViewAccount {
+    left: 1306px;
+    top: 52px;
+    color: #420F1A;
+    font-size: 22px;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  
+  .Recommendations {
+    left: 1058px;
+    top: 53px;
+    color: black;
+    font-size: 22px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .Community {
+    left: 853px;
+    top: 51px;
+    color: black;
+    font-size: 22px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .Plotponder {
+    left: 68px;
+    top: 37px;
+    color: black;
+    font-size: 48px;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  
+  .HiUsername {
+    left: 584px;
+    top: 212px;
+    color: black;
+    font-size: 36px;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  
+  .YourRatings {
+    left: 449px;
+    top: 303px;
+    color: black;
+    font-size: 36px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .D707c67aA00a45e98620Dd63525307745,
+  .D707c67aA00a45e98620Dd63525307746,
+  .D707c67aA00a45e98620Dd63525307747,
+  .D707c67aA00a45e98620Dd63525307748 {
+    position: absolute;
+  }
+  
+  .D707c67aA00a45e98620Dd63525307745 {
+    width: 176px;
+    height: 282px;
+    left: 80px;
+    top: 395px;
+  }
+  
+  .D707c67aA00a45e98620Dd63525307746 {
+    width: 176px;
+    height: 282px;
+    left: 313px;
+    top: 395px;
+  }
+  
+  .D707c67aA00a45e98620Dd63525307747 {
+    width: 176px;
+    height: 282px;
+    left: 546px;
+    top: 395px;
+  }
+  
+  .D707c67aA00a45e98620Dd63525307748 {
+    width: 176px;
+    height: 282px;
+    left: 779px;
+    top: 395px;
+  }
+  
+  .Rectangle50,
+  .Rectangle47,
+  .Rectangle48,
+  .Rectangle49 {
+    position: absolute;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .Rectangle50 {
+    width: 258px;
+    height: 62px;
+    left: 425px;
+    top: 757px;
+    background: white;
+    border: 1px black solid;
+  }
+  
+  .AddBook {
+    left: 485px;
+    top: 772px;
+    color: black;
+    font-size: 24px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .YourCommunities {
+    left: 1090px;
+    top: 303px;
+    color: black;
+    font-size: 36px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .Rectangle47 {
+    width: 449px;
+    height: 108px;
+    left: 1021px;
+    top: 383px;
+    opacity: 0.50;
+    background: #E9C2C5;
+    border-radius: 70px;
+  }
+  
+  .Romance {
+    left: 1169px;
+    top: 413px;
+    color: black;
+    font-size: 36px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .Rectangle48 {
+    width: 449px;
+    height: 108px;
+    left: 1021px;
+    top: 524px;
+    opacity: 0.50;
+    background: #B8D8E3;
+    border-radius: 70px;
+  }
+  
+  .Comedy {
+    left: 1179px;
+    top: 554px;
+    color: black;
+    font-size: 36px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .Rectangle49 {
+    width: 449px;
+    height: 108px;
+    left: 1029px;
+    top: 664px;
+    opacity: 0.50;
+    background: #949BD8;
+    border-radius: 70px;
+  }
+  
+  .Fantasy {
+    left: 1187px;
+    top: 694px;
+    color: black;
+    font-size: 36px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
