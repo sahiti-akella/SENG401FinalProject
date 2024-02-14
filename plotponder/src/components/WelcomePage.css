@@ -1,0 +1,133 @@
+.desktop {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.div {
+    background-color: #ffffff;
+    height: 982px;
+    position: relative;
+    width: 1512px;
+}
+
+.text-wrapper {
+    color: #000000;
+    font-family: "Inika-Bold", Helvetica;
+    font-size: 48px;
+    font-weight: 700;
+    left: 68px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 36px;
+}
+
+ .text-wrapper-2 {
+    color: #000000;
+    font-family: "Inika-Bold", Helvetica;
+    font-size: 64px;
+    font-weight: 700;
+    left: 402px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 158px;
+}
+
+.lottie-animation {
+    position: absolute;
+    top: 240px; /* Adjust the top position as needed */
+    left: 354px; /* Adjust the left position as needed */
+}
+
+ .element {
+    height: 550px;
+    left: 354px;
+    object-fit: cover;
+    position: absolute;
+    top: 290px;
+    width: 755px;
+}
+
+ .overlap-group {
+    height: 108px;
+    left: 807px;
+    position: absolute;
+    top: 838px;
+    width: 432px;
+}
+
+.rectangle {
+    background-color: #ffffff;
+    border: 3px solid;
+    border-color: #000000;
+    border-radius: 70px;
+    height: 108px;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 345px;
+}
+
+.text-wrapper-3 {
+    color: #000000;
+    font-family: "Inika-Regular", Helvetica;
+    font-size: 32px;
+    font-weight: 400;
+    left: 40px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 40px;
+    width: 290px;
+}
+
+.text-wrapper-4 {
+    color: #000000;
+    font-family: "Inika-Regular", Helvetica;
+    font-size: 32px;
+    font-weight: 400;
+    left: 34px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 32px;
+    width: 398px;
+}
+
+.overlap {
+    border-radius: 70px;
+    height: 108px;
+    left: 387px;
+    position: absolute;
+    top: 838px;
+    width: 345px;
+}
+
+.rectangle-2 {
+    background-color: #cea0aa;
+    border-radius: 70px;
+    height: 108px;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 345px;
+    align-items: center;
+}
+
+.text-wrapper-5 {
+    color: #000000;
+    font-family: "Inika-Regular", Helvetica;
+    font-size: 32px;
+    font-weight: 400;
+    left: 119px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 40px;
+}

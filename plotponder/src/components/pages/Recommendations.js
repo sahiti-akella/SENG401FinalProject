@@ -1,9 +1,9 @@
-// BookRecommendations.js
+// Recommendations.js
 
 import React from "react";
-import "./recommendationPagesstyle.css"; // Import the styles
+import "../Recommendations.css";
 
-function BookRecommendations(props) {
+function Recommendations(props) {
   return (
     <div className="MacbookPro14Recommendations" style={{width: 1512, height: 982, position: 'relative', background: 'white'}}>
   <div className="ViewAccount" style={{left: 1306, top: 52, position: 'absolute', color: 'black', fontSize: 22, fontFamily: 'Inika', fontWeight: '400', wordWrap: 'break-word'}}>View Account</div>
@@ -32,4 +32,4 @@ function BookRecommendations(props) {
   );
 }
 
-export default BookRecommendations;
+export default Recommendations;
