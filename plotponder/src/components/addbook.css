@@ -1,0 +1,192 @@
+/* addbook.css */
+
+.MacbookPro14UserAccount {
+    width: 1512px;
+    height: 982px;
+    position: relative;
+    background: white;
+  }
+  
+  .ViewAccount,
+  .Recommendations,
+  .Community,
+  .Plotponder,
+  .AddBook,
+  .AvailableBooks {
+    position: absolute;
+    font-family: 'Inika';
+  }
+  
+  .ViewAccount {
+    left: 1306px;
+    top: 52px;
+    color: #420F1A;
+    font-size: 22px;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  
+  .Recommendations {
+    left: 1058px;
+    top: 53px;
+    color: black;
+    font-size: 22px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .Community {
+    left: 853px;
+    top: 51px;
+    color: black;
+    font-size: 22px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .Plotponder {
+    left: 68px;
+    top: 37px;
+    color: black;
+    font-size: 48px;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  
+  .AddBook {
+    position: absolute;
+    font-size: 24px;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  .AddBook:nth-child(odd) {
+    width: 176px;
+  }
+  
+  .AddBook:nth-child(even) {
+    width: 154px;
+  }
+  
+  .AddBook:nth-child(1) {
+    left: 340px;
+    top: 654px;
+  }
+  
+  .AddBook:nth-child(2) {
+    left: 573px;
+    top: 654px;
+  }
+  
+  .AddBook:nth-child(3) {
+    left: 806px;
+    top: 654px;
+  }
+  
+  .AddBook:nth-child(4) {
+    left: 1039px;
+    top: 654px;
+  }
+  
+  .AddBook:nth-child(5) {
+    left: 340px;
+    top: 1080px;
+  }
+  
+  .AddBook:nth-child(6) {
+    left: 573px;
+    top: 1080px;
+  }
+  
+  .AddBook:nth-child(7) {
+    left: 806px;
+    top: 1080px;
+  }
+  
+  .AddBook:nth-child(8) {
+    left: 1039px;
+    top: 1080px;
+  }
+  
+  .AvailableBooks {
+    left: 604px;
+    top: 174px;
+    color: black;
+    font-size: 36px;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+  
+  .Rectangle50,
+  .Rectangle51,
+  .Rectangle52,
+  .Rectangle53,
+  .Rectangle54,
+  .Rectangle55,
+  .Rectangle56,
+  .Rectangle57 {
+    position: absolute;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .Rectangle50,
+  .Rectangle51,
+  .Rectangle52,
+  .Rectangle53,
+  .Rectangle54,
+  .Rectangle55,
+  .Rectangle56,
+  .Rectangle57 {
+    height: 62px;
+    background: white;
+    border: 1px black solid;
+  }
+  
+  .Rectangle50 {
+    width: 176px;
+    left: 318px;
+    top: 639px;
+  }
+  
+  .Rectangle51 {
+    width: 176px;
+    left: 551px;
+    top: 639px;
+  }
+  
+  .Rectangle52 {
+    width: 176px;
+    left: 784px;
+    top: 639px;
+  }
+  
+  .Rectangle53 {
+    width: 176px;
+    left: 1017px;
+    top: 639px;
+  }
+  
+  .Rectangle54 {
+    width: 176px;
+    left: 318px;
+    top: 1065px;
+  }
+  
+  .Rectangle55 {
+    width: 176px;
+    left: 551px;
+    top: 1065px;
+  }
+  
+  .Rectangle56 {
+    width: 176px;
+    left: 784px;
+    top: 1065px;
+  }
+  
+  .Rectangle57 {
+    width: 176px;
+    left: 1017px;
+    top: 1065px;
+  }
+  
