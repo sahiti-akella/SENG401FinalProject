@@ -136,11 +136,11 @@ CREATE TABLE USER_ACCOUNT (
     Last_Name          varchar(100) not null,
 	User_Email			varchar(100) not null,
 	Login_Password		varchar(100) not null,
-    Is_Author			boolean,
+    User_Role			varchar(50) not null,
     primary key (User_Email)
 );
 
-DROP TABLE IF EXISTS AUTHOR_LOGIN;
+/*DROP TABLE IF EXISTS AUTHOR_LOGIN;
 CREATE TABLE AUTHOR_LOGIN (
 	Login_Password		varchar(100) not null,
     primary key (Login_Password)
@@ -148,8 +148,10 @@ CREATE TABLE AUTHOR_LOGIN (
 
 INSERT INTO AUTHOR_LOGIN (Login_Password)
 VALUES
-('sY7he5oP83bt3Q');
+('sY7he5oP83bt3Q');*/
 
-INSERT INTO USER_ACCOUNT (First_Name, Last_Name, User_Email, Login_Password, Is_Author)
+INSERT INTO USER_ACCOUNT (First_Name, Last_Name, User_Email, Login_Password, User_Role)
 VALUES
-('hooriya', 'amjad', 'hooriya624@gmail.com', 'coolpassword', false);
+('hooriya', 'amjad', 'hooriya624@gmail.com', 'coolpassword', 'admin'),
+('John', 'Green', 'jgreen@yahoo.ca', 'johnthegreen', 'author'),
+('nikki', 'williams', 'nikita123@gmail.com', 'passwordistheway', 'admin');
