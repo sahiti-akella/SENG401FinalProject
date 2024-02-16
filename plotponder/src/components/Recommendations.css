@@ -1,116 +1,66 @@
 /* recommendationPagesstyle.css */
 
-.MacbookPro14Recommendations {
+.recommendations-container {
   width: 1512px;
   height: 982px;
   position: relative;
   background: white;
 }
 
-.ViewAccount,
-.Recommendations,
-.Community,
-.Plotponder,
-.AskOurBookbot {
-  position: absolute;
-  font-family: 'Inika';
-  word-wrap: break-word;
-}
-
-.ViewAccount {
-  left: 1306px;
-  top: 52px;
-  color: black;
-  font-size: 22px;
-  font-weight: 400;
-}
-
-.Recommendations {
-  left: 1058px;
-  top: 53px;
-  color: #420F1A;
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.Community {
-  left: 853px;
-  top: 51px;
-  color: black;
-  font-size: 22px;
-  font-weight: 400;
-}
-
-.Plotponder {
-  left: 68px;
-  top: 37px;
-  color: black;
-  font-size: 48px;
-  font-weight: 700;
-}
-
-.Rectangle43,
-.Rectangle44,
-.Rectangle45,
-.Rectangle46 {
+.rectangle-rec {
+  width: 417px;
+  height: 550px;
+  margin-left: 20px;
   position: absolute;
   background: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 100px;
   border-radius: 15px;
 }
 
-.Rectangle43 {
-  width: 417px;
-  height: 550px;
-  left: 69px;
-  top: 278px;
-}
-
-.Rectangle44 {
-  width: 417px;
-  height: 550px;
-  left: 1042px;
-  top: 278px;
-}
-
-.Rectangle45 {
-  width: 417px;
-  height: 550px;
-  left: 1042px;
-  top: 278px;
-}
-
-.Rectangle46 {
-  width: 417px;
-  height: 550px;
-  left: 555px;
-  top: 278px;
-}
-
-.AskOurBookbot {
-  left: 1121px;
-  top: 882px;
+.ask-bookbot {
+  right: 0;
+  top: 800px;
+  position: absolute;
   color: black;
   font-size: 32px;
+  font-family: 'Inika';
   font-weight: 400;
+  word-wrap: break-word;
+  background-color: #CEA0AA;
+  text-decoration: none;
+  padding: 25px; /* Adjust padding as needed */
+  border-radius: 60px; /* Adjust border-radius for rounded corners */
 }
 
-
-.D707c67aA00a45e98620Dd63525307741,
-.D707c67aA00a45e98620Dd63525307744,
-.D707c67aA00a45e98620Dd63525307742,
-.D707c67aA00a45e98620Dd63525307743 {
-  position: absolute;
+.book-image {
   width: 176px;
   height: 282px;
+  margin-top: 200px;
+  margin-left: 125px;
+  position: absolute;
 }
 
+.book-title {
+  width: 307px;
+  left: 60px;
+  top: 500px;
+  position: absolute;
+  text-align: center;
+  color: black;
+  font-size: 24px;
+  font-family: 'Inika';
+  font-weight: 700;
+  word-wrap: break-word;
+}
 
-.PercyJacksonAndTheOlympiansTheLightningThief,
-.RickRiordan {
+.author {
+  left: 150px;
+  top: 600px;
   position: absolute;
   color: black;
   font-size: 24px;
   font-family: 'Inika';
+  font-weight: 400;
   word-wrap: break-word;
 }
