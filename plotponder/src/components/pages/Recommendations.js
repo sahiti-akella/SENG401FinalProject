@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 function Recommendations(props) {
   return (
     <div className="recommendations-container">
+      
+      <div className="user-rec-title">User's Recommendations</div>
 
       <div className="Recommendation">
         <div className="rectangle-rec" />

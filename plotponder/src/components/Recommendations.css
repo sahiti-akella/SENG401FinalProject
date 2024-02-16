@@ -7,6 +7,16 @@
   background: white;
 }
 
+.user-rec-title {
+  font-family: "Inika";
+  font-size: 36px;
+  font-weight: 700;
+  
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: 150px;
+}
+
 .rectangle-rec {
   width: 417px;
   height: 550px;
@@ -14,7 +24,7 @@
   position: absolute;
   background: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 100px;
+  margin-top: 10px;
   border-radius: 15px;
 }
 
@@ -36,7 +46,7 @@
 .book-image {
   width: 176px;
   height: 282px;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-left: 125px;
   position: absolute;
 }
@@ -44,7 +54,7 @@
 .book-title {
   width: 307px;
   left: 60px;
-  top: 500px;
+  top: 450px;
   position: absolute;
   text-align: center;
   color: black;
@@ -56,7 +66,7 @@
 
 .author {
   left: 150px;
-  top: 600px;
+  top: 550px;
   position: absolute;
   color: black;
   font-size: 24px;
