@@ -15,7 +15,7 @@
 
 .text-wrapper {
     color: #000000;
-    font-family: "Inika-Bold", Helvetica;
+    font-family: "Inika-Bold";
     font-size: 48px;
     font-weight: 700;
     left: 68px;
@@ -27,7 +27,7 @@
 
  .text-wrapper-2 {
     color: #000000;
-    font-family: "Inika-Bold", Helvetica;
+    font-family: "Inika";
     font-size: 64px;
     font-weight: 700;
     left: 402px;
@@ -75,10 +75,10 @@
 
 .text-wrapper-3 {
     color: #000000;
-    font-family: "Inika-Regular", Helvetica;
+    font-family: "Inika";
     font-size: 32px;
     font-weight: 400;
-    left: 40px;
+    left: 55px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
@@ -88,7 +88,7 @@
 
 .text-wrapper-4 {
     color: #000000;
-    font-family: "Inika-Regular", Helvetica;
+    font-family: "Inika";
     font-size: 32px;
     font-weight: 400;
     left: 34px;
@@ -122,7 +122,7 @@
 
 .text-wrapper-5 {
     color: #000000;
-    font-family: "Inika-Regular", Helvetica;
+    font-family: "Inika";
     font-size: 32px;
     font-weight: 400;
     left: 119px;

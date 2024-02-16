@@ -1,18 +1,15 @@
 import React from "react";
-import { useState } from "react";
-import Lottie from "react-lottie";
-import animationData from "../animation.json"; // Import your Lottie animation JSON file
 import "./Navbar.css";
+import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
 
     return (
-        <div className="desktop">
-            <div className="div">
-                <div className="text-wrapper">
-                    PlotPonder 💭
-                </div>
-            </div>
+        <div className="Navbar">
+            <NavLink to="/Account" className="view-account" activeClassName="active">View Account</NavLink>
+            <NavLink to="/Recommendations" className="recommendations-title" activeClassName="active">Recommendations</NavLink>
+            <NavLink to="/Community" className="community" activeClassName="active">Community</NavLink>
+            <div className="plotponder-title">PlotPonder 💭</div>
         </div>
     );
 };

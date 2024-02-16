@@ -1,0 +1,55 @@
+/* Navbar.css */
+.view-account.active,
+.recommendations-title.active,
+.community.active {
+    font-weight: 700; /* Bold */
+}
+
+.view-account {
+    left: 1306px;
+    top: 52px;
+    position: absolute;
+    color: black;
+    font-size: 22px;
+    font-family: 'Inika';
+    font-weight: 400;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+.recommendations-title {
+    left: 1058px;
+    top: 52px;
+    position: absolute;
+    color: black;
+    font-size: 22px;
+    font-family: 'Inika';
+    font-weight: 400;
+    word-wrap: break-word;
+    text-decoration: none;
+
+}
+
+.community {
+    left: 853px;
+    top: 52px;
+    position: absolute;
+    color: black;
+    font-size: 22px;
+    font-family: 'Inika';
+    font-weight: 400;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+.plotponder-title {
+    left: 68px;
+    top: 37px;
+    position: absolute;
+    color: black;
+    font-size: 48px;
+    font-family: 'Inika';
+    font-weight: 700;
+    word-wrap: break-word;
+    text-decoration: none;
+}

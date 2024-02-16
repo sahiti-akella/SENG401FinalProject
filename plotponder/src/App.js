@@ -1,26 +1,32 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import WelcomePage from './components/pages/WelcomePage';
 import Community from './components/pages/Community';
 import Account from './components/pages/Account';
 import Recommendations from './components/pages/Recommendations';
+import BookBot from './components/pages/BookBot';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <>
-      <Router>
-        {/* <Navbar /> */}
-        <Routes>
-          {/* <Route path="/" exact element={<Home />} /> */}
-          <Route path="/" element={<WelcomePage />} />
-          <Route path="/Community" element={<Community />} />
-          <Route path="/Recommendations" element={<Recommendations />} />
-          <Route path="/Account" element={<Account />} />
+    <Router>
+      <Routes>
+        {/* Home Page */}
+        <Route path="/" element={<WelcomePage />} />
+        
+        {/* Other Pages */}
+        <Route path="/Community" element={<Community />} />
+        <Route path="/Recommendations" element={<Recommendations />} />
+        <Route path="/Account" element={<Account />} />
+        <Route path="/Recommendations/BookBot" element={<BookBot />} />
+        
+        {/* Catch-all route for unmatched paths */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
 
-        </Routes>
-      </Router>
-    </>
+      {/* Navbar outside of Routes */}
+      {window.location.pathname !== '/' && <Navbar />}
+    </Router>
   );
 }
 
