@@ -5,6 +5,7 @@ import Community from './components/pages/Community';
 import Account from './components/pages/Account';
 import Recommendations from './components/pages/Recommendations';
 import BookBot from './components/pages/BookBot';
+// import addbook from './components/pages/addbook';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         <Route path="/Recommendations" element={<Recommendations />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Recommendations/BookBot" element={<BookBot />} />
+        {/* <Route path="/addbook" element={<addbook />} /> */}
+        
+
         
         {/* Catch-all route for unmatched paths */}
         <Route path="*" element={<Navigate to="/" />} />
