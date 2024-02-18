@@ -54,10 +54,19 @@
   }
   
   .AddBook {
+    width: 151px !important;
     position: absolute;
     font-size: 24px;
     font-weight: 400;
+    color: black;
     word-wrap: break-word;
+    font-family: 'Inika';
+    text-decoration: none;
+
+    border: 1px solid black; /* You can adjust the border width and color */
+    padding: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
   }
   
   .AddBook:nth-child(odd) {
@@ -107,86 +116,13 @@
     left: 1039px;
     top: 1080px;
   }
-  
+
   .AvailableBooks {
     left: 604px;
     top: 174px;
     color: black;
+    position: absolute;
     font-size: 36px;
     font-weight: 700;
     word-wrap: break-word;
   }
-  
-  .Rectangle50,
-  .Rectangle51,
-  .Rectangle52,
-  .Rectangle53,
-  .Rectangle54,
-  .Rectangle55,
-  .Rectangle56,
-  .Rectangle57 {
-    position: absolute;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  
-  .Rectangle50,
-  .Rectangle51,
-  .Rectangle52,
-  .Rectangle53,
-  .Rectangle54,
-  .Rectangle55,
-  .Rectangle56,
-  .Rectangle57 {
-    height: 62px;
-    background: white;
-    border: 1px black solid;
-  }
-  
-  .Rectangle50 {
-    width: 176px;
-    left: 318px;
-    top: 639px;
-  }
-  
-  .Rectangle51 {
-    width: 176px;
-    left: 551px;
-    top: 639px;
-  }
-  
-  .Rectangle52 {
-    width: 176px;
-    left: 784px;
-    top: 639px;
-  }
-  
-  .Rectangle53 {
-    width: 176px;
-    left: 1017px;
-    top: 639px;
-  }
-  
-  .Rectangle54 {
-    width: 176px;
-    left: 318px;
-    top: 1065px;
-  }
-  
-  .Rectangle55 {
-    width: 176px;
-    left: 551px;
-    top: 1065px;
-  }
-  
-  .Rectangle56 {
-    width: 176px;
-    left: 784px;
-    top: 1065px;
-  }
-  
-  .Rectangle57 {
-    width: 176px;
-    left: 1017px;
-    top: 1065px;
-  }
-  
