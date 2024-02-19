@@ -1,0 +1,82 @@
+.MacbookPro14SignIn {
+  width: 1512px;
+  height: 982px;
+  position: relative;
+  background: white;
+}
+
+.Rectangle76 {
+  width: 1395px;
+  height: 550px;
+  left: 76px;
+  top: 195px;
+  position: absolute;
+  background: #CEA0AA;
+  border-radius: 30px;
+}
+
+.Frame2 {
+  width: 100px;
+  height: 100px;
+  left: 233px;
+  top: 178px;
+  position: absolute;
+}
+
+.SignIn {
+  width: 212px;
+  height: 85px;
+  left: 662px;
+  top: 125px;
+  position: absolute;
+  color: black;
+  font-size: 48px;
+  font-family: 'Inika';
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+form {
+  position: absolute;
+}
+
+label {
+  width: 517px;
+  height: 76px;
+  position: absolute;
+  color: black;
+  font-size: 36px;
+  font-family: 'Inika';
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 517px;
+  height: 76px;
+  position: absolute;
+  color: black;
+  font-size: 36px;
+  font-family: 'Inika';
+  font-weight: 400;
+  word-wrap: break-word;
+  left: 450px;
+}
+
+#optional {
+  top: 435px;
+}
+
+button {
+  width: 517px;
+  height: 76px;
+  position: absolute;
+  color: black;
+  font-size: 36px;
+  font-family: 'Inika';
+  font-weight: 400;
+  word-wrap: break-word;
+  left: 450px;
+  top: 600px;
+}
