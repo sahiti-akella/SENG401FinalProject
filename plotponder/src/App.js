@@ -26,8 +26,6 @@ function App() {
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         
-
-        
         {/* Catch-all route for unmatched paths */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
