@@ -1,8 +1,7 @@
 .MacbookPro14SignIn {
   width: 1512px;
-  height: 982px;
-  position: relative;
-  background: white;
+  height: 900px;
+
 }
 
 .Rectangle76 {
@@ -40,7 +39,7 @@ form {
   position: absolute;
 }
 
-label {
+label, input, button {
   width: 517px;
   height: 76px;
   position: absolute;
@@ -64,19 +63,67 @@ input[type="password"] {
   left: 450px;
 }
 
-#optional {
-  top: 435px;
+label[for="Email"] {
+  left: 187px;
+  top: 300px;
+}
+
+input[type="text"][id="email"] {
+  left: 475px;
+  top: 275px;
+}
+
+label[for="password"] {
+  left: 187px;
+  top: 400px;
+}
+
+input[type="password"][id="password"] {
+  left: 475px;
+  top: 375px;
+}
+
+label[for="optional"] {
+  left: 187px;
+  top: 420px;
+}
+
+button[for="signin"] {
+  left: 475px;
+  top: 600px;
+  cursor: pointer;
 }
 
 button {
-  width: 517px;
-  height: 76px;
-  position: absolute;
-  color: black;
-  font-size: 36px;
-  font-family: 'Inika';
-  font-weight: 400;
-  word-wrap: break-word;
   left: 450px;
   top: 600px;
+}
+
+/* checkbox styles */
+input[type="checkbox"] {
+  position: absolute;
+  left: 470px !important;
+  top: 220px !important; /* Adjust the top position as needed */
+  z-index: 1;
+}
+
+label[for="signInAsAuthorCheckbox"] {
+  position: absolute;
+  left: 510px;
+  top: 220px; /* Adjust the top position as needed */
+  font-size: 24px; /* Adjust the font size as needed */
+  z-index: 2;
+}
+
+label[for="authorpassword"] {
+  position: absolute;
+  left: 187px;
+  top: 495px; /* Adjust the top position as needed */
+  z-index: 3;
+}
+
+input[type="password"][id="authorpassword"] {
+  position: absolute;
+  left: 475px;
+  top: 475px; /* Adjust the top position as needed */
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import Lottie from "react-lottie";
 import animationData from "../../animation.json"; // Import your Lottie animation JSON file
 import "../WelcomePage.css";
@@ -33,14 +34,14 @@ export const WelcomePage = () => {
                         isPaused={isPaused}
                     />
                 </div>
-                <div className="overlap-group">
+                <Link to="/SignUp" className="overlap-group">
                     <div className="rectangle" />
                     <div className="text-wrapper-3">Create an Account</div>
-                </div>
-                <div className="overlap">
+                </Link>
+                <Link to="/SignIn" className="overlap">
                     <div className="rectangle-2" />
                     <div className="text-wrapper-5">Sign In</div>
-                </div>
+                </Link>
             </div>
         </div>
     );

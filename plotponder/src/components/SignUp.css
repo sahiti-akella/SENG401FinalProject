@@ -1,8 +1,6 @@
 .MacbookPro14CreateAnAccount {
     width: 1512px;
     height: 982px;
-    position: relative;
-    background: white;
   }
   
   .Rectangle77 {
@@ -43,12 +41,36 @@
   label {
     width: 517px;
     height: 76px;
+    left: 187px;
     position: absolute;
     color: black;
     font-size: 36px;
     font-family: 'Inika';
     font-weight: 400;
     word-wrap: break-word;
+  }
+
+  label[for="firstname"] {
+    top: 255px;
+  }
+
+  label[for="lastname"] {
+    top: 355px;
+  }
+
+  label[for="EmailAccount"] {
+    top: 455px;
+  }
+
+  label[for="passwordsignup"] {
+    top: 555px;
+  }
+
+
+  label[for="signupasauthor"] {
+    left: 650px;
+    top: 637px;
+    font-size: 24px;
   }
   
   input[type="text"],
@@ -67,6 +89,8 @@
   input[type="checkbox"] {
     width: 25px;
     height: 25px;
+    left: 600px;
+    top: 635px;
     position: absolute;
     background: #CEA0AA;
   }
@@ -82,5 +106,12 @@
     word-wrap: break-word;
     left: 950px;
     top: 800px;
+    cursor: pointer;
+  }
+
+  .authorSignUpMessage {
+    margin-top: 615px;
+    margin-left: 300px;
+
   }
   
