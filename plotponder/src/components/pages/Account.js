@@ -35,6 +35,9 @@ function Account(props) {
         <Link to="/Account" className="Community1">Romance</Link>
         <Link to="/Account" className="Community2">Comedy</Link>
         <Link to="/Account" className="Community3">Fantasy</Link>
+
+
+        <Link to="/" className="LogOut">Log Out</Link>
     </div>
   );
 }
