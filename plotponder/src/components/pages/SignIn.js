@@ -54,6 +54,7 @@ function SignIn(props) {
         <input
           type="checkbox"
           id="signInAsAuthorCheckbox"
+          className="checkbox2"
           onChange={handleCheckboxChange}
         />
         <label htmlFor="signInAsAuthorCheckbox">Sign in as author</label>

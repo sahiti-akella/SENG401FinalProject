@@ -86,7 +86,7 @@
     left: 450px;
   }
   
-  input[type="checkbox"] {
+  .checkbox1 {
     width: 25px;
     height: 25px;
     left: 600px;

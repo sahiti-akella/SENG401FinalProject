@@ -34,7 +34,7 @@ function SignUp(props) {
             <input type="password" id="passwordsignup" name="passwordsignup" style={{top: 535}}></input>
             <br></br>
 
-            <input type="checkbox" id="signupasauthor" name="signupasauthor" value="authorsignup"></input>
+            <input type="checkbox" id="signupasauthor" name="signupasauthor" value="authorsignup" className="checkbox1"></input>
             <label for="signupasauthor"> Sign up as Author</label>
 
             <p className="authorSignUpMessage">*When you sign up as an author, an author password will be sent to you via email. Use this password for future sign in's.*</p>
