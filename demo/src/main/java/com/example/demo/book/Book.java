@@ -1,4 +1,4 @@
-package plotponder.backend;
+package com.example.demo.book;
 
 public class Book {
     private int bookID;
@@ -9,6 +9,13 @@ public class Book {
 
     public Book(int bookID, String title, int authorID, int genreID, int yearMade){
         this.bookID = bookID;
+        this.title = title;
+        this.authorID = authorID;
+        this.genreID = genreID;
+        this.yearMade = yearMade;
+    }
+
+    public Book(String title, int authorID, int genreID, int yearMade){
         this.title = title;
         this.authorID = authorID;
         this.genreID = genreID;
@@ -33,5 +40,16 @@ public class Book {
 
     public int getYearMade(){
         return this.yearMade;
+    }
+
+    @Override
+    public String toString(){
+        return "Book{" +
+                "id=" + bookID +
+                ", name='" + title + '\'' +
+                ", author id=" + authorID +
+                ", genre id=" + genreID +
+                ", year made=" + yearMade +
+                '}';
     }
 }

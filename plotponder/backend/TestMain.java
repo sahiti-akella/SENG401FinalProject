@@ -3,7 +3,7 @@ package plotponder.backend;
 import java.util.ArrayList;
 
 public class TestMain {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         DatabaseConnection connection = new DatabaseConnection();
         ArrayList<Author> authors = connection.getAllAuthors();
         ArrayList<Genre> genres = connection.getAllGenres();
@@ -37,5 +37,5 @@ public class TestMain {
             System.out.println("Topic: " + club.getTopic());
             System.out.println("Year Made: " + club.getYearMade() + "\n");
         }
-    }
+    }*/
 }

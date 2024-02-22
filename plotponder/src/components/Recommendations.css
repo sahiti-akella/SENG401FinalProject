@@ -1,5 +1,17 @@
 /* recommendationPagesstyle.css */
 
+.books {
+  display: flex;
+  gap: 500px;
+}
+
+.Recommendation {
+  display: inline-block;
+  margin-right: 20px; 
+  margin-top: 20px;
+  position: relative;
+}
+
 .recommendations-container {
   width: 1512px;
   height: 982px;
