@@ -14,8 +14,8 @@ function SignIn(props) {
 
     // Attempt to create a new user
     signInWithEmailAndPassword(userDatabase, email, password)
-      .then((data) => {
-        const user = data.user;
+      .then((userCredential) => {
+        const user = userCredential.user;
         console.log(user, "userInfo");
         navigate("/Account");
       })
