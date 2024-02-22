@@ -7,38 +7,36 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 function SignUp(props) {
   const navigate = useNavigate();
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     const username = e.target.username.value;
 
-    // Attempt to create a new user
-    createUserWithEmailAndPassword(userDatabase, email, password)
-      .then((data) => {
-        const user = data.user;
+    try {
+      // Attempt to create a new user
+      const userCredential = await createUserWithEmailAndPassword(
+        userDatabase,
+        email,
+        password
+      );
 
-        updateProfile(user, {
-          displayName: username,
-        })
-          .then(() => {
-            console.log("Display name updated successfully");
-          })
-          .catch((error) => {
-            console.error("Error updating display name:", error);
-          });
+      // Update the display name
+      const user = userCredential.user;
+      console.log(user, "userInfo");
+      await updateProfile(user, { displayName: username });
 
-        console.log(user, "userInfo");
-        navigate("/Account");
-      })
-      .catch((error) => {
-        if (error.code === "auth/email-already-in-use") {
-          window.alert("Email is already in use. Redirecting to sign-in page.");
-          navigate("/SignIn");
-        } else {
-          console.error("Error during sign up:", error);
-        }
-      });
+      console.log("Display name updated successfully");
+
+      navigate("/Account");
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        window.alert("Email is already in use. Redirecting to sign-in page.");
+        navigate("/SignIn");
+      } else {
+        console.error("Error during sign up:", error);
+      }
+    }
   };
 
   return (

@@ -7,6 +7,21 @@ import { userDatabase } from "./FirebaseConfig";
 function Account(props) {
   const navigate = useNavigate();
 
+  const [displayName, setDisplayName] = useState("");
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        console.log("Current User:", user.email);
+        const name = user.displayName;
+        setDisplayName(name);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const handleSignOut = () => {
     signOut(userDatabase).then((val) => {
       navigate("/");
@@ -15,7 +30,7 @@ function Account(props) {
 
   return (
     <div className="MacbookPro14UserAccount">
-      <div className="HiUsername">Hi Username! 👋</div>
+      <div className="HiUsername">Hi {displayName}! 👋</div>
 
       <div className="YourRatings">Your Favourites</div>
 
