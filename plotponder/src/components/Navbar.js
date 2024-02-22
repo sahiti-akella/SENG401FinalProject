@@ -6,9 +6,9 @@ export const Navbar = () => {
 
     return (
         <div className="Navbar">
-            <NavLink to="/Account" className="view-account" activeClassName="active">View Account</NavLink>
-            <NavLink to="/Recommendations" className="recommendations-title" activeClassName="active">Recommendations</NavLink>
-            <NavLink to="/Community" className="community" activeClassName="active">Community</NavLink>
+            <NavLink to="/Account" className="view-account" activeclassname="active">View Account</NavLink>
+            <NavLink to="/Recommendations" className="recommendations-title" activeclassname="active">Recommendations</NavLink>
+            <NavLink to="/Community" className="community" activeclassname="active">Community</NavLink>
             <div className="plotponder-title">PlotPonder 💭</div>
         </div>
     );

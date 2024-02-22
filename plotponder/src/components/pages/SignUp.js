@@ -1,49 +1,86 @@
 import React from "react";
 import "../SignUp.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { userDatabase } from "./FirebaseConfig";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 function SignUp(props) {
   const navigate = useNavigate();
 
-  const handleSignUp = () => {
-    // Perform sign-in logic here (Adding User to Database, sending author password if indicated)
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const username = e.target.username.value;
 
-    // Navigate to "/Account" after successful sign-in
-    navigate("/Account");
+    // Attempt to create a new user
+    createUserWithEmailAndPassword(userDatabase, email, password)
+      .then((data) => {
+        const user = data.user;
+
+        updateProfile(user, {
+          displayName: username,
+        })
+          .then(() => {
+            console.log("Display name updated successfully");
+          })
+          .catch((error) => {
+            console.error("Error updating display name:", error);
+          });
+
+        console.log(user, "userInfo");
+        navigate("/Account");
+      })
+      .catch((error) => {
+        if (error.code === "auth/email-already-in-use") {
+          window.alert("Email is already in use. Redirecting to sign-in page.");
+          navigate("/SignIn");
+        } else {
+          console.error("Error during sign up:", error);
+        }
+      });
   };
 
   return (
-    <div className="MacbookPro14CreateAnAccount">
-      <div className="Rectangle77" />
-      <div className="Frame1"/>
-      <div className="SignUp">SIGN UP</div>
-        <form>
-            <label for="firstname"> First Name *</label>
-            <input type="text" id="firstname" name="firstname" style={{top: 235}}></input>
-            <br></br>
+    <div className="main-div">
+      <div className="header">
+        <div className="title-wrapper">PlotPonder</div>
+      </div>
+      <div className="form-div">
+        <div className="signup-title">Sign Up</div>
+        <form onSubmit={(e) => handleSignUp(e)}>
+          <input
+            type="text"
+            className="username"
+            name="username"
+            placeholder="Username"
+          ></input>
+          <br></br>
 
-            <label for="lastname"> Last Name *</label>
-            <input type="text" id="lastname" name="lastname" style={{top: 335}}></input>
-            <br></br>
+          <input
+            type="text"
+            className="email"
+            name="email"
+            placeholder="Email"
+          ></input>
+          <br></br>
 
-            <label for="EmailAccount">Email *</label>
-            <input type="text" id="emailaccount" name="emailaccount" style={{top: 435}}></input>
-            <br></br>
+          <input
+            type="password"
+            className="password"
+            name="password"
+            placeholder="Password"
+          ></input>
+          <br></br>
 
-            <label for ="passwordsignup">Password *</label>
-            <input type="password" id="passwordsignup" name="passwordsignup" style={{top: 535}}></input>
-            <br></br>
-
-            <input type="checkbox" id="signupasauthor" name="signupasauthor" value="authorsignup" className="checkbox1"></input>
-            <label for="signupasauthor"> Sign up as Author</label>
-
-            <p className="authorSignUpMessage">*When you sign up as an author, an author password will be sent to you via email. Use this password for future sign in's.*</p>
-
-            <button for ="signup" type="button" onClick={handleSignUp}>Sign Up</button>
+          <button>Sign Up</button>
         </form>
+        <p className="switch-signup">
+          Already have an account? <Link to="/SignIn">Sign in</Link>
+        </p>
+      </div>
     </div>
-
-);
+  );
 }
 
 export default SignUp;
