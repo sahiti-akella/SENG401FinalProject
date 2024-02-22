@@ -1,66 +1,63 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import "../SignIn.css";
+import { Link, useNavigate } from "react-router-dom";
+import { userDatabase } from "./FirebaseConfig";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 function SignIn(props) {
-  const [signInAsAuthor, setSignInAsAuthor] = useState(false);
   const navigate = useNavigate();
 
-  const handleCheckboxChange = () => {
-    setSignInAsAuthor(!signInAsAuthor);
-  };
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
-  const handleSignIn = () => {
-    // Perform sign-in logic here (User Authentication from database)
-
-    // Navigate to "/Account" after successful sign-in
-    navigate("/Account");
+    // Attempt to create a new user
+    signInWithEmailAndPassword(userDatabase, email, password)
+      .then((data) => {
+        const user = data.user;
+        console.log(user, "userInfo");
+        navigate("/Account");
+      })
+      .catch((error) => {
+        if (error.code === "auth/invalid-credential") {
+          window.alert("Invalid password/email or account does not exist");
+        } else {
+          console.error("Error during sign in:", error);
+        }
+      });
   };
 
   return (
-    <div className="MacbookPro14SignIn">
-      <div className="Rectangle76" />
-      <div className="Frame2" />
-      <div className="SignIn">SIGN IN</div>
+    <div className="main-div">
+      <div className="header">
+        <div className="title-wrapper">PlotPonder</div>
+      </div>
+      <div className="signin-form-div">
+        <div className="signin-title">Sign In</div>
+        <form onSubmit={(e) => handleSignIn(e)}>
+          <input
+            type="text"
+            className="email"
+            name="email"
+            placeholder="Email"
+          ></input>
+          <br></br>
 
-      <form>
-        <label htmlFor="Email">Email *</label>
-        <input type="text" id="email" name="email" placeholder="Enter your email"></input>
-        <br />
+          <input
+            type="password"
+            className="password"
+            name="password"
+            placeholder="Password"
+          ></input>
+          <br></br>
 
-        <label htmlFor="password">Password *</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Enter your password"
-          style={{ top: "375px", left: "475px" }}
-        ></input>
-        <br />
-
-        {signInAsAuthor && (
-          <>
-            <label htmlFor="optional" style={{ top: "500px" }}>Author Password *</label>
-            <input
-              type="password"
-              id="authorpassword"
-              name="authorpassword"
-              placeholder="Enter your author password"
-            ></input>
-            <br />
-          </>
-        )}
-
-        <input
-          type="checkbox"
-          id="signInAsAuthorCheckbox"
-          className="checkbox2"
-          onChange={handleCheckboxChange}
-        />
-        <label htmlFor="signInAsAuthorCheckbox">Sign in as author</label>
-
-        <button type="button" onClick={handleSignIn} htmlFor="signin">Sign In</button>
-      </form>
+          <button>Sign In</button>
+        </form>
+        <p className="switch-signin">
+          Don't have an account? <Link to="/SignUp">Sign Up</Link>
+        </p>
+      </div>
     </div>
   );
 }

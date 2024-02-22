@@ -1,133 +1,91 @@
-.desktop {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+.main-div {
+  background-color: #cbc3e3;
+  height: 100vh; /* 80% of the viewport height */
+  position: relative;
+  width: 100vw; /* 70% of the viewport width */
+  max-width: 1512px; /* Set a maximum width */
 }
 
-.div {
-    background-color: #ffffff;
-    height: 982px;
-    position: relative;
-    width: 1512px;
+.title-wrapper {
+  background-color: white;
+  color: black;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 3vw; /* 3% of the viewport width */
+  font-weight: 500;
+  left: 4.5vw; /* 4.5% of the viewport width */
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 2vh; /* 3.7% of the viewport height */
 }
 
-.text-wrapper {
-    color: #000000;
-    font-family: "Inika-Bold";
-    font-size: 48px;
-    font-weight: 700;
-    left: 68px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 36px;
+.header {
+  background-color: white; /* Set background color */
+  border-bottom: 1px solid #000000; /* Set border at the bottom */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow to the border */
+  padding: 5vh; /* Adjust padding as needed */
 }
 
- .text-wrapper-2 {
-    color: #000000;
-    font-family: "Inika";
-    font-size: 64px;
-    font-weight: 700;
-    left: 402px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 158px;
+.welcome-wrapper {
+  color: white;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 2.5vw; /* 4% of the viewport width */
+  font-weight: 400;
+  font-style: italic; /* Make it italic */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 16vh; /* 16% of the viewport height */
 }
 
 .lottie-animation {
-    position: absolute;
-    top: 240px; /* Adjust the top position as needed */
-    left: 354px; /* Adjust the left position as needed */
+  position: absolute;
+  top: 20%; /* Adjust the top position as needed */
+  left: 50%; /* Adjust the left position as needed */
+  transform: translateX(-50%); /* Center horizontally */
 }
 
- .element {
-    height: 550px;
-    left: 354px;
-    object-fit: cover;
-    position: absolute;
-    top: 290px;
-    width: 755px;
+.element {
+  height: 34vw; /* 34% of the viewport width */
+  left: 23.5vw; /* 23.5% of the viewport width */
+  object-fit: cover;
+  position: absolute;
+  top: 29.6vh; /* 29.6% of the viewport height */
+  width: 49.8vw; /* 49.8% of the viewport width */
 }
 
- .overlap-group {
-    height: 108px;
-    left: 807px;
-    position: absolute;
-    top: 838px;
-    width: 432px;
+.signup-button {
+  background-color: white;
+  color: black;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 1.5vw; /* 4% of the viewport width */
+  border-radius: 6.8vw; /* 6.8% of the viewport width */
+  border: none;
+  height: 8.8vh; /* 8.8% of the viewport height */
+  left: 55%; /* 53% of the viewport width */
+  position: absolute;
+  top: 70vh; /* 70% of the viewport height */
+  width: 20vw; /* 29% of the viewport width */
 }
 
-.rectangle {
-    background-color: #ffffff;
-    border: 3px solid;
-    border-color: #000000;
-    border-radius: 70px;
-    height: 108px;
-    left: 0;
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    width: 345px;
+.signin-button {
+  background-color: white;
+  color: black;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 1.5vw; /* 4% of the viewport width */
+  border-radius: 6.8vw; /* 6.8% of the viewport width */
+  border: none;
+  height: 8.8vh; /* 8.8% of the viewport height */
+  left: 25%; /* 21.4% of the viewport width */
+  position: absolute;
+  top: 70vh; /* 70% of the viewport height */
+  width: 20vw; /* 24.4% of the viewport width */
 }
 
-.text-wrapper-3 {
-    color: #000000;
-    font-family: "Inika";
-    font-size: 32px;
-    font-weight: 400;
-    left: 55px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 40px;
-    width: 290px;
-}
-
-.text-wrapper-4 {
-    color: #000000;
-    font-family: "Inika";
-    font-size: 32px;
-    font-weight: 400;
-    left: 34px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 32px;
-    width: 398px;
-}
-
-.overlap {
-    border-radius: 70px;
-    height: 108px;
-    left: 387px;
-    position: absolute;
-    top: 838px;
-    width: 345px;
-}
-
-.rectangle-2 {
-    background-color: #cea0aa;
-    border-radius: 70px;
-    height: 108px;
-    left: 0;
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    width: 345px;
-    align-items: center;
-}
-
-.text-wrapper-5 {
-    color: #000000;
-    font-family: "Inika";
-    font-size: 32px;
-    font-weight: 400;
-    left: 119px;
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    top: 40px;
+.signup-button:hover,
+.signin-button:hover {
+  background-color: black; /* Change to your desired hover background color */
+  color: white; /* Change to your desired hover font color */
 }
