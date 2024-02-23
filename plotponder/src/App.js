@@ -9,6 +9,7 @@ import SignIn from './components/pages/SignIn';
 import Navbar from './components/Navbar';
 import SignUp from './components/pages/SignUp';
 import AddBook from './components/pages/AddBook';
+import ViewCommunities from './components/pages/ViewCommunities';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         
         {/* Other Pages */}
         <Route path="/Community" element={<Community />} />
+        <Route path="/Community/View" element={<ViewCommunities />} />
         <Route path="/Recommendations" element={<Recommendations />} />
         <Route path="/Account" element={<Account />} />
         <Route path="/Account/AddBook" element={<AddBook />} />
