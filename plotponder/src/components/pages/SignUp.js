@@ -3,6 +3,7 @@ import "../SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import axios from "axios";
 
 function SignUp(props) {
   const navigate = useNavigate();
@@ -12,6 +13,13 @@ function SignUp(props) {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const username = e.target.username.value;
+
+    const formData = {
+      username: username,
+      email: email,
+      password: password
+    };
+    console.log(formData)
 
     try {
       // Attempt to create a new user
@@ -28,7 +36,19 @@ function SignUp(props) {
 
       console.log("Display name updated successfully");
 
-      navigate("/Account");
+      // add user account to database
+      const response = await axios.post(`http://localhost:8080/api/v1/account/signup`, formData);
+      console.log(response);
+
+      if (response.status === 201) {
+        console.log("User signed up successfully");
+        navigate("/Account");
+      } else {
+        console.error("Failed to sign up user");
+        // Handle failure case (e.g., display an error message)
+      }
+
+      //navigate("/Account");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         window.alert("Email is already in use. Redirecting to sign-in page.");
