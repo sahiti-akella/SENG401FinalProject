@@ -24,7 +24,7 @@ public class UserAccountController {
     {
         DatabaseConnection databaseConnection = new DatabaseConnection();
         System.out.println(userAccount.getUsername());
-        boolean userAdded = databaseConnection.addUser(userAccount.getUsername(), userAccount.getEmail(), userAccount.getPassword());
+        boolean userAdded = databaseConnection.addUser(userAccount.getUsername(), userAccount.getEmail());
         if (userAdded) {
             return new ResponseEntity<>(userAccount, HttpStatus.CREATED);
         } else {

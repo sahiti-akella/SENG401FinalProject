@@ -3,12 +3,10 @@ package com.example.demo.book;
 public class UserAccount {
     private String username;
     private String email;
-    private String password;
 
-    public UserAccount(String username, String email, String password) {
+    public UserAccount(String username, String email) {
         this.username = username;
         this.email = email;
-        this.password = password;
     }
 
     public String getUsername(){
@@ -17,9 +15,5 @@ public class UserAccount {
 
     public String getEmail(){
         return this.email;
-    }
-    
-    public String getPassword(){
-        return this.password;
     }
 }

@@ -44,15 +44,13 @@ public class DatabaseConnection {
         return books;
     }
 
-    public boolean addUser(String username, String email, String password) {
-        String query = "INSERT INTO USER_ACCOUNT (Username, User_Email, Login_Password, User_Role) VALUES (?, ?, ?, ?)";
+    public boolean addUser(String username, String email) {
+        String query = "INSERT INTO USERS (Username, User_Email) VALUES (?, ?)";
     
         try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
             // Set parameters for the query
             preparedStatement.setString(1, username); 
             preparedStatement.setString(2, email);
-            preparedStatement.setString(3, password);
-            preparedStatement.setString(4, "user"); // Assuming default user role is "user"
     
             int rowsAffected = preparedStatement.executeUpdate();
             return rowsAffected > 0; 

@@ -16,8 +16,7 @@ function SignUp(props) {
 
     const formData = {
       username: username,
-      email: email,
-      password: password
+      email: email
     };
     console.log(formData)
 
