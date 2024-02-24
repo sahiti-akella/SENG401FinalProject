@@ -12,6 +12,14 @@ import AddBook from './components/pages/AddBook';
 import ViewCommunities from './components/pages/ViewCommunities';
 
 function App() {
+  // Get the current route
+  const currentRoute = window.location.pathname;
+
+  // Function to determine whether to show Navbar
+  const shouldShowNavbar = () => {
+    return currentRoute !== '/' && currentRoute !== '/SignIn' && currentRoute !== '/SignUp';
+  };
+
   return (
     <Router>
       <Routes>
@@ -33,7 +41,7 @@ function App() {
       </Routes>
 
       {/* Navbar outside of Routes */}
-      {window.location.pathname !== '/' && <Navbar />}
+      {shouldShowNavbar() && <Navbar />}
     </Router>
   );
 }
