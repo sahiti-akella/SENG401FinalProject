@@ -2,7 +2,9 @@ package com.example.demo.book;
 
 import java.sql.*;
 import java.util.ArrayList;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DatabaseConnection {
     private Statement stmt;
     private Connection dbConnection;
@@ -59,5 +61,8 @@ public class DatabaseConnection {
             e.printStackTrace();
             return false; 
         }
-    }
+    }    
+    public static void main(String[] args) {
+        DatabaseConnection db =new DatabaseConnection(); 
+    }   
 }

@@ -17,12 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "api/v1/account")
 public class UserAccountController {
 
+    private final DatabaseConnection databaseConnection;
+
     //private UserAccount userAccount;
+
+    @Autowired
+    public UserAccountController(DatabaseConnection databaseConnection) {
+        this.databaseConnection = databaseConnection;
+    }
     
     @PostMapping("/signup")
-    public ResponseEntity createAccount(@RequestBody UserAccount userAccount)
-    {
-        DatabaseConnection databaseConnection = new DatabaseConnection();
+    public ResponseEntity createAccount(@RequestBody UserAccount userAccount) {
         System.out.println(userAccount.getUsername());
         boolean userAdded = databaseConnection.addUser(userAccount.getUsername(), userAccount.getEmail());
         if (userAdded) {
