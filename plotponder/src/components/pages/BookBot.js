@@ -18,6 +18,11 @@ function BookBot() {
 
     return (
         <div>
+
+            <div>
+                <h2>Response:</h2>
+                <p>{response}</p>
+            </div>
             <form onSubmit={handleSubmit}>
                 <label>
                     Prompt:
@@ -30,10 +35,7 @@ function BookBot() {
                 <button type="submit">Submit</button>
             </form>
 
-            <div>
-                <h2>Response:</h2>
-                <p>{response}</p>
-            </div>
+            
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Community.css";
 import { Link } from 'react-router-dom';
+import Navbar from "../Navbar";
 
 const Reply = ({ reply, onDeleteReply }) => {
     //this controls the comments button on each post
@@ -204,7 +205,9 @@ export default function Community(props) {
     };
 
   return (
-    <div className="div">
+    <div> 
+      <Navbar />
+      <div className="div">
       <div className="div-2"></div>
       <div className="title">
         <div className="current-club-title">Club 1</div>
@@ -271,5 +274,8 @@ export default function Community(props) {
         </div>
       </div>
     </div>
+
+    </div>
+   
   );
 }
