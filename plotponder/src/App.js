@@ -12,36 +12,27 @@ import AddBook from './components/pages/AddBook';
 import ViewCommunities from './components/pages/ViewCommunities';
 
 function App() {
-  // Get the current route
-  const currentRoute = window.location.pathname;
-
-  // Function to determine whether to show Navbar
-  const shouldShowNavbar = () => {
-    return currentRoute !== '/' && currentRoute !== '/SignIn' && currentRoute !== '/SignUp';
-  };
-
   return (
     <Router>
-      <Routes>
-        {/* Home Page */}
-        <Route path="/" element={<WelcomePage />} />
-        
-        {/* Other Pages */}
-        <Route path="/Community" element={<Community />} />
-        <Route path="/Community/View" element={<ViewCommunities />} />
-        <Route path="/Recommendations" element={<Recommendations />} />
-        <Route path="/Account" element={<Account />} />
-        <Route path="/Account/AddBook" element={<AddBook />} />
-        <Route path="/Recommendations/BookBot" element={<BookBot />} />
-        <Route path="/SignIn" element={<SignIn />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        
-        {/* Catch-all route for unmatched paths */}
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-
-      {/* Navbar outside of Routes */}
-      {shouldShowNavbar() && <Navbar />}
+      <div> {/* Wrap everything in a div */}
+        <Routes>
+          {/* Home Page */}
+          <Route path="/" element={<WelcomePage />} />
+          
+          {/* Other Pages */}
+          <Route path="/Community" element={<Community />} />
+          <Route path="/Community/View" element={<ViewCommunities />} />
+          <Route path="/Recommendations" element={<Recommendations />} />
+          <Route path="/Account" element={<Account />} />
+          <Route path="/Account/AddBook" element={<AddBook />} />
+          <Route path="/Recommendations/BookBot" element={<BookBot />} />
+          <Route path="/SignIn" element={<SignIn />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          
+          {/* Catch-all route for unmatched paths */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Recommendations.css";
 import { Link } from 'react-router-dom';
+import Navbar from "../Navbar";
 
 function Recommendations(props) {
 
@@ -25,10 +26,10 @@ function Recommendations(props) {
   };
 
   return (
-    <div className="recommendations-container">
-      
+    <div> 
+      <Navbar />
+      <div className="recommendations-container">
       <div className="user-rec-title">User's Recommendations</div>
-
       <div className="books">
       {randomBooks.map((book, index) => (
         <div key={index} className="Recommendation">
@@ -42,6 +43,9 @@ function Recommendations(props) {
       
       <Link to="/Recommendations/BookBot" className="ask-bookbot">Ask Our BookBot!</Link>
     </div>
+      
+    </div>
+   
   );
 }
 
