@@ -1,6 +1,11 @@
+// BookBot.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
+import Lottie from 'react-lottie';
+import bookBotAnimation from '../../Bookbot.json';
 import Navbar from '../Navbar';
+import '../BookBot.css';
 
 function BookBot() {
     const [prompt, setPrompt] = useState("");
@@ -20,23 +25,50 @@ function BookBot() {
     return (
         <div>
             <Navbar />
-            <div>
-                <h2>Response:</h2>
-                <p>{response}</p>
+            <div className='welcome-page'>
+                <h2 className='welcome-message'>Welcome to Bookbot! 🤖</h2>
+                <div className='bookbot-description'> 
+                    Discover your next literary obsession with Book Bot, your ultimate guide 
+                    to personalized book and TV show recommendations! Utilizing cutting-edge AI technology,
+                    Book Bot seamlessly integrates with OpenAI's ChatGPT, ensuring each suggestion is finely 
+                    tuned to your unique interests. Simply enter a book name, and let Book Bot work its 
+                    magic, delivering tailored recommendations in seconds. 
+                </div>
             </div>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Prompt:
-                    <input 
-                        type="text" 
-                        value={prompt} 
-                        onChange={(e) => setPrompt(e.target.value)} 
+            <div className='chat-container'> 
+                <div className="lottie-container">
+                    <Lottie 
+                        options={{
+                            loop: true,
+                            autoplay: true,
+                            animationData: bookBotAnimation,
+                            rendererSettings: {
+                                preserveAspectRatio: 'xMidYMid slice'
+                            }
+                        }}
+                        height={window.innerHeight / 2} // Adjust height to take up half of the bottom half of the page
+                        width="100%"
                     />
-                </label>
-                <button type="submit">Submit</button>
-            </form>
-
-            
+                </div>
+                <div className="prompt-response-container">
+                   <p>BookBot's Recommendations:</p>
+                    <div> 
+                    <div className='chatgpt-response'></div>
+                    <p>{response}</p>
+                    </div>
+                    <form onSubmit={handleSubmit} className="input-form">
+                        <input 
+                            type="text" 
+                            value={prompt} 
+                            onChange={(e) => setPrompt(e.target.value)} 
+                            className="prompt-input"
+                            placeholder="Enter Book Name for Recommendations......"
+                        />
+                        <button type="submit" className="submit-button">Submit</button>
+                    </form>
+                </div>
+              
+            </div>
         </div>
     );
 };
