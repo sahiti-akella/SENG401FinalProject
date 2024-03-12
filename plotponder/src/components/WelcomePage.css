@@ -2,7 +2,7 @@
   background-color: #cbc3e3;
   height: 100vh; /* 80% of the viewport height */
   position: relative;
-  width: 100vw; /* 70% of the viewport width */
+  width: 100%; /* 70% of the viewport width */
   max-width: 1512px; /* Set a maximum width */
 }
 

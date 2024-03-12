@@ -3,6 +3,7 @@ import "../useraccount.css";
 import { Link, useNavigate } from "react-router-dom";
 import { signOut, getAuth } from "firebase/auth";
 import { userDatabase } from "./FirebaseConfig";
+import Navbar from "../Navbar";
 
 function Account(props) {
   const navigate = useNavigate();
@@ -29,7 +30,9 @@ function Account(props) {
   };
 
   return (
-    <div className="MacbookPro14UserAccount">
+    <div>
+      <Navbar />
+      <div className="MacbookPro14UserAccount">
       <div className="HiUsername">Hi {displayName}! 👋</div>
 
       <div className="YourRatings">Your Favourites</div>
@@ -77,8 +80,9 @@ function Account(props) {
         Fantasy
       </Link>
 
-      <button onClick={handleSignOut}>Sign Out</button>
     </div>
+    </div>
+    
   );
 }
 

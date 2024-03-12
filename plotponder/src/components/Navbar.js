@@ -2,16 +2,20 @@ import React from "react";
 import "./Navbar.css";
 import { NavLink } from 'react-router-dom';
 
-export const Navbar = () => {
-
+const Navbar = () => {
     return (
         <div className="Navbar">
-            <NavLink to="/Account" className="view-account" activeclassname="active">View Account</NavLink>
-            <NavLink to="/Recommendations" className="recommendations-title" activeclassname="active">Recommendations</NavLink>
-            <NavLink to="/Community" className="community" activeclassname="active">Community</NavLink>
-            <div className="plotponder-title">PlotPonder 💭</div>
+            <div className="header">
+                <div className="title-wrapper">PlotPonder</div>
+                    <div className="search-wrapper">   
+                        <NavLink to="/Recommendations" className="nav-link" activeClassName="active">Recommendations</NavLink>
+                        <NavLink to="/Community" className="nav-link" activeClassName="active">Community</NavLink>
+                        <NavLink to="/Account" className="nav-link" activeClassName="active">View Account</NavLink>
+                    </div>
+            </div>
         </div>
     );
 };
 
 export default Navbar;
+
