@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from '../Navbar';
 
 function BookBot() {
     const [prompt, setPrompt] = useState("");
@@ -18,7 +19,7 @@ function BookBot() {
 
     return (
         <div>
-
+            <Navbar />
             <div>
                 <h2>Response:</h2>
                 <p>{response}</p>

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import "../addbook.css";
+import Navbar from "../Navbar";
 
 export default function AddBook(props) {
   const [books, setBooks] = useState([]);
@@ -31,7 +32,9 @@ export default function AddBook(props) {
   ];
 
   return (
-    <div className="MacbookPro14UserAccount">
+    <div> 
+      <Navbar />
+      <div className="MacbookPro14UserAccount">
       <div className="AvailableBooks" style={{ left: 604, top: 174, position: 'absolute', color: 'black', fontSize: 36, fontFamily: 'Inika', fontWeight: '700', wordWrap: 'break-word' }}>Available Books</div>
       
       {books.map((book, index) => {
@@ -56,5 +59,7 @@ export default function AddBook(props) {
         );
       })}
     </div>
+    </div>
+   
   );  
 }
