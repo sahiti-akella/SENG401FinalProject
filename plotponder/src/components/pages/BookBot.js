@@ -26,7 +26,10 @@ function BookBot() {
         <div>
             <Navbar />
             <div className='welcome-page'>
-                <h2 className='welcome-message'>Welcome to Bookbot! 🤖</h2>
+                <div className='welcome-message'> 
+                <h2 >Welcome to Bookbot! 🤖</h2>
+                </div>
+                
                 <div className='bookbot-description'> 
                     Discover your next literary obsession with Book Bot, your ultimate guide 
                     to personalized book and TV show recommendations! Utilizing cutting-edge AI technology,

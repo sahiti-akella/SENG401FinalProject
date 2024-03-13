@@ -1,16 +1,19 @@
 /* BookBot.css */
 
-@keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
-
 
 .welcome-page {
     text-align: center;
     font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     font-size: 20px;
     padding-top: 20px;
+}
+
+.welcome-message{
+    animation: typing 2s steps(40, end);
 }
 
 .bookbot-description {
