@@ -1,0 +1,64 @@
+.homepage-div {
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    margin: 0 auto; /* This centers the div horizontally */
+    max-width: 960px; /* Adjust this value as needed */
+    padding: 0 20px; /* Adds space on the left and right sides */
+    align-items: center;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.homepage-message {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    overflow: hidden; /* Hides overflow text for typewriter effect */
+    white-space: nowrap; /* Prevents text from wrapping */
+    animation: typing 2s steps(40, end);
+}
+
+.description {
+    font-size: 20px;
+    padding-top: 10px;
+    color: #3a3b3d;
+}
+
+.lottie-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px; /* Adjust as needed */
+    margin-bottom: 30px; /* Add space between Lottie and button */
+}
+
+.lottie{
+    width: 270px;
+    height: 270px;
+}
+
+.get-started-button {
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 40px; /* Adjust padding as needed */
+    background-color: #9b8bb5; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds drop shadow */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+    height: 60px;
+    width: 300px;
+}
+
+.get-started-button:hover {
+    background-color: #7b6d91; /* Button background color on hover */
+}
+
+
+/* Typewriter animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
