@@ -41,7 +41,7 @@ function SignUp(props) {
 
       if (response.status === 201) {
         console.log("User signed up successfully");
-        navigate("/Account");
+        navigate("/Home");
       } else {
         console.error("Failed to sign up user");
         // Handle failure case (e.g., display an error message)

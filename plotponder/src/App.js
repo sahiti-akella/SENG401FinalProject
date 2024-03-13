@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 import SignUp from './components/pages/SignUp';
 import AddBook from './components/pages/AddBook';
 import ViewCommunities from './components/pages/ViewCommunities';
+import Home from './components/pages/Home';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/Recommendations/BookBot" element={<BookBot />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/Home" element={<Home />} />
           
           {/* Catch-all route for unmatched paths */}
           <Route path="*" element={<Navigate to="/" />} />
