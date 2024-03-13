@@ -1,0 +1,78 @@
+/* BookBot.css */
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+
+.welcome-page {
+    text-align: center;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.bookbot-description {
+    font-size: 18px;
+    padding-top: 10px;
+    color: #3a3b3d;
+}
+
+.chat-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 35px;
+}
+
+.lottie-container {
+    width: 35%;
+    height: 40%;
+    margin-left: 5%;
+}
+
+.prompt-response-container {
+    width: 60%;
+    margin-left: 5%;
+    background-color: white;
+    margin-right: 40px;
+    border-radius: 10px;
+    padding: 10px; /* Adjusted padding */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 -6px 8px rgba(0, 0, 0, 0.1); /* Two shadows: one for bottom and one for top */
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    overflow-y: auto; /* Enable vertical overflow scrolling */
+    text-align: center;
+}
+
+
+.chatgpt-response {
+    white-space: nowrap;
+    animation: typewriter 3s steps(40) 1s forwards; /* Apply typewriter animation */
+}
+
+.input-form {
+    display: flex;
+    align-items: center;
+}
+
+.prompt-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #9b8bb5;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #7b6d91;
+}
