@@ -9,19 +9,42 @@ function Account(props) {
   const navigate = useNavigate();
 
   const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
 
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         console.log("Current User:", user.email);
+        const email = user.email
         const name = user.displayName;
         setDisplayName(name);
+        setEmail(email)
       }
     });
 
     return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    fetchFavoriteBooks(email);
+  }, [email]);
+
+  const fetchFavoriteBooks = async (email) => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/v1/account/favorites/${email}`);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        setFavoriteBooks(data);
+      } else {
+        console.error("Failed to fetch favorite books:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error fetching favorite books:", error);
+    }
+  };
 
   const handleSignOut = () => {
     signOut(userDatabase).then((val) => {
@@ -37,17 +60,31 @@ function Account(props) {
 
       <div className="YourRatings">Your Favourites</div>
 
-      <div className="rating-images">
-        <img className="image1" src="https://via.placeholder.com/176x282" />
-        <img className="image2" src="https://via.placeholder.com/176x282" />
-        <img className="image3" src="https://via.placeholder.com/176x282" />
-        <img className="image4" src="https://via.placeholder.com/176x282" />
-      </div>
+      {favoriteBooks.map((book, index) => {
+        const row = Math.floor(index / 3);
+        const col = index % 3;
+        const top = 400 + (row * 450);
+        const left = 150 + (col * 300);
+
+        return (
+          <React.Fragment key={index}>
+            <img
+              className={`D707c67aA00a45e98620Dd6352530774${index}`}
+              style={{ width: 176, height: 282, left: left, top: top, position: 'absolute' }}
+              src={`https://via.placeholder.com/176x282`}
+            />
+            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176 }}>{book.bookTitle}</div>
+          </React.Fragment>
+        );
+      })}
 
       {/* <div className="Rectangle50" style={{width: 258, height: 62, left: 425, top: 757, position: 'absolute', background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', border: '1px black solid'}} /> */}
 
       <Link
-        to="/Account/AddBook"
+        to={{
+          pathname: "/Account/AddBook",
+          state: { userEmail: email } // Pass the user email as state
+        }}
         className="AddBook-button"
         style={{ left: 485, top: 772 }}
       >
