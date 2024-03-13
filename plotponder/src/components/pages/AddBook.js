@@ -1,12 +1,34 @@
 // addbook.js
 
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import "../addbook.css";
 import Navbar from "../Navbar";
+import { signOut, getAuth } from "firebase/auth";
+import { userDatabase } from "./FirebaseConfig";
+import axios from "axios";
 
-export default function AddBook(props) {
+export default function AddBook() {
   const [books, setBooks] = useState([]);
+  const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        console.log("Current User:", user.email);
+        const email = user.email
+        const name = user.displayName;
+        setDisplayName(name);
+        setEmail(email)
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  console.log(email)
 
   useEffect(() => {
     fetchBooks();
@@ -23,6 +45,29 @@ export default function AddBook(props) {
       }
     } catch (error) {
       console.error("Error fetching books:", error);
+    }
+  };
+
+  const handleAddBook = async (bookID) => {
+    const formData = {
+      bookID: bookID,
+      userEmail: email
+    };
+    console.log(formData)
+
+    try {
+      // add user account to database
+      const response = await axios.post(`http://localhost:8080/api/v1/account/addBook`, formData);
+      console.log(response);
+
+      if (response.status === 201) {
+        console.log("Book added successfully");
+        // You may want to update state or do some other action upon success
+      } else {
+        console.error("Failed to add book:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error adding book:", error);
     }
   };
 
@@ -52,9 +97,9 @@ export default function AddBook(props) {
             />
             <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176 }}>{book.bookTitle}</div>
             {/* Add Book link */}
-            <Link to="/Account/AddBook" className="AddBook" style={{ left: left + 2, top: top + 300 + 20 + 30, position: 'absolute' }}>
+            <button onClick={() => handleAddBook(book.bookID)} className="AddBook" style={{ left: left + 2, top: top + 300 + 20 + 30, position: 'absolute' }}>
               + Add Book
-            </Link>
+            </button>
           </React.Fragment>
         );
       })}
