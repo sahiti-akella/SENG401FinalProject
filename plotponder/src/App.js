@@ -1,28 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import WelcomePage from './components/pages/WelcomePage';
-import Community from './components/pages/Community';
 import Account from './components/pages/Account';
 import Recommendations from './components/pages/Recommendations';
 import BookBot from './components/pages/BookBot';
 import SignIn from './components/pages/SignIn';
-import Navbar from './components/Navbar';
 import SignUp from './components/pages/SignUp';
 import AddBook from './components/pages/AddBook';
-import ViewCommunities from './components/pages/ViewCommunities';
 import Home from './components/pages/Home';
+import Communities from './components/pages/Communities';
+import CommunityPage from './components/pages/CommunityPage';
 
 function App() {
+  const [communityList, setCommunityList] = useState([]);
+
+  const addCommunity = (title) => {
+    setCommunityList([...communityList, title]);
+  }
+
   return (
     <Router>
       <div> {/* Wrap everything in a div */}
         <Routes>
           {/* Home Page */}
           <Route path="/" element={<WelcomePage />} />
-          
+
+          {/* Communities Page */}
+          <Route path="/community" element={<Communities communities={communityList} addCommunity={addCommunity} />} />
+          <Route path="/community/:title" element={<CommunityPage />} />
+
           {/* Other Pages */}
-          <Route path="/Community" element={<Community />} />
-          <Route path="/Community/View" element={<ViewCommunities />} />
           <Route path="/Recommendations" element={<Recommendations />} />
           <Route path="/Account" element={<Account />} />
           <Route path="/Account/AddBook" element={<AddBook />} />
