@@ -91,6 +91,22 @@ function Account(props) {
         + Add Book
       </Link>
 
+      <div 
+        className="Settings" 
+        style={{
+          left: 1350,
+          top: 20,
+          position: "absolute",
+          color: "black",
+          fontSize: 36,
+          fontFamily: "Inika",
+          fontWeight: "400",
+          wordWrap: "break-word",
+        }}
+      >
+        Settings
+      </div>
+
       <div
         className="YourCommunities"
         style={{

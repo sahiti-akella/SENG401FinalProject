@@ -2,6 +2,7 @@
 .ViewAccount,
 .Recommendations,
 .Community,
+.Settings, 
 .Plotponder,
 .HiUsername,
 .YourRatings,
@@ -38,6 +39,15 @@
   color: black;
   font-size: 22px;
   font-weight: 400;
+  word-wrap: break-word;
+}
+
+.Settings {
+  left: 1306px;
+  top: 52px;
+  color: #420F1A;
+  font-size: 22px;
+  font-weight: 700;
   word-wrap: break-word;
 }
 
