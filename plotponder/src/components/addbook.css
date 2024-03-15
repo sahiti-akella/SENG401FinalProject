@@ -117,12 +117,15 @@
     top: 1080px;
   }
 
-  .AvailableBooks {
+  .available-books {
     left: 604px;
-    top: 174px;
+    top: 50px;
     color: black;
     position: absolute;
     font-size: 36px;
-    font-weight: 700;
+    font-weight: 600;
     word-wrap: break-word;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   }
+
+  

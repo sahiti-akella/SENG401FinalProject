@@ -33,10 +33,12 @@ function Recommendations(props) {
       <div className="books">
       {randomBooks.map((book, index) => (
         <div key={index} className="Recommendation">
-          <div className="rectangle-rec" />
-          <img className="book-image" src={`https://via.placeholder.com/176x282`} alt="Book Cover" />
-          <div className="book-title">{book.bookTitle}</div>
-          <div className="author">{book.author}</div>
+          <div className="rectangle-rec">
+            <img className="book-image" src={`https://via.placeholder.com/176x282`} alt="Book Cover" />
+            <div className="book-title">{book.bookTitle}</div>
+            <div className="author">{book.author}</div>
+          </div>
+          
         </div>
       ))}
       </div>

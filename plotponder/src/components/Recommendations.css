@@ -2,42 +2,42 @@
 
 .books {
   display: flex;
-  gap: 500px;
+  gap: 450px;
 }
 
 .Recommendation {
   display: inline-block;
-  margin-right: 20px; 
-  margin-top: 20px;
+  margin-top: 60px;
   position: relative;
 }
 
 .recommendations-container {
-  width: 1512px;
-  height: 982px;
-  position: relative;
+  width: 100%; /* You may want to adjust this */
+  position: absolute;
   background: white;
+  margin: 0 auto; /* Center horizontally */
+  margin-top: 50px; /* Add margin-top for spacing */
 }
-
 .user-rec-title {
-  font-family: "Inika";
+  font-family: Centure Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 36px;
   font-weight: 700;
-  
+
   letter-spacing: 0em;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 .rectangle-rec {
-  width: 417px;
+  width: 380px;
   height: 550px;
   margin-left: 20px;
   position: absolute;
   background: white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 -6px 8px rgba(0, 0, 0, 0.1); 
   margin-top: 10px;
   border-radius: 15px;
+  justify-content: center;
 }
 
 .ask-bookbot {
@@ -58,15 +58,15 @@
 .book-image {
   width: 176px;
   height: 282px;
-  margin-top: 100px;
-  margin-left: 125px;
+  margin-top: 25%;
+  margin-left: 27%;
   position: absolute;
 }
 
 .book-title {
   width: 307px;
-  left: 60px;
-  top: 450px;
+  left: 10%;
+  top: 75%;
   position: absolute;
   text-align: center;
   color: black;
@@ -74,6 +74,7 @@
   font-family: 'Inika';
   font-weight: 700;
   word-wrap: break-word;
+  font-family: Centure Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
 .author {

@@ -5,11 +5,7 @@
 .Plotponder,
 .HiUsername,
 .YourRatings,
-.AddBook,
-.YourCommunities,
-.Romance,
-.Comedy,
-.Fantasy {
+.AddBook {
   position: absolute;
   font-family: 'Inika';
 }
@@ -43,23 +39,23 @@
 
 .HiUsername {
   left: 584px;
-  top: 212px;
+  top: 50px;
   position: absolute;
   color: black;
   font-size: 36px;
-  font-family: "Inika";
+  font-family: Centure Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-weight: 700;
   word-wrap: break-word;
 }
 
 .YourRatings {
   left: 449px;
-  top: 303px;
+  top: 150px;
   color: black;
   position: absolute;
   font-size: 36px;
   font-weight: 400;
-  font-family: "Inika";
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   word-wrap: break-word;
 }
 
@@ -114,94 +110,25 @@
   color: black; /* Set the text color explicitly */
   font-size: 24px;
   font-weight: 400;
-  font-family: "Inika";
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   position: absolute;
   word-wrap: break-word;
   text-decoration: none;
   z-index: 1; /* Ensure text is on top of the background */
   display: inline-block; /* Ensures that the border wraps around the text */
-
   border: 1px solid black; 
   padding: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
   width: 185px !important;
+  border-radius: 50px;
+  transition: background-color 0.3s; /* Add transition effect for smooth hover */
 }
 
-
-.YourCommunities {
-  left: 1090px;
-  top: 303px;
-  color: black;
-  font-size: 36px;
-  font-weight: 400;
-  word-wrap: break-word;
+.AddBook-button:hover {
+  background-color: lightgray; /* Set the background color on hover */
 }
 
-/* left: 1021, top: 383, position: 'absolute', opacity: 0.50,boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 70}} /> */
-.Community1 {
-  left: 1020px !important;
-  top: 385px !important;
-  position: absolute;
-  color: black;
-  font-family: "Inika";
-  font-size: 36px;
-  font-weight: 400;
-  word-wrap: break-word;
-  text-decoration: none;
-
-  background-color: #E9C2C5;
-  text-decoration: none;
-  padding: 25px; /* Adjust padding as needed */
-  border-radius: 60px; /* Adjust border-radius for rounded corners */
-  width: 400px;
-  height: 55px;
-  text-align: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-
-.Community2 {
-  left: 1020px !important;
-  top: 526px !important;
-  position: absolute;
-  font-family: "Inika";
-  color: black;
-  font-size: 36px;
-  font-weight: 400;
-  word-wrap: break-word;
-  text-decoration: none;
-  
-  background-color: #B8D8E3;
-  text-decoration: none;
-  padding: 25px; /* Adjust padding as needed */
-  border-radius: 60px; /* Adjust border-radius for rounded corners */
-  width: 400px;
-  height: 55px;
-  text-align: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.Community3 {
-  left: 1020px !important;
-  top: 665px !important;
-  color: black;
-  position: absolute;
-  font-family: "Inika";
-  font-size: 36px;
-  font-weight: 400;
-  word-wrap: break-word;
-  text-decoration: none;
-
-  background-color: #949BD8;
-  text-decoration: none;
-  padding: 25px; /* Adjust padding as needed */
-  border-radius: 60px; /* Adjust border-radius for rounded corners */
-  width: 400px;
-  height: 55px;
-  text-align: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}  
 
 .LogOut {
   position: absolute;
