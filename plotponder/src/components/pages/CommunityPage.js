@@ -239,4 +239,5 @@ const CommunityPage = ({ props }) => {
 
 
 };
+
 export default CommunityPage;
