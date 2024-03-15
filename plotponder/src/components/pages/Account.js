@@ -56,7 +56,7 @@ function Account(props) {
     <div>
       <Navbar />
       <div className="MacbookPro14UserAccount">
-      <div className="HiUsername">Hi {displayName}! 👋</div>
+      <div className="HiUsername">Hi, {displayName}! 👋</div>
 
       <div className="YourRatings">Your Favourites</div>
 
@@ -86,7 +86,6 @@ function Account(props) {
           state: { userEmail: email } // Pass the user email as state
         }}
         className="AddBook-button"
-        style={{ left: 485, top: 772 }}
       >
         + Add Book
       </Link>
@@ -141,7 +140,6 @@ function Account(props) {
       <Link to="/Account" className="Community3">
         Fantasy
       </Link>
-
     </div>
     </div>
     

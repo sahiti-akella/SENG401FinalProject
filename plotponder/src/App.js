@@ -12,6 +12,8 @@ import Communities from './components/pages/Communities';
 import CommunityPage from './components/pages/CommunityPage';
 import Settings from './components/pages/Settings';
 
+
+
 function App() {
   const [communityList, setCommunityList] = useState([]);
 

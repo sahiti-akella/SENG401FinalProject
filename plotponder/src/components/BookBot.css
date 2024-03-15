@@ -63,8 +63,9 @@
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 50px;
     margin-right: 10px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
 .submit-button {
@@ -72,8 +73,9 @@
     border: none;
     background-color: #9b8bb5;
     color: white;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
 .submit-button:hover {

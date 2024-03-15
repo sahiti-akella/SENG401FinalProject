@@ -80,7 +80,7 @@ export default function AddBook() {
     <div> 
       <Navbar />
       <div className="MacbookPro14UserAccount">
-      <div className="AvailableBooks" style={{ left: 604, top: 174, position: 'absolute', color: 'black', fontSize: 36, fontFamily: 'Inika', fontWeight: '700', wordWrap: 'break-word' }}>Available Books</div>
+      <div className="available-books">Available Books</div>
       
       {books.map((book, index) => {
         const row = Math.floor(index / 4);
