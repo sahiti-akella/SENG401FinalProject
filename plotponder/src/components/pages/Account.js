@@ -90,56 +90,6 @@ function Account(props) {
         + Add Book
       </Link>
 
-      <Link to={
-        {
-          pathname: '/Account/Settings',
-          state: {}
-        }
-      }
-      className="Settings"
-      style={{left: 40, top: 10}}>
-      <div 
-        className="Settings" 
-        style={{
-          left: 1350,
-          top: 20,
-          position: "absolute",
-          color: "black",
-          fontSize: 36,
-          fontFamily: "Inika",
-          fontWeight: "400",
-          wordWrap: "break-word",
-        }}
-      >
-        Settings
-      </div>
-      </Link>
-
-      <div
-        className="YourCommunities"
-        style={{
-          left: 1090,
-          top: 303,
-          position: "absolute",
-          color: "black",
-          fontSize: 36,
-          fontFamily: "Inika",
-          fontWeight: "400",
-          wordWrap: "break-word",
-        }}
-      >
-        Your Communities
-      </div>
-
-      <Link to="/Account" className="Community1">
-        Romance
-      </Link>
-      <Link to="/Account" className="Community2">
-        Comedy
-      </Link>
-      <Link to="/Account" className="Community3">
-        Fantasy
-      </Link>
     </div>
     </div>
     
