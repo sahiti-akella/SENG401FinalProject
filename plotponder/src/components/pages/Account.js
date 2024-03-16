@@ -90,14 +90,6 @@ function Account(props) {
         + Add Book
       </Link>
 
-      <Link to={
-        {
-          pathname: '/Account/Settings',
-          state: {}
-        }
-      }
-      className="Settings"
-      style={{left: 40, top: 10}}>
       <div 
         className="Settings" 
         style={{
@@ -113,7 +105,6 @@ function Account(props) {
       >
         Settings
       </div>
-      </Link>
 
       <div
         className="YourCommunities"
