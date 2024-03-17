@@ -14,6 +14,8 @@ export default function AddBook() {
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [addedBooks, setAddedBooks] = useState([]);
+  const [favoriteBooks, setFavoriteBooks] = useState([]);
 
   useEffect(() => {
     const auth = getAuth();
@@ -34,7 +36,10 @@ export default function AddBook() {
 
   useEffect(() => {
     fetchBooks();
-  }, []);
+    if (email) {
+      fetchFavoriteBooks(email);
+    }
+  }, [email]);
 
   const fetchBooks = async () => {
     try {
@@ -51,7 +56,29 @@ export default function AddBook() {
     }
   };
 
+  const fetchFavoriteBooks = async (email) => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/v1/account/favorites/${email}`);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        setFavoriteBooks(data);
+        const favoriteBookIds = data.map(book => book.bookID);
+        setAddedBooks(favoriteBookIds);
+      } else {
+        console.error("Failed to fetch favorite books:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error fetching favorite books:", error);
+    }
+  };
+
   const handleAddBook = async (bookID) => {
+    if (addedBooks.includes(bookID)) {
+      console.log("Book already added");
+      alert("This book is already in your favorites.");
+      return;
+    }
     const formData = {
       bookID: bookID,
       userEmail: email
@@ -65,6 +92,7 @@ export default function AddBook() {
 
       if (response.status === 201) {
         console.log("Book added successfully");
+        setAddedBooks([...addedBooks, bookID]);
         // You may want to update state or do some other action upon success
       } else {
         console.error("Failed to add book:", response.statusText);
@@ -104,6 +132,8 @@ export default function AddBook() {
           const top = 300 + (row * 450);
           const left = 150 + (col * 300);
 
+          const isBookAdded = addedBooks.includes(book.bookID);
+
   
         return (
           <React.Fragment key={index}>
@@ -115,7 +145,7 @@ export default function AddBook() {
             <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176 }}>{book.bookTitle}</div>
             {/* Add Book link */}
             <button onClick={() => handleAddBook(book.bookID)} className="AddBook" style={{ left: left + 2, top: top + 300 + 20 + 30, position: 'absolute' }}>
-              + Add Book
+              {isBookAdded ? "Added" : "+ Add Book"}
             </button>
           </React.Fragment>
         );
