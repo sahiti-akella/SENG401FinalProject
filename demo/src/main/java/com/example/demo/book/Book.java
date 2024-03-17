@@ -6,20 +6,23 @@ public class Book {
     private String author;
     private int genreID;
     private int yearMade;
+    private String imageURL;
 
-    public Book(int bookID, String title, String author, int genreID, int yearMade){
+    public Book(int bookID, String title, String author, int genreID, int yearMade, String imageURL){
         this.bookID = bookID;
         this.title = title;
         this.author = author;
         this.genreID = genreID;
         this.yearMade = yearMade;
+        this.imageURL = imageURL;
     }
 
-    public Book(String title, String author, int genreID, int yearMade){
+    public Book(String title, String author, int genreID, int yearMade, String imageURL){
         this.title = title;
         this.author = author;
         this.genreID = genreID;
         this.yearMade = yearMade;
+        this.imageURL = imageURL;
     }
 
     public int getBookID(){
@@ -42,6 +45,10 @@ public class Book {
         return this.yearMade;
     }
 
+    public String getImageURL(){
+        return this.imageURL;
+    }
+
     @Override
     public String toString(){
         return "Book{" +
@@ -50,6 +57,7 @@ public class Book {
                 ", author=" + author +
                 ", genre id=" + genreID +
                 ", year made=" + yearMade +
+                ", image url=" + imageURL +
                 '}';
     }
 }

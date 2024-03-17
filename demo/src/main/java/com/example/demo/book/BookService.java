@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 public class BookService {
 
     public List<Book> getBooks() {
-		return List.of(new Book(1, "some book", "some author", 3, 2004));
+		return List.of(new Book(1, "some book", "some author", 3, 2004, "some URL"));
 	}
 }

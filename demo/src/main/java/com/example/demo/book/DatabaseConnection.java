@@ -34,8 +34,9 @@ public class DatabaseConnection {
                 String author = resultSet.getString("Author");
                 int genreID = resultSet.getInt("Genre_ID");
                 int yearMade = resultSet.getInt("Year_Made");
+                String imageURL = resultSet.getString("ImageURL");
   
-                Book book = new Book(bookID, title, author, genreID, yearMade);
+                Book book = new Book(bookID, title, author, genreID, yearMade, imageURL);
     
                 books.add(book);
             }
@@ -112,8 +113,9 @@ public class DatabaseConnection {
                     String author = resultSet.getString("Author");
                     int genreID = resultSet.getInt("Genre_ID");
                     int yearMade = resultSet.getInt("Year_Made");
+                    String imageURL = resultSet.getString("ImageURL");
       
-                    Book book = new Book(bookID, title, author, genreID, yearMade);
+                    Book book = new Book(bookID, title, author, genreID, yearMade, imageURL);
         
                     favoriteBooks.add(book);
                 }
