@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom';
 import Navbar from "../Navbar";
 import '../CommunityPage.css';
+import { signOut, getAuth } from "firebase/auth";
+import axios from 'axios';
 
 const Reply = ({ reply, onDeleteReply }) => {
     //this controls the comments button on each post
@@ -104,6 +106,25 @@ const Comment = ({ comment, onDeleteComment, onToggleReplies, onPostReply, onDel
 };
 
 const CommunityPage = ({ props }) => {
+  const [communityId, setCommunityId] = useState(null); // State to store the community ID
+  const [email, setEmail] = useState("");
+  const [displayName, setDisplayName] = useState("");
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        console.log("Current User:", user.email);
+        const email = user.email
+        const name = user.displayName;
+        setDisplayName(name);
+        setEmail(email)
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
     const [comments, setComments] = useState(
         JSON.parse(localStorage.getItem("comments")) || []
       );
@@ -114,6 +135,24 @@ const CommunityPage = ({ props }) => {
       const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
       const [commentModalPostId, setCommentModalPostId] = useState(null);
       const [deleteModalPostId, setDeleteModalPostId] = useState(null);
+
+      useEffect(() => {
+        const fetchCommunityId = async () => {
+          try {
+            const response = await axios.get(`http://localhost:8080/api/v1/community/communityId/${params.title}`);
+            if (response.data && response.data.communityId) {
+              console.log(response.data.communityId)
+              setCommunityId(response.data.communityId);
+            } else {
+              console.error('Community ID not found');
+            }
+          } catch (error) {
+            console.error('Error fetching community ID:', error);
+          }
+        };
+    
+        fetchCommunityId(); // Call the function to fetch the community ID
+      }, [params.title]); // Trigger the effect when the topic changes
     
       const handleToggleReplies = (commentId) => {
         setComments((prevComments) =>
@@ -141,7 +180,7 @@ const CommunityPage = ({ props }) => {
       
       const handlePostReply = (commentId, newReply) => {
         if (newReply.trim() !== "") {
-          const username = "YourUsername"; // Replace with the actual username
+          const username = displayName; // Replace with the actual username
           const timestamp = Date.now();
           const replyId = Date.now(); // Assign a unique id
       
@@ -168,19 +207,41 @@ const CommunityPage = ({ props }) => {
       };
       
     
-      const handlePostComment = () => {
+      const handlePostComment = async () => {
         if (newComment.trim() !== "") {
-          const username = "YourUsername"; // Replace with the actual username
+          const username = displayName; // Replace with the actual username
           const timestamp = Date.now();
           const id = Date.now(); // Assign a unique id
-          const updatedComments = [
-            ...comments,
-            { id, text: newComment, username, timestamp, commentCount: 0 }
-          ];
-          setComments(updatedComments);
-          setNewComment("");
-    
-          localStorage.setItem("comments", JSON.stringify(updatedComments));
+
+          
+
+          try {
+            const formData = {
+              post: newComment,
+              author: username
+            };
+            
+            console.log(formData)
+            // Send the POST request to your backend API
+            /*const response = await axios.post(`http://localhost:8080/api/v1/community/addPost/${communityId}`, formData);
+            console.log(response)
+            console.log('Comment added successfully:', response.data);*/
+            
+            // Update the comments state to reflect the new comment
+            const updatedComments = [
+              ...comments,
+              { id, text: newComment, username, timestamp, commentCount: 0 }
+            ];
+            setComments(updatedComments);
+      
+            // Reset the newComment state to an empty string
+            setNewComment("");
+      
+            // Update the local storage with the updated comments
+            localStorage.setItem("comments", JSON.stringify(updatedComments));
+          } catch (error) {
+            console.error('Error adding comment:', error);
+          }
         }
       };
     

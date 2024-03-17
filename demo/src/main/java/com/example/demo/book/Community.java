@@ -1,18 +1,18 @@
-package plotponder.backend;
+package com.example.demo.book;
 
-public class Club {
-    private int clubID;
+public class Community {
+    private int communityID;
     private String topic;
     private int yearMade;
 
-    public Club(int clubID, String topic, int yearMade) {
-        this.clubID = clubID;
+    public Community(int communityID, String topic, int yearMade) {
+        this.communityID = communityID;
         this.topic = topic;
         this.yearMade = yearMade;
     }
 
-    public int getClubID() {
-        return this.clubID;
+    public int getCommunityID() {
+        return this.communityID;
     }
 
     public String getTopic() {

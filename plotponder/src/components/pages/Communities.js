@@ -3,16 +3,33 @@ import { Link } from 'react-router-dom';
 import Navbar from "../Navbar";
 import CommunityPage from './CommunityPage';
 import '../Communities.css';
+import axios from 'axios';
 
 const Communities = ({ addCommunity }) => {
-    const [communities, setCommunities] = useState(() => {
-        const storedCommunities = JSON.parse(localStorage.getItem('communities')) || [];
-        return storedCommunities;
-      });
+  const [communities, setCommunities] = useState([]);
   const [newCommunityTitle, setNewCommunityTitle] = useState('');
   const initialExploreCommunities = ['Harry Potter', 'Percy Jackson', 'Lord of the Rings', 'The Hobbit'];
 
   useEffect(() => {
+    // Fetch all communities from the API
+    fetchAllCommunities();
+  }, []);
+
+  const fetchAllCommunities = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/api/v1/community/allData');
+      if (response.ok) {
+        const data = await response.json();
+        setCommunities(data);
+      } else {
+        console.error('Failed to fetch communities');
+      }
+    } catch (error) {
+      console.error('Error fetching communities:', error);
+    }
+  };
+
+  /*useEffect(() => {
     // Retrieve communities from local storage on component mount
     const storedCommunities = JSON.parse(localStorage.getItem('communities')) || [];
     setCommunities(storedCommunities);
@@ -22,19 +39,30 @@ const Communities = ({ addCommunity }) => {
     // Save communities to local storage whenever the communities state changes
     localStorage.setItem('communities', JSON.stringify(communities));
   }, [communities]);
-
-  const handleCreateCommunity = () => {
+*/
+  const handleCreateCommunity = async () => {
     if (newCommunityTitle.trim() !== '') {
-      if (communities.includes(newCommunityTitle)) {
-        alert(`Club "${newCommunityTitle}" is already created.`);
-      } else {
-        setCommunities(prevCommunities => [...prevCommunities, newCommunityTitle]);
-        setNewCommunityTitle('');
+      const formData = new FormData();
+      formData.append('topic', newCommunityTitle);
+      formData.append('yearMade', new Date().getFullYear());
+      console.log(newCommunityTitle)
+
+      try {
+        const response = await axios.post('http://localhost:8080/api/v1/community/addCommunity', formData);
+        if (response.status === 200) {
+          // Refresh communities after creating a new one
+          fetchAllCommunities();
+          setNewCommunityTitle('');
+        } else {
+          console.error('Failed to create community');
+        }
+      } catch (error) {
+        console.error('Error creating community:', error);
       }
     }
   };
 
-  const handleDeleteCommunity = (communityToDelete) => {
+  /*const handleDeleteCommunity = (communityToDelete) => {
     const confirmDelete = window.confirm(`Are you sure you want to delete/leave ${communityToDelete}?`);
     if (confirmDelete) {
       setCommunities(prevCommunities =>
@@ -59,7 +87,7 @@ const Communities = ({ addCommunity }) => {
     // Update local storage
     localStorage.setItem('communities', JSON.stringify(updatedCommunities));
     
-  };
+  };*/
 
 
   const exploreCommunities = initialExploreCommunities.filter(community => !communities.includes(community));
@@ -71,20 +99,17 @@ const Communities = ({ addCommunity }) => {
   return (
     <div>
       <Navbar />
-      <div className="section-title">Your Clubs</div>
+      <div className="section-title">Explore Clubs</div>
       <div className="community-item">
         {communities.length === 0 ? (
           <div className="no-clubs-message">Create a Club Below, or Join a Club from the Explore Section</div>
         ) : (
           <div className="community-details">
-            {communities.map((community) => (
-              <div key={community} className="community-entry">
-                <Link to={`/community/${community}`} className="community-link">
-                    {community}
+            {communities.map((community, index) => (
+              <div key={index} className="community-entry">
+                <Link to={`/community/${community.topic}`} className="community-link">
+                    {community.topic}
                 </Link>
-                <button className="delete-button" onClick={() => handleDeleteCommunity(community)}>
-                  Delete/Leave 🗑
-                </button>
               </div>
             ))}
           </div>
@@ -101,19 +126,6 @@ const Communities = ({ addCommunity }) => {
       <button className="create-community-button" onClick={handleCreateCommunity}>
         Create new community
       </button>
-
-      {/* Explore Communities Section */}
-      <div className="section-title">Explore</div>
-      <div className="community-item">
-        {exploreCommunities.map((community) => (
-          <div key={community} className="explore-link">
-            {community}
-            <button className="join-button" onClick={() => handleJoinLeaveCommunity(community)}>
-              Join +
-            </button>
-          </div>
-        ))}
-      </div>
 
     </div>
   );

@@ -125,6 +125,77 @@ public class DatabaseConnection {
         return favoriteBooks;
     }
 
+    public ArrayList<Community> getAllCommunities() {
+        ArrayList<Community> communities = new ArrayList<>();
+        String query = "SELECT * FROM CLUBS";
+    
+        try (ResultSet resultSet = stmt.executeQuery(query)) {
+            while (resultSet.next()) {
+                int clubID = resultSet.getInt("Club_ID");
+                String topic = resultSet.getString("Topic");
+                int yearMade = resultSet.getInt("Year_Made");
+   
+                Community club = new Community(clubID, topic, yearMade);
+    
+                communities.add(club);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
+        return communities;
+    } 
+
+    public boolean addCommunity(String topic, int yearMade) {
+        String query = "INSERT INTO CLUBS (Topic, Year_Made) VALUES (?, ?)";
+        
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
+            // Set parameters for the query
+            preparedStatement.setString(1, topic); 
+            preparedStatement.setInt(2, yearMade);
+        
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0; 
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false; 
+        }
+    } 
+    
+    public int getCommunityIdByTopic(String topic) {
+        String query = "SELECT Club_ID FROM CLUBS WHERE Topic = ?";
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)){
+            preparedStatement.setString(1, topic);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt("Club_ID");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        // If community ID is not found, return -1
+        return -1;
+    }
+
+    public boolean addPostToCommunity(int communityId, String post, String author) {
+        String query = "INSERT INTO COMMUNITY_POSTS (Community_ID, Post, Author) VALUES (?, ?, ?)";
+        
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
+            // Set parameters for the query
+            preparedStatement.setInt(1, communityId);
+            preparedStatement.setString(2, post);
+            preparedStatement.setString(3, author);
+            
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0; 
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false; 
+        }
+    }
+    
+
     public static void main(String[] args) {
         DatabaseConnection db =new DatabaseConnection(); 
     }   
