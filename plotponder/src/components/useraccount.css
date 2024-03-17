@@ -8,9 +8,16 @@
 .YourRatings,
 .AddBook {
   position: absolute;
-  font-family: 'Inika';
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;;
 }
 
+.MacbookPro14UserAccount{
+  width: 100%;
+  height: 982px;
+  position: relative;
+  justify-content: center;
+
+}
 .ViewAccount {
   left: 1306px;
   top: 52px;
@@ -48,9 +55,9 @@
 }
 
 .HiUsername {
-  left: 584px;
+  left: 45%;
   top: 50px;
-  position: absolute;
+  position: relative;
   color: black;
   font-size: 36px;
   font-family: Centure Gothic, CenturyGothic, AppleGothic, sans-serif;
@@ -58,9 +65,19 @@
   word-wrap: break-word;
 }
 
+.account-description{
+  position: relative;
+  margin-top: 80px;
+  font-size: 20px;
+  margin-left: 10px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  justify-content: center;
+  text-align: center;
+}
+
 .YourRatings {
-  left: 449px;
-  top: 150px;
+  left: 40%;
+  top: 355px;
   color: black;
   position: absolute;
   font-size: 36px;
@@ -121,7 +138,9 @@
   font-size: 24px;
   font-weight: 400;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-  position: absolute;
+  position: relative;
+  margin-left: 42%;
+  margin-top: 50px;
   word-wrap: break-word;
   text-decoration: none;
   z-index: 1; /* Ensure text is on top of the background */
@@ -136,7 +155,7 @@
 }
 
 .AddBook-button:hover {
-  background-color: lightgray; /* Set the background color on hover */
+  background-color: #9b8bb5; /* Set the background color on hover */
 }
 
 
