@@ -17,6 +17,7 @@
     border-bottom: 1px solid #000000; /* Set border at the bottom */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow to the border */
     padding: 4vh; /* Adjust padding as needed */
+    width: 100%; /* Set width to 100% */
 }
 
 .search-wrapper {

@@ -10,8 +10,10 @@ import axios from "axios";
 
 export default function AddBook() {
   const [books, setBooks] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState([]);
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const auth = getAuth();
@@ -40,6 +42,7 @@ export default function AddBook() {
       if (response.ok) {
         const data = await response.json();
         setBooks(data);
+        setFilteredBooks(data); 
       } else {
         console.error("Failed to fetch books:", response.statusText);
       }
@@ -71,6 +74,13 @@ export default function AddBook() {
     }
   };
 
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+    const filtered = books.filter(book => book.bookTitle.toLowerCase().includes(query));
+    setFilteredBooks(filtered);
+  };
+
   const sets = [
     { top: 316 },
     { top: 742 },
@@ -80,13 +90,20 @@ export default function AddBook() {
     <div> 
       <Navbar />
       <div className="MacbookPro14UserAccount">
-      <div className="AvailableBooks" style={{ left: 604, top: 174, position: 'absolute', color: 'black', fontSize: 36, fontFamily: 'Inika', fontWeight: '700', wordWrap: 'break-word' }}>Available Books</div>
-      
-      {books.map((book, index) => {
-        const row = Math.floor(index / 4);
-        const col = index % 4;
-        const top = 300 + (row * 450);
-        const left = 150 + (col * 300);
+      <div className="available-books">Available Books</div>
+        <input className="search-bar"
+            type="text"
+            placeholder="Search Books..."
+            value={searchQuery}
+            onChange={handleSearch}
+          />
+
+        {filteredBooks.map((book, index) => {
+          const row = Math.floor(index / 4);
+          const col = index % 4;
+          const top = 300 + (row * 450);
+          const left = 150 + (col * 300);
+
   
         return (
           <React.Fragment key={index}>
