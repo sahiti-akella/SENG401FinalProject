@@ -31,11 +31,11 @@ public class DatabaseConnection {
             while (resultSet.next()) {
                 int bookID = resultSet.getInt("Book_ID");
                 String title = resultSet.getString("Title");
-                int authorID = resultSet.getInt("Author_ID");
+                String author = resultSet.getString("Author");
                 int genreID = resultSet.getInt("Genre_ID");
                 int yearMade = resultSet.getInt("Year_Made");
   
-                Book book = new Book(bookID, title, authorID, genreID, yearMade);
+                Book book = new Book(bookID, title, author, genreID, yearMade);
     
                 books.add(book);
             }
@@ -109,11 +109,11 @@ public class DatabaseConnection {
                 while (resultSet.next()) {
                     int bookID = resultSet.getInt("Book_ID");
                     String title = resultSet.getString("Title");
-                    int authorID = resultSet.getInt("Author_ID");
+                    String author = resultSet.getString("Author");
                     int genreID = resultSet.getInt("Genre_ID");
                     int yearMade = resultSet.getInt("Year_Made");
       
-                    Book book = new Book(bookID, title, authorID, genreID, yearMade);
+                    Book book = new Book(bookID, title, author, genreID, yearMade);
         
                     favoriteBooks.add(book);
                 }

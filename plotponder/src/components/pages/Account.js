@@ -82,7 +82,8 @@ function Account(props) {
               style={{ width: 176, height: 282, left: left, top: top, position: 'absolute' }}
               src={`https://via.placeholder.com/176x282`}
             />
-            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif'}}>{book.bookTitle}</div>
+            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', fontWeight: 'bolder'}}>{book.bookTitle}</div>
+            <div style={{ left: left, top: top + 282 + 70, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif'}}>{book.author}</div>
           </React.Fragment>
         );
       })}
