@@ -68,7 +68,7 @@ const Comment = ({ comment, onDeleteComment, onToggleReplies, onPostReply, onDel
           <div 
             classname="delete-comment" 
             style={{cursor: "pointer"}}
-            onClick={() => onDeleteComment(comment.id)}>
+            /*onClick={() => onDeleteComment(comment.id)}*/>
                 🗑
           </div>
           <div className="post-toolbar-divider">|</div>
@@ -106,35 +106,32 @@ const Comment = ({ comment, onDeleteComment, onToggleReplies, onPostReply, onDel
 };
 
 const CommunityPage = ({ props }) => {
-  const [communityId, setCommunityId] = useState(null); // State to store the community ID
-  const [email, setEmail] = useState("");
-  const [displayName, setDisplayName] = useState("");
+    const [communityId, setCommunityId] = useState(null); // State to store the community ID
+    const [email, setEmail] = useState("");
+    const [displayName, setDisplayName] = useState("");
+    const [comments, setComments] = useState([]);
+    const params = useParams();
+    const [newComment, setNewComment] = useState("");
+    const [newReply, setNewReply] = useState("");
+    const [showCommentModal, setShowCommentModal] = useState(false);
+    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+    const [commentModalPostId, setCommentModalPostId] = useState(null);
+    const [deleteModalPostId, setDeleteModalPostId] = useState(null);
 
-  useEffect(() => {
-    const auth = getAuth();
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        console.log("Current User:", user.email);
-        const email = user.email
-        const name = user.displayName;
-        setDisplayName(name);
-        setEmail(email)
-      }
-    });
+    useEffect(() => {
+      const auth = getAuth();
+      const unsubscribe = auth.onAuthStateChanged((user) => {
+        if (user) {
+          console.log("Current User:", user.email);
+          const email = user.email
+          const name = user.displayName;
+          setDisplayName(name);
+          setEmail(email)
+        }
+      });
 
-    return () => unsubscribe();
-  }, []);
-
-    const [comments, setComments] = useState(
-        JSON.parse(localStorage.getItem("comments")) || []
-      );
-      const params = useParams();
-      const [newComment, setNewComment] = useState("");
-      const [newReply, setNewReply] = useState("");
-      const [showCommentModal, setShowCommentModal] = useState(false);
-      const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
-      const [commentModalPostId, setCommentModalPostId] = useState(null);
-      const [deleteModalPostId, setDeleteModalPostId] = useState(null);
+      return () => unsubscribe();
+    }, []);
 
       useEffect(() => {
         const fetchCommunityId = async () => {
@@ -153,6 +150,22 @@ const CommunityPage = ({ props }) => {
     
         fetchCommunityId(); // Call the function to fetch the community ID
       }, [params.title]); // Trigger the effect when the topic changes
+
+      useEffect(() => {
+        const fetchComments = async () => {
+          if (communityId) {
+            try {
+              const response = await axios.get(`http://localhost:8080/api/v1/community/comments/${communityId}`);
+              setComments(response.data); // Assuming the data is an array of comments
+              console.log(response.data)
+            } catch (error) {
+              console.error('Error fetching comments:', error);
+            }
+          }
+        };
+    
+        fetchComments();
+      }, [communityId]);
     
       const handleToggleReplies = (commentId) => {
         setComments((prevComments) =>
@@ -178,11 +191,21 @@ const CommunityPage = ({ props }) => {
         );
       };  
       
-      const handlePostReply = (commentId, newReply) => {
+      const handlePostReply = async (commentId, newReply) => {
         if (newReply.trim() !== "") {
+          console.log(commentId)
           const username = displayName; // Replace with the actual username
           const timestamp = Date.now();
-          const replyId = Date.now(); // Assign a unique id
+          //const replyId = Date.now(); // Assign a unique id
+
+          const formData = new FormData();
+          formData.append('text', newReply);
+          formData.append('username', username);
+
+          try {
+            const response = await axios.post(`http://localhost:8080/api/v1/community/addReply/${commentId}`, formData);
+            console.log(response.data)
+            const { replyId } = response.data;
       
           setComments((prevComments) =>
             prevComments.map((comment) =>
@@ -203,6 +226,9 @@ const CommunityPage = ({ props }) => {
       
           setNewReply(""); // Reset the newReply state to an empty string
           setShowCommentModal(false);
+                } catch (error){
+                  console.error('Error posting reply:', error);
+                }
         }
       };
       
@@ -213,45 +239,51 @@ const CommunityPage = ({ props }) => {
           const timestamp = Date.now();
           const id = Date.now(); // Assign a unique id
 
-          
-
           try {
-            const formData = {
-              post: newComment,
-              author: username
-            };
+            const formData = new FormData();
+            formData.append('post', newComment);
+            formData.append('author', username);
             
             console.log(formData)
             // Send the POST request to your backend API
-            /*const response = await axios.post(`http://localhost:8080/api/v1/community/addPost/${communityId}`, formData);
+            const response = await axios.post(`http://localhost:8080/api/v1/community/addPost/${communityId}`, formData);
             console.log(response)
-            console.log('Comment added successfully:', response.data);*/
+            console.log('Comment added successfully:', response.data);
             
             // Update the comments state to reflect the new comment
-            const updatedComments = [
+            /*const updatedComments = [
               ...comments,
               { id, text: newComment, username, timestamp, commentCount: 0 }
             ];
-            setComments(updatedComments);
+            setComments(updatedComments);*/
+            // Update state with the new comment
+            setComments(prevComments => [...prevComments, {
+              id: response.data.id,
+              text: newComment,
+              username: username,
+              timestamp,
+              commentCount: 0
+            }]);
       
             // Reset the newComment state to an empty string
             setNewComment("");
       
             // Update the local storage with the updated comments
-            localStorage.setItem("comments", JSON.stringify(updatedComments));
+            /*localStorage.setItem("comments", JSON.stringify(updatedComments));*/
           } catch (error) {
             console.error('Error adding comment:', error);
           }
         }
       };
     
-        const handleDeleteComment = (commentId) => {
-            setComments((prevComments) => {
-                const updatedComments = prevComments.filter((comment) => comment.id !== commentId);
-                localStorage.setItem("comments", JSON.stringify(updatedComments));
-                return updatedComments;
-            });
-        };
+        /*const handleDeleteComment = async (commentId) => {
+          try {
+            await axios.delete(`http://localhost:8080/api/v1/community/deleteComment/${commentId}`);
+            setComments((prevComments) => prevComments.filter((comment) => comment.id !== commentId));
+          } catch (error) {
+              console.error('Error deleting comment:', error);
+          }
+        };*/
     return (
         <div> 
           <Navbar />
@@ -268,7 +300,7 @@ const CommunityPage = ({ props }) => {
                     <Comment
                         key={comment.id}
                         comment={{ ...comment, replies: comment.replies || [] }}
-                        onDeleteComment={handleDeleteComment}
+                        //onDeleteComment={handleDeleteComment}
                         onToggleReplies={handleToggleReplies}
                         onPostReply={handlePostReply}
                         onDeleteReply={(replyId) => handleDeleteReply(comment.id, replyId)}

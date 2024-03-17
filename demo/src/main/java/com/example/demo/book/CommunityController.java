@@ -7,6 +7,7 @@ import java.util.Collections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -63,5 +64,28 @@ public class CommunityController {
             return new ResponseEntity<>("Failed to add post", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping("/comments/{communityId}")
+    public ResponseEntity<?> getCommentsByCommunityId(@PathVariable int communityId) {
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        List<Comment> comments = databaseConnection.getCommentsByCommunityId(communityId);
+        if (comments != null) {
+            return new ResponseEntity<>(comments, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping("/addReply/{commentId}")
+    public ResponseEntity addReplyToComment(@PathVariable int commentId, @RequestParam String text, @RequestParam String username) {
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        boolean success = databaseConnection.addReplyToComment(commentId, text, username);
+        if (success) {
+            return new ResponseEntity<>("Reply added successfully", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Failed to add reply", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
 }

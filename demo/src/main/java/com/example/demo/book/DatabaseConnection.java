@@ -197,6 +197,63 @@ public class DatabaseConnection {
         }
     }
     
+    public ArrayList<Comment> getCommentsByCommunityId(int communityId) {
+        ArrayList<Comment> comments = new ArrayList<>();
+        String query = "SELECT * FROM COMMUNITY_POSTS WHERE Community_ID = ?";
+        
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
+            preparedStatement.setInt(1, communityId);
+        
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    int postId = resultSet.getInt("Post_ID");
+                    String text = resultSet.getString("Post");
+                    String author = resultSet.getString("Author");
+                    long timestamp = resultSet.getTimestamp("Timestamp").getTime();
+        
+                    Comment comment = new Comment(postId, text, author, timestamp);
+                    comments.add(comment);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return comments;
+    }
+
+    public boolean deleteComment(int commentId) {
+        String query = "DELETE FROM COMMUNITY_POSTS WHERE POST_ID = ?";
+        
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
+            preparedStatement.setInt(1, commentId);
+            
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }    
+
+    public boolean addReplyToComment(int commentId, String text, String username) {
+        String query = "INSERT INTO COMMENTS (Post_ID, Comments, Author) VALUES (?, ?, ?)";
+        
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
+            // Set parameters for the query
+            preparedStatement.setInt(1, commentId);
+            preparedStatement.setString(2, text);
+            preparedStatement.setString(3, username);
+            
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    
 
     public static void main(String[] args) {
         DatabaseConnection db =new DatabaseConnection(); 
