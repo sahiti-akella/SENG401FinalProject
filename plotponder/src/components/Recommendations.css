@@ -2,7 +2,7 @@
 
 .books {
   display: flex;
-  gap: 450px;
+  gap: 40px;
 }
 
 .Recommendation {
@@ -12,11 +12,11 @@
 }
 
 .recommendations-container {
-  width: 100%; /* You may want to adjust this */
+  width: 100%; 
   position: absolute;
   background: white;
-  margin: 0 auto; /* Center horizontally */
-  margin-top: 50px; /* Add margin-top for spacing */
+  margin: 0 auto; 
+  margin-top: 40px; 
 }
 .user-rec-title {
   font-family: Centure Gothic, CenturyGothic, AppleGothic, sans-serif;
@@ -28,31 +28,49 @@
   margin-top: 50px;
 }
 
+.rec-description {
+  font-family: Centure Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: 40px; 
+  justify-content: center;
+  align-items: center;
+}
+
+.rec-text{
+  margin-bottom: 45px;
+}
+
 .rectangle-rec {
   width: 380px;
   height: 550px;
-  margin-left: 20px;
-  position: absolute;
+  margin-left: 60px;
+  position: relative;
   background: white;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 -6px 8px rgba(0, 0, 0, 0.1); 
-  margin-top: 10px;
+  margin-top: 20px;
   border-radius: 15px;
   justify-content: center;
 }
 
 .ask-bookbot {
-  right: 0;
-  top: 800px;
-  position: absolute;
   color: black;
-  font-size: 32px;
+  font-size: 20px;
   font-family: 'Inika';
   font-weight: 400;
   word-wrap: break-word;
-  background-color: #CEA0AA;
   text-decoration: none;
-  padding: 25px; /* Adjust padding as needed */
-  border-radius: 60px; /* Adjust border-radius for rounded corners */
+  padding: 20px; 
+  border-radius: 60px; 
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  border: 1px solid black; 
+  transition: background-color 0.3s; 
+}
+
+.ask-bookbot:hover {
+  background-color: #9b8bb5; 
 }
 
 .book-image {
