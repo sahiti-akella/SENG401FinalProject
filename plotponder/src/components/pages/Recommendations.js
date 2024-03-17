@@ -3,6 +3,7 @@ import "../Recommendations.css";
 import { Link } from 'react-router-dom';
 import Navbar from "../Navbar";
 
+
 function Recommendations(props) {
 
   const [randomBooks, setRandomBooks] = useState([]);
@@ -43,7 +44,7 @@ function Recommendations(props) {
       {randomBooks.map((book, index) => (
         <div key={index} className="Recommendation">
           <div className="rectangle-rec">
-            <img className="book-image" src={`https://via.placeholder.com/176x282`} alt="Book Cover" />
+            <img className="book-image" src={book.imageURL} alt="Book Cover" />
             <div className="book-title">{book.bookTitle}</div>
             <div className="author">{book.author}</div>
           </div>
