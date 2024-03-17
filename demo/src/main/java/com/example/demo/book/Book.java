@@ -3,21 +3,21 @@ package com.example.demo.book;
 public class Book {
     private int bookID;
     private String title;
-    private int authorID;
+    private String author;
     private int genreID;
     private int yearMade;
 
-    public Book(int bookID, String title, int authorID, int genreID, int yearMade){
+    public Book(int bookID, String title, String author, int genreID, int yearMade){
         this.bookID = bookID;
         this.title = title;
-        this.authorID = authorID;
+        this.author = author;
         this.genreID = genreID;
         this.yearMade = yearMade;
     }
 
-    public Book(String title, int authorID, int genreID, int yearMade){
+    public Book(String title, String author, int genreID, int yearMade){
         this.title = title;
-        this.authorID = authorID;
+        this.author = author;
         this.genreID = genreID;
         this.yearMade = yearMade;
     }
@@ -30,8 +30,8 @@ public class Book {
         return this.title;
     }
 
-    public int getAuthorID(){
-        return this.authorID;
+    public String getAuthor(){
+        return this.author;
     }
 
     public int getGenreID(){
@@ -47,7 +47,7 @@ public class Book {
         return "Book{" +
                 "id=" + bookID +
                 ", name='" + title + '\'' +
-                ", author id=" + authorID +
+                ", author=" + author +
                 ", genre id=" + genreID +
                 ", year made=" + yearMade +
                 '}';

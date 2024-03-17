@@ -146,9 +146,10 @@ export default function AddBook() {
               style={{ width: 176, height: 282, left: left, top: top, position: 'absolute' }}
               src={`https://via.placeholder.com/176x282`}
             />
-            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', textAlign: 'center', width: 176 }}>{book.bookTitle}</div>
+            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', textAlign: 'center', width: 176, fontWeight: 'bolder' }}>{book.bookTitle}</div>
+            <div style={{ left: left, top: top + 282 + 65, position: 'absolute', fontSize: 15, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', textAlign: 'center', width: 176 }}>{book.author}</div>
             {/* Add Book link */}
-            <button onClick={() => handleAddBook(book.bookID)} className="AddBook" style={{ left: left + 2, top: top + 300 + 20 + 30, position: 'absolute' }}>
+            <button onClick={() => handleAddBook(book.bookID)} className="AddBook" style={{ left: left + 2, top: top + 300 + 20 + 55, position: 'absolute' }}>
               {isBookAdded ? "Added" : "+ Add Book"}
             </button>
           </React.Fragment>
