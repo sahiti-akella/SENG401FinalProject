@@ -118,7 +118,11 @@ export default function AddBook() {
     <div> 
       <Navbar />
       <div className="MacbookPro14UserAccount">
-      <div className="available-books">Available Books</div>
+      <div className="available-books"> Available Books</div>
+      <div className="back-to-bookshelf"> 
+        <Link to="/Account"> {"\u2190"} Back to Bookshelf</Link>
+      </div>
+       
         <input className="search-bar"
             type="text"
             placeholder="Search Books..."
@@ -130,7 +134,7 @@ export default function AddBook() {
           const row = Math.floor(index / 4);
           const col = index % 4;
           const top = 300 + (row * 450);
-          const left = 150 + (col * 300);
+          const left = 180+ (col * 300);
 
           const isBookAdded = addedBooks.includes(book.bookID);
 
@@ -142,7 +146,7 @@ export default function AddBook() {
               style={{ width: 176, height: 282, left: left, top: top, position: 'absolute' }}
               src={`https://via.placeholder.com/176x282`}
             />
-            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176 }}>{book.bookTitle}</div>
+            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', textAlign: 'center', width: 176 }}>{book.bookTitle}</div>
             {/* Add Book link */}
             <button onClick={() => handleAddBook(book.bookID)} className="AddBook" style={{ left: left + 2, top: top + 300 + 20 + 30, position: 'absolute' }}>
               {isBookAdded ? "Added" : "+ Add Book"}

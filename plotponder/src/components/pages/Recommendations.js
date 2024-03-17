@@ -30,6 +30,15 @@ function Recommendations(props) {
       <Navbar />
       <div className="recommendations-container">
       <div className="user-rec-title">User's Recommendations</div>
+      <div className= "rec-description">
+        <div className="rec-text">Here's a diverse assortment of reads selected from our extensive book database. 
+        These titles are curated to offer a variety of genres and themes. Dive in and explore 
+        the world of literature! And for personalized recommendations tailored to your preferences,
+        don't hesitate to consult our BookBot—it's equipped to help you discover your next 
+        favorite book! Happy reading!</div>
+        <Link to="/Recommendations/BookBot" className="ask-bookbot">Ask Our BookBot &#x2192;</Link>
+      </div>
+      
       <div className="books">
       {randomBooks.map((book, index) => (
         <div key={index} className="Recommendation">
@@ -43,7 +52,7 @@ function Recommendations(props) {
       ))}
       </div>
       
-      <Link to="/Recommendations/BookBot" className="ask-bookbot">Ask Our BookBot!</Link>
+      
     </div>
       
     </div>

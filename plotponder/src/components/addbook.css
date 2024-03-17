@@ -1,7 +1,7 @@
 /* addbook.css */
 
 .MacbookPro14UserAccount {
-    width: 1512px;
+    width: 100%;
     height: 982px;
     position: relative;
     background: white;
@@ -54,19 +54,20 @@
   }
   
   .AddBook {
-    width: 151px !important;
+    width: 170px !important;
     position: absolute;
     font-size: 24px;
     font-weight: 400;
-    color: black;
+    color: white;
     word-wrap: break-word;
-    font-family: 'Inika';
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     text-decoration: none;
-
-    border: 1px solid black; /* You can adjust the border width and color */
-    padding: 10px;
+    border: 1px solid black;
+    padding: 9px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
+    background-color: #9b8bb5;
+    border-radius: 50px;
   }
   
   .AddBook:nth-child(odd) {
@@ -77,46 +78,6 @@
     width: 154px;
   }
   
-  .AddBook:nth-child(1) {
-    left: 340px;
-    top: 654px;
-  }
-  
-  .AddBook:nth-child(2) {
-    left: 573px;
-    top: 654px;
-  }
-  
-  .AddBook:nth-child(3) {
-    left: 806px;
-    top: 654px;
-  }
-  
-  .AddBook:nth-child(4) {
-    left: 1039px;
-    top: 654px;
-  }
-  
-  .AddBook:nth-child(5) {
-    left: 340px;
-    top: 1080px;
-  }
-  
-  .AddBook:nth-child(6) {
-    left: 573px;
-    top: 1080px;
-  }
-  
-  .AddBook:nth-child(7) {
-    left: 806px;
-    top: 1080px;
-  }
-  
-  .AddBook:nth-child(8) {
-    left: 1039px;
-    top: 1080px;
-  }
-
   .available-books {
     left: 604px;
     top: 50px;
@@ -126,6 +87,18 @@
     font-weight: 600;
     word-wrap: break-word;
     font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  }
+
+  .back-to-bookshelf{
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    word-wrap: break-word;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    text-decoration: none;
   }
 
   .search-bar{

@@ -56,14 +56,23 @@ function Account(props) {
     <div>
       <Navbar />
       <div className="MacbookPro14UserAccount">
-      <div className="HiUsername">Hi, {displayName}! 👋</div>
+      <div className="HiUsername">Hi, {displayName}! 👋 </div>
+      <div className="account-description">To add books 
+      to your personal bookshelf, simply click on the 
+      "Add Books" button to get started. Once clicked, 
+      you'll be directed to a page where you can search 
+      for your favorite books and add them to your collection. 
+      Whether it's classics, bestsellers, or hidden gems, curate 
+      your own reading list with ease. Start building your bookshelf 
+      and discover new literary adventures!</div>
+      
 
       <div className="YourRatings">Your Favourites</div>
 
       {favoriteBooks.map((book, index) => {
-        const row = Math.floor(index / 3);
-        const col = index % 3;
-        const top = 400 + (row * 450);
+        const row = Math.floor(index / 4);
+        const col = index % 4;
+        const top = 450 + (row * 450);
         const left = 150 + (col * 300);
 
         return (
@@ -73,7 +82,7 @@ function Account(props) {
               style={{ width: 176, height: 282, left: left, top: top, position: 'absolute' }}
               src={`https://via.placeholder.com/176x282`}
             />
-            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176 }}>{book.bookTitle}</div>
+            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif'}}>{book.bookTitle}</div>
           </React.Fragment>
         );
       })}
@@ -87,7 +96,7 @@ function Account(props) {
         }}
         className="AddBook-button"
       >
-        + Add Book
+        + Add Books
       </Link>
 
     </div>
