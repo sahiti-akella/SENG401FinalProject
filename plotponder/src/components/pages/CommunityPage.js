@@ -293,7 +293,7 @@ const CommunityPage = ({ props }) => {
             <h1>{params.title}</h1>
           </div>
           <div className="browse-clubs-link"> 
-        <Link to="/Community"> {"\u2190"}Browse Clubs</Link>
+        <Link to="/Community"> {"\u2190"} Browse Clubs</Link>
       </div>
           <div className="comments-and-club-navigator">
             <div className="div-12">
