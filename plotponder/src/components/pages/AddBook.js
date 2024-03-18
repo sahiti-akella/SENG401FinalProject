@@ -154,9 +154,9 @@ export default function AddBook() {
             <button onClick={() => handleAddBook(book.bookID)} className="AddBook" style={{ left: left + 2, top: top + 300 + 20 + 55, position: 'absolute' }}>
               {isBookAdded ? "Added" : "+ Add Book"}
             </button>
-            <div style={{ left: left, top: top - 50, position: 'absolute',  textAlign: 'center', width: 176 }} >
+            {/*<div style={{ left: left, top: top - 50, position: 'absolute',  textAlign: 'center', width: 176 }} >
             <StarRating />
-            </div>
+            </div>*/}
             
           </React.Fragment>
         );
