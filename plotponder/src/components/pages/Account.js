@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signOut, getAuth } from "firebase/auth";
 import { userDatabase } from "./FirebaseConfig";
 import Navbar from "../Navbar";
+import StarRating from "./StarRating";
 
 function Account(props) {
   const navigate = useNavigate();
@@ -84,6 +85,9 @@ function Account(props) {
             />
             <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', fontWeight: 'bolder'}}>{book.bookTitle}</div>
             <div style={{ left: left, top: top + 282 + 70, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif'}}>{book.author}</div>
+            <div style={{ left: left, top: top + 50, position: 'absolute',  textAlign: 'center', width: 176 }} >
+            <StarRating />
+            </div>
           </React.Fragment>
         );
       })}
