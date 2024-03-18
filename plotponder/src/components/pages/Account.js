@@ -85,7 +85,7 @@ function Account(props) {
             />
             <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', fontWeight: 'bolder'}}>{book.bookTitle}</div>
             <div style={{ left: left, top: top + 282 + 70, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif'}}>{book.author}</div>
-            <div style={{ left: left, top: top - 70, position: 'absolute',  textAlign: 'center', width: 176 }} >
+            <div style={{ left: left, top: top + 50, position: 'absolute',  textAlign: 'center', width: 176 }} >
             <StarRating />
             </div>
           </React.Fragment>
