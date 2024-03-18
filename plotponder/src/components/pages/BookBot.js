@@ -6,6 +6,7 @@ import Lottie from 'react-lottie';
 import bookBotAnimation from '../../Bookbot.json';
 import Navbar from '../Navbar';
 import '../BookBot.css';
+import { Link } from 'react-router-dom';
 
 function BookBot() {
     const [prompt, setPrompt] = useState("");
@@ -27,14 +28,17 @@ function BookBot() {
             <Navbar />
             <div className='welcome-page'>
                 <div className='welcome-message'> 
-                <h2 >Welcome to Bookbot! 🤖</h2>
+                <h2 >Welcome to BookBot! 🤖</h2>
+                </div>
+                <div className="back-to-recommendations"> 
+                    <Link to="/Recommendations"> {"\u2190"} Back to Recommendations </Link>
                 </div>
                 
                 <div className='bookbot-description'> 
-                    Discover your next literary obsession with Book Bot, your ultimate guide 
+                    Discover your next literary obsession with BookBot, your ultimate guide 
                     to personalized book and TV show recommendations! Utilizing cutting-edge AI technology,
-                    Book Bot seamlessly integrates with OpenAI's ChatGPT, ensuring each suggestion is finely 
-                    tuned to your unique interests. Simply enter a book name, and let Book Bot work its 
+                    BookBot seamlessly integrates with OpenAI's ChatGPT, ensuring each suggestion is finely 
+                    tuned to your unique interests. Simply enter a book name, and let BookBot work its 
                     magic, delivering tailored recommendations in seconds. 
                 </div>
             </div>

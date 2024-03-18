@@ -67,8 +67,7 @@ function Account(props) {
       your own reading list with ease. Start building your bookshelf 
       and discover new literary adventures!</div>
       
-
-      <div className="YourRatings">Your Favourites</div>
+      <div className="YourRatings">Your Bookshelf</div>
 
       {favoriteBooks.map((book, index) => {
         const row = Math.floor(index / 4);
@@ -83,9 +82,9 @@ function Account(props) {
               style={{ width: 176, height: 282, left: left, top: top, position: 'absolute' }}
               src={book.imageURL}
             />
-            <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', fontWeight: 'bolder'}}>{book.bookTitle}</div>
-            <div style={{ left: left, top: top + 282 + 70, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif'}}>{book.author}</div>
-            <div style={{ left: left, top: top + 50, position: 'absolute',  textAlign: 'center', width: 176 }} >
+            <div className="book-title" style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', fontWeight: 'bolder'}}>{book.bookTitle}</div>
+            <div className="book-author"  style={{ left: left, top: top + 282 + 70, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif'}}>{book.author}</div>
+            <div className="book-rating" style={{ left: left, top: top - 50 , position: 'absolute',  textAlign: 'center', width: 176 }} >
             <StarRating />
             </div>
           </React.Fragment>

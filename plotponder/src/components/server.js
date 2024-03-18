@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 app.post("/chat", cors(), async (req, res) => {
   
   const { bookName } = req.body;
-  const prompt = `Give me 3 recommendations for books/tv series similar to ${bookName} and give a two sentence description for each: `;
+  const prompt = `Give me 5 recommendations for a book/tv series with a similar plot or theme as ${bookName} and give a two sentence description for each: `;
 
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",

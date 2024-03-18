@@ -12,8 +12,16 @@
     padding-top: 20px;
 }
 
-.welcome-message{
-    animation: typing 2s steps(40, end);
+.back-to-recommendations{
+    position: absolute;
+    left: 40px;
+    top: 140px;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    word-wrap: break-word;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    text-decoration: none;
 }
 
 .bookbot-description {
