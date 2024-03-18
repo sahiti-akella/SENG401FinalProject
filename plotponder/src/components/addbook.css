@@ -63,7 +63,7 @@
     font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
     text-decoration: none;
     border: 1px solid black;
-    padding: 9px;
+    padding: 1px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
     background-color: #9b8bb5;
@@ -112,5 +112,13 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   }
+
+  .appRating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: row;
+}
 
   

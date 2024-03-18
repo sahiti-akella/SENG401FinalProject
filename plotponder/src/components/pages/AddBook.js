@@ -7,6 +7,7 @@ import Navbar from "../Navbar";
 import { signOut, getAuth } from "firebase/auth";
 import { userDatabase } from "./FirebaseConfig";
 import axios from "axios";
+import StarRating from "./StarRating";
 
 export default function AddBook() {
   const [books, setBooks] = useState([]);
@@ -148,10 +149,15 @@ export default function AddBook() {
             />
             <div style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', textAlign: 'center', width: 176, fontWeight: 'bolder' }}>{book.bookTitle}</div>
             <div style={{ left: left, top: top + 282 + 65, position: 'absolute', fontSize: 15, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', textAlign: 'center', width: 176 }}>{book.author}</div>
+            
             {/* Add Book link */}
             <button onClick={() => handleAddBook(book.bookID)} className="AddBook" style={{ left: left + 2, top: top + 300 + 20 + 55, position: 'absolute' }}>
               {isBookAdded ? "Added" : "+ Add Book"}
             </button>
+            <div style={{ left: left, top: top - 50, position: 'absolute',  textAlign: 'center', width: 176 }} >
+            <StarRating />
+            </div>
+            
           </React.Fragment>
         );
       })}
