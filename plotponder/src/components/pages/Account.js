@@ -53,6 +53,13 @@ function Account(props) {
     });
   };
 
+  const handleRemoveBook = (bookID, index) => {
+    console.log("Removing book with ID:", bookID, "at index:", index);
+    const updatedBooks = [...favoriteBooks];
+    updatedBooks.splice(index, 1);
+    setFavoriteBooks(updatedBooks);
+  };
+  
   return (
     <div>
       <Navbar />
@@ -87,6 +94,7 @@ function Account(props) {
             <div className="book-rating" style={{ left: left, top: top - 50 , position: 'absolute',  textAlign: 'center', width: 176 }} >
             <StarRating />
             </div>
+            <button style={{ left: left + 160, top: top - 10 , position: 'absolute', background: '#9b8bb5', color: 'white', border: 'none', borderRadius: '50%', width: '30px', height: '30px', alignItems: 'center', display: 'flex', justifyContent: 'center'}} onClick={() => handleRemoveBook(book.bookID, index)}> - </button>
           </React.Fragment>
         );
       })}
@@ -96,7 +104,7 @@ function Account(props) {
       <Link
         to={{
           pathname: "/Account/AddBook",
-          state: { userEmail: email } // Pass the user email as state
+          state: { userEmail: email} // Pass the user email as state
         }}
         className="AddBook-button"
       >
