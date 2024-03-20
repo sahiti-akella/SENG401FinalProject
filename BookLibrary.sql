@@ -62,7 +62,8 @@ VALUES
 ('Thriller'),
 ('Memoir'),
 ('Poetry'),
-('Young Adult');
+('Young Adult'),
+('Historical Fiction');
 
 -- BOOKS IN THE DATABASE
 DROP TABLE IF EXISTS BOOKS;
@@ -108,7 +109,41 @@ VALUES
 ('Simon vs. the Homo Sapiens Agenda', 'Becky Albertalli', 13, 2015, 'https://m.media-amazon.com/images/I/915Hg0EpqfL._AC_UF1000,1000_QL80_.jpg'),
 ('Stargirl', 'Jerry Spinelli', 13, 2000, 'https://m.media-amazon.com/images/I/71GxjoAYJHL._AC_UF1000,1000_QL80_.jpg'),
 ('Nimona', 'Noelle Stevenson', 8, 2015, 'https://m.media-amazon.com/images/I/51GIzHtjBqL._AC_UF1000,1000_QL80_.jpg'),
-('Becoming', 'Michelle Obama', 11, 2018, 'https://m.media-amazon.com/images/I/81jfDTSLQ9L._AC_UF1000,1000_QL80_.jpg');
+('Becoming', 'Michelle Obama', 11, 2018, 'https://m.media-amazon.com/images/I/81jfDTSLQ9L._AC_UF1000,1000_QL80_.jpg'),
+('We Were Liars', 'E. Lockhart', 2, 2014, 'https://m.media-amazon.com/images/I/71+tuHzXknL._AC_UF1000,1000_QL80_.jpg'),
+('Divergent', 'Veronica Roth', 3, 2011, 'https://m.media-amazon.com/images/I/91oNu+R7EUL._AC_UF1000,1000_QL80_.jpg'),
+('Insurgent', 'Veronica Roth', 3, 2012, 'https://m.media-amazon.com/images/I/61DdmGCbbBL._AC_UF1000,1000_QL80_.jpg'),
+('Allegiant', 'Veronica Roth', 3, 2013, 'https://m.media-amazon.com/images/I/91UojRVuHKL._AC_UF1000,1000_QL80_.jpg'),
+('The Invisible Life of Addie Larue', 'V. E. Schwab', 1, 2020, 'https://m.media-amazon.com/images/I/91Ql48Y0mqL._AC_UF1000,1000_QL80_.jpg'),
+('The Inheritance Games', 'Jennifer Lynn Barnes', 7, 2020, 'https://m.media-amazon.com/images/I/91oB1gHuiIL._AC_UF1000,1000_QL80_.jpg'),
+('The Hawthorne Legacy', 'Jennifer Lynn Barnes', 7, 2021, 'https://m.media-amazon.com/images/I/81BwjoiEkuL._AC_UF1000,1000_QL80_.jpg'),
+('The Final Gambit', 'Jennifer Lynn Barnes', 7, 2022, 'https://m.media-amazon.com/images/I/91bgAVuRzFL._AC_UF1000,1000_QL80_.jpg'),
+('The Brothers Hawthorne', 'Jennifer Lynn Barnes', 7, 2023, 'https://m.media-amazon.com/images/I/91jXTr5kePL._AC_UF1000,1000_QL80_.jpg'),
+('To Kill a Mockingbird', 'Harper Lee', 10, 1960, 'https://m.media-amazon.com/images/I/51p12agL5LL.jpg'),
+('The Housemaid', 'Freida McFadden', 10, 2023, 'https://m.media-amazon.com/images/I/81AHTyq2wVL._AC_UF1000,1000_QL80_.jpg'),
+('All The Light We Cannot See', 'Anthony Doerr', 14, 2014, 'https://m.media-amazon.com/images/I/81RBTG28sCL._AC_UF1000,1000_QL80_.jpg'),
+('Gone with the Wind', 'Margaret Mitchell', 14, 1936, 'https://m.media-amazon.com/images/I/91w1IHrUqZL._AC_UF1000,1000_QL80_.jpg'),
+('I Am Number Four', 'Pittacus Lore', 3, 2010, 'https://m.media-amazon.com/images/I/81MAe5Qp-9L._AC_UF1000,1000_QL80_.jpg'),
+('The Power of Six', 'Pittacus Lore', 3, 2011, 'https://m.media-amazon.com/images/I/81qMm+Y-euL._AC_UF1000,1000_QL80_.jpg'),
+('The Rise of Nine', 'Pittacus Lore', 3, 2012, 'https://m.media-amazon.com/images/I/71DeqtR-baL._AC_UF1000,1000_QL80_.jpg'),
+('The Fall of Five', 'Pittacus Lore', 3, 2013, 'https://m.media-amazon.com/images/I/91RDx0pZ8cL._AC_UF350,350_QL50_.jpg'),
+('The Revenge of Seven', 'Pittacus Lore', 3, 2014, 'https://m.media-amazon.com/images/I/71Azrthm5PL._AC_UF1000,1000_QL80_.jpg'),
+('The Fate of Ten', 'Pittacus Lore', 3, 2016, 'https://m.media-amazon.com/images/I/91qhLUdRl5L._AC_UF1000,1000_QL80_.jpg'),
+('Among The Free', 'Margaret Peterson Haddix', 3, 2006, 'https://m.media-amazon.com/images/I/618zYzBKw8L._AC_UF1000,1000_QL80_.jpg'),
+('The Breadwinner', 'Deborah Ellis', 2, 2000, 'https://m.media-amazon.com/images/I/719cTCBHW1L._AC_UF1000,1000_QL80_.jpg'),
+('The Giving Tree', 'Shel Silverstein', 2, 1964, 'https://m.media-amazon.com/images/I/71wiGMKadmL._AC_UF1000,1000_QL80_.jpg'),
+('The Perks of Being a Wallflower', 'Stephen Chbosky', 13, 1999, 'https://m.media-amazon.com/images/I/61KSi8OvgVL._AC_UF1000,1000_QL80_.jpg'),
+('November 9', 'Colleen Hoover', 6, 2015, 'https://m.media-amazon.com/images/I/71RBpTJkKaL._AC_UF1000,1000_QL80_.jpg'),
+('It Ends with Us', "Colleen Hoover", 6, 2016, 'https://m.media-amazon.com/images/I/813aV273-rL._AC_UF1000,1000_QL80_.jpg'),
+('Things We Never Got Over', 'Lucy Score', 11, 2022, 'https://m.media-amazon.com/images/I/81WklxcuSZL._AC_UF1000,1000_QL80_.jpg'),
+('Before we were strangers', 'Renée Carlino', 6, 1989, 'https://m.media-amazon.com/images/I/41PyYpmn8vL.jpg'),
+('Paper Towns', 'John Green', 7, 2008, 'https://m.media-amazon.com/images/I/81WBJQUEFsL._AC_UF1000,1000_QL80_.jpg'),
+('Lord of the Flies', 'William Golding', 13, 1954, 'https://m.media-amazon.com/images/I/61p1CcekGxL._AC_UF1000,1000_QL80_.jpg'),
+('At the Mountains of Madness', 'H. P. Lovecraft', 5, 1936, 'https://m.media-amazon.com/images/I/61NTngHHDVL._AC_UF1000,1000_QL80_.jpg'),
+('Watchmen', 'Alan Moore', 8, 1987, 'https://m.media-amazon.com/images/I/71ztkXHWZaL._AC_UF1000,1000_QL80_.jpg'),
+('One Hundred Years of Solitude', 'Gabriel García Márquez', 1, 1967, 'https://m.media-amazon.com/images/I/81MI6+TpYkL._AC_UF1000,1000_QL80_.jpg'),
+('A Clockwork Orange', 'Anthony Burgess', 5, 1962, 'https://m.media-amazon.com/images/I/61rZCYUYXuL._AC_UF1000,1000_QL80_.jpg'),
+('Powerless', 'Lauren Roberts', 13, 2023, 'https://m.media-amazon.com/images/I/81XbnexD2QL._AC_UF1000,1000_QL80_.jpg');
 
 -- COMMUNITIES 
 DROP TABLE IF EXISTS CLUBS;
