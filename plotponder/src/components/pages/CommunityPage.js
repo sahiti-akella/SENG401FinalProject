@@ -22,9 +22,9 @@ const Reply = ({ reply, onDeleteReply }) => {
           </div>
           <div className="time">{formatTimestamp(reply.timestamp)}</div>
         </div>
-        <div className="delete-reply" style={{ cursor: "pointer", fontSize: "30px", width: "20px" }} onClick={() => onDeleteReply(reply.id)}>
+        {/*<div className="delete-reply" style={{ cursor: "pointer", fontSize: "30px", width: "20px" }} onClick={() => onDeleteReply(reply.id)}>
         🗑
-        </div>
+    </div> */}
         <hr className="comment-separator" />
       </div>
     );
@@ -41,7 +41,7 @@ const Comment = ({ comment, onDeleteComment, onToggleReplies, onPostReply, onDel
         onToggleReplies(comment.id);
     };
       
-    const handleDeleteReply = (commentId, replyId) => {
+    /*const handleDeleteReply = (commentId, replyId) => {
         setComments((prevComments) =>
           prevComments.map((comment) =>
             comment.id === commentId
@@ -53,7 +53,7 @@ const Comment = ({ comment, onDeleteComment, onToggleReplies, onPostReply, onDel
               : comment
           )
         );
-      };      
+      };  */    
   
     return (
       <div className="comment">
@@ -65,12 +65,12 @@ const Comment = ({ comment, onDeleteComment, onToggleReplies, onPostReply, onDel
           <div className="time">{formatTimestamp(comment.timestamp)}</div>
         </div>
         <div className="post-toolbar">
-          <div 
+          {/* <div 
             classname="delete-comment" 
             style={{cursor: "pointer"}}
-            /*onClick={() => onDeleteComment(comment.id)}*/>
+            onClick={() => onDeleteComment(comment.id)}>
                 🗑
-          </div>
+    </div> */}
           <div className="post-toolbar-divider">|</div>
           <div 
             className="replies-button" 
@@ -82,7 +82,7 @@ const Comment = ({ comment, onDeleteComment, onToggleReplies, onPostReply, onDel
         {showReplies && (
         <div className="replies-container">
           {comment.replies.map((reply) => (
-            <Reply key={reply.id} reply={reply} onDeleteReply={() => handleDeleteReply(comment.id, reply.id)} />
+            <Reply key={reply.id} reply={reply} /*onDeleteReply={() => handleDeleteReply(comment.id, reply.id)}*/ />
           ))}
           <div className="reply-textbox">
             <input
@@ -151,33 +151,54 @@ const CommunityPage = ({ props }) => {
         fetchCommunityId(); // Call the function to fetch the community ID
       }, [params.title]); // Trigger the effect when the topic changes
 
-      useEffect(() => {
-        const fetchComments = async () => {
-          if (communityId) {
-            try {
-              const response = await axios.get(`http://localhost:8080/api/v1/community/comments/${communityId}`);
-              setComments(response.data); // Assuming the data is an array of comments
-              console.log(response.data)
-            } catch (error) {
-              console.error('Error fetching comments:', error);
-            }
+      const fetchComments = async () => {
+        if (communityId) {
+          try {
+            const response = await axios.get(`http://localhost:8080/api/v1/community/comments/${communityId}`);
+            setComments(response.data); // Assuming the data is an array of comments
+            console.log(response.data)
+          } catch (error) {
+            console.error('Error fetching comments:', error);
           }
-        };
+        }
+      };
+
+      useEffect(() => {
     
         fetchComments();
       }, [communityId]);
     
-      const handleToggleReplies = (commentId) => {
-        setComments((prevComments) =>
-          prevComments.map((comment) =>
-            comment.id === commentId
-              ? { ...comment, showReplies: !comment.showReplies }
-              : comment
-          )
-        );
+      const handleToggleReplies = async (commentId) => {
+        // Check if replies for the comment have already been fetched
+        const commentIndex = comments.findIndex(comment => comment.id === commentId);
+        const comment = comments[commentIndex];
+
+        if (!comment.showReplies && (!comment.replies || comment.replies.length === 0)) {
+            try {
+                // Fetch replies for the comment
+                const response = await axios.get(`http://localhost:8080/api/v1/community/replies/${commentId}`);
+                const fetchedReplies = response.data; // Assuming the data is an array of replies
+                
+                // Update the comments state to include the fetched replies
+                setComments(prevComments => {
+                    const updatedComments = [...prevComments];
+                    updatedComments[commentIndex] = { ...comment, replies: fetchedReplies, showReplies: true };
+                    return updatedComments;
+                });
+            } catch (error) {
+                console.error('Error fetching replies:', error);
+            }
+        } else {
+            // Toggle the showReplies state for the comment
+            setComments(prevComments => {
+                const updatedComments = [...prevComments];
+                updatedComments[commentIndex] = { ...comment, showReplies: !comment.showReplies };
+                return updatedComments;
+            });
+        }
       };
     
-      const handleDeleteReply = (commentId, replyId) => {
+      /*const handleDeleteReply = (commentId, replyId) => {
         setComments((prevComments) =>
           prevComments.map((comment) =>
             comment.id === commentId
@@ -189,7 +210,7 @@ const CommunityPage = ({ props }) => {
               : comment
           )
         );
-      };  
+      };  */
       
       const handlePostReply = async (commentId, newReply) => {
         if (newReply.trim() !== "") {
@@ -218,7 +239,7 @@ const CommunityPage = ({ props }) => {
                           { id: replyId, text: newReply, username, timestamp },
                         ]
                       : [{ id: replyId, text: newReply, username, timestamp }],
-                    commentCount: comment.commentCount + 1, // Increment comment count
+                    commentCount: comment.commentCount, // Increment comment count
                   }
                 : comment
             )
@@ -251,25 +272,11 @@ const CommunityPage = ({ props }) => {
             console.log('Comment added successfully:', response.data);
             
             // Update the comments state to reflect the new comment
-            /*const updatedComments = [
-              ...comments,
-              { id, text: newComment, username, timestamp, commentCount: 0 }
-            ];
-            setComments(updatedComments);*/
-            // Update state with the new comment
-            setComments(prevComments => [...prevComments, {
-              id: response.data.id,
-              text: newComment,
-              username: username,
-              timestamp,
-              commentCount: 0
-            }]);
+            await fetchComments();
       
             // Reset the newComment state to an empty string
             setNewComment("");
       
-            // Update the local storage with the updated comments
-            /*localStorage.setItem("comments", JSON.stringify(updatedComments));*/
           } catch (error) {
             console.error('Error adding comment:', error);
           }
@@ -306,7 +313,7 @@ const CommunityPage = ({ props }) => {
                         //onDeleteComment={handleDeleteComment}
                         onToggleReplies={handleToggleReplies}
                         onPostReply={handlePostReply}
-                        onDeleteReply={(replyId) => handleDeleteReply(comment.id, replyId)}
+                        //onDeleteReply={(replyId) => handleDeleteReply(comment.id, replyId)}
                         setComments={setComments}
                         setNewReply={setNewReply}
                     />

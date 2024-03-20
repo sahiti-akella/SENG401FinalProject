@@ -87,5 +87,14 @@ public class CommunityController {
         }
     }
 
-
+    @GetMapping("/replies/{commentId}")
+    public ResponseEntity<?> getRepliesByCommentId(@PathVariable int commentId) {
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        List<Comment> replies = databaseConnection.getRepliesByCommentId(commentId);
+        if (replies != null) {
+            return new ResponseEntity<>(replies, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }

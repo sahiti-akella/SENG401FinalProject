@@ -268,6 +268,31 @@ public class DatabaseConnection {
         }
     }    
 
+    public ArrayList<Comment> getRepliesByCommentId(int commentId) {
+        ArrayList<Comment> replies = new ArrayList<>();
+        String query = "SELECT * FROM COMMENTS WHERE Post_ID = ?";
+    
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
+            preparedStatement.setInt(1, commentId);
+    
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    int replyId = resultSet.getInt("Comment_ID");
+                    String text = resultSet.getString("Comments");
+                    String author = resultSet.getString("Author");
+                    long timestamp = resultSet.getTimestamp("Timestamp").getTime();
+    
+                    Comment reply = new Comment(replyId, text, author, timestamp);
+                    replies.add(reply);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    
+        return replies;
+    }
+
     public static void main(String[] args) {
         DatabaseConnection db = new DatabaseConnection();
     }
