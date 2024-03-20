@@ -5,6 +5,7 @@ import { signOut, getAuth } from "firebase/auth";
 import { userDatabase } from "./FirebaseConfig";
 import Navbar from "../Navbar";
 import StarRating from "./StarRating";
+import axios from 'axios';
 
 function Account(props) {
   const navigate = useNavigate();
@@ -53,11 +54,24 @@ function Account(props) {
     });
   };
 
-  const handleRemoveBook = (bookID, index) => {
-    console.log("Removing book with ID:", bookID, "at index:", index);
-    const updatedBooks = [...favoriteBooks];
-    updatedBooks.splice(index, 1);
-    setFavoriteBooks(updatedBooks);
+  const handleRemoveBook = async (bookID, index) => {
+    try {
+      // Make an API call to remove the book from favorites
+      const formData = {
+        userEmail: email,
+        bookID: bookID
+      };
+
+      const response = await axios.delete(`http://localhost:8080/api/v1/account/removeBook/${email}/${bookID}`);
+      console.log(response)
+
+      console.log("Removing book with ID:", bookID, "at index:", index);
+      const updatedBooks = [...favoriteBooks];
+      updatedBooks.splice(index, 1);
+      setFavoriteBooks(updatedBooks);
+    } catch (error) {
+      console.error('Error removing book from favorites:', error);
+    }
   };
   
   return (

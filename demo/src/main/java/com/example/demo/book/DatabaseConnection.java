@@ -253,6 +253,21 @@ public class DatabaseConnection {
         }
     }
 
+    public boolean removeBookFromFavorites(int userId, int bookId) {
+        String query = "DELETE FROM FAVOURITES WHERE User_ID = ? AND Book_ID = ?";
+    
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
+            preparedStatement.setInt(1, userId);
+            preparedStatement.setInt(2, bookId);
+    
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }    
+
     public static void main(String[] args) {
         DatabaseConnection db = new DatabaseConnection();
     }
