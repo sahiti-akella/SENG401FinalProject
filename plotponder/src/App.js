@@ -10,6 +10,8 @@ import AddBook from './components/pages/AddBook';
 import Home from './components/pages/Home';
 import Communities from './components/pages/Communities';
 import CommunityPage from './components/pages/CommunityPage';
+import ChangePassword from './components/pages/ChangePassword';
+import ChangeEmail from './components/pages/ChangeEmail';
 
 function App() {
   const [communityList, setCommunityList] = useState([]);
@@ -37,6 +39,8 @@ function App() {
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Home" element={<Home />} />
+          <Route path="/ChangePassword" element={<ChangePassword />} />
+          <Route path="/ChangeEmail" element={<ChangeEmail />} />
           
           {/* Catch-all route for unmatched paths */}
           <Route path="*" element={<Navigate to="/" />} />

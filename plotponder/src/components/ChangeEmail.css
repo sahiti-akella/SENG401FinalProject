@@ -1,0 +1,69 @@
+.main {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .signin-form-div {
+    background-color: white;
+    width: 30%;
+    height: 48%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 28%; /* Adjust the top value as needed */
+    position: absolute;
+  }
+  
+  .signin-title {
+    background-color: white;
+    width: 55%;
+    height: 50px;
+    left: 49%;
+    transform: translateX(-50%);
+    top: 10%; /* Adjust the top value as needed */
+    position: absolute;
+    color: black;
+    font-size: 38px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30%;
+  }
+  
+  input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  button {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid black; /* Add a border */
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  }
+  
+  button:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .switch-signin {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  
