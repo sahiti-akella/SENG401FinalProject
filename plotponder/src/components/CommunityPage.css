@@ -240,8 +240,8 @@
 
 .type-comment {
   border-radius: 50px;
-  border: 1px solid var(--3-gray, #d0d4d9);
-  background-color: var(--1-white, #fff);
+  border: 1px solid #d0d4d9;
+  background-color:#fff;
   align-self: start;
   flex-grow: 1;
   width: 1200px !important;
