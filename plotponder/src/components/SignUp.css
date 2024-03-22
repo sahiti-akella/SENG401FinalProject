@@ -6,7 +6,7 @@
 .form-div {
   background-color: white;
   width: 30%;
-  height: 56.5%;
+  height: 59%;
   left: 50%;
   transform: translateX(-50%);
   top: 24%; /* Adjust the top value as needed */
@@ -64,7 +64,7 @@ button:hover {
 
 .switch-signup {
   margin-top: 10%;
-  margin-left: 40%;
+  text-align: center;
 }
 
 

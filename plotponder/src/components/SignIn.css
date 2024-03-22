@@ -6,10 +6,10 @@
 .signin-form-div {
   background-color: white;
   width: 30%;
-  height: 48%;
+  height: 55%;
   left: 50%;
   transform: translateX(-50%);
-  top: 28%; /* Adjust the top value as needed */
+  top: 26%; /* Adjust the top value as needed */
   position: absolute;
 }
 
@@ -45,7 +45,7 @@ input {
   font-size: 16px;
 }
 
-button {
+.button-signin {
   width: 20%;
   padding: 10px;
   border: 1px solid black; /* Add a border */
@@ -55,6 +55,7 @@ button {
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  margin-top: 5%;
 }
 
 button:hover {
@@ -63,8 +64,13 @@ button:hover {
 }
 
 .switch-signin {
-  margin-top: 20% !important;
-  margin-left: 40%;
+  margin-top: 10%;
+  text-align: center;
+}
+
+.forgot-pass{
+  margin-top: -5%;
+  margin-left: 50%;
 }
 
 
@@ -108,7 +114,7 @@ button:hover {
     font-size: 3vw;
   }
 
-  .signin-b {
+  .button-signin {
     width: 23% !important; /* Smooth transition */
   }
 
@@ -139,7 +145,7 @@ button:hover {
     top: 10%; /* Smooth transition */
   }
 
-  .signin-b {
+  .button-signin {
     width: 27% !important; /* Smooth transition */
   }
 
@@ -175,7 +181,7 @@ button:hover {
     top: 10%; /* Smooth transition */
   }
 
-  .signin-b {
+  .button-signin {
     width: 24% !important; /* Smooth transition */
   }
   
@@ -199,7 +205,7 @@ button:hover {
     top: 10%; /* Smooth transition */
   }
 
-  .signin-b {
+  .button-signin {
     width: 27% !important; /* Smooth transition */
   }
 

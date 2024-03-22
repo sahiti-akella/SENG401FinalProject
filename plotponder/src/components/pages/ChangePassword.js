@@ -3,39 +3,29 @@ import "../ChangePassword.css";
 import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Navbar from "../Navbar";
+import { sendPasswordResetEmail } from "firebase/auth";
 
 function ChangePassword(props) {
   const navigate = useNavigate();
 
-  const handleSignIn = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-
-    // Attempt to create a new user
-    signInWithEmailAndPassword(userDatabase, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user, "userInfo");
-        navigate("/Home");
-      })
-      .catch((error) => {
-        if (error.code === "auth/invalid-credential") {
-          window.alert("Invalid password/email or account does not exist");
-        } else {
-          console.error("Error during sign in:", error);
-        }
-      });
-  };
+  const handleChangePass = async(e)=>{
+    e.preventDefault()
+    const emalVal = e.target.email.value;
+    sendPasswordResetEmail(userDatabase,emalVal).then(data=>{
+        alert("Check your gmail")
+        navigate("/")
+    }).catch(err=>{
+        alert(err.code)
+    })
+}
 
   return (
     <div className="main-div">
-      <div className="header">
-        <div className="title-wrapper">PlotPonder</div>
-      </div>
-      <div className="signin-form-div">
-        <div className="signin-title">Change Password</div>
-        <form onSubmit={(e) => handleSignIn(e)}>
+      <Navbar />
+      <div className="changepass-form-div">
+        <div className="change-pass-title">Change Password</div>
+        <form onSubmit={(e) => handleChangePass(e)}>
           <input
             type="text"
             className="email"
@@ -52,11 +42,8 @@ function ChangePassword(props) {
           ></input>
           <br></br>
 
-          <button>Sign In</button>
+          <button>Change Password</button>
         </form>
-        <p className="switch-signin">
-          Don't have an account? <Link to="/SignUp">Sign Up</Link>
-        </p>
       </div>
     </div>
   );
