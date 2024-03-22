@@ -90,7 +90,7 @@ function SignUp(props) {
           ></input>
           <br></br>
 
-          <button>Sign Up</button>
+          <button className="signin-b">Sign Up</button>
         </form>
         <p className="switch-signup">
           Already have an account? <Link to="/SignIn">Sign in</Link>

@@ -13,9 +13,8 @@
 }
 
 .back-to-recommendations{
-    position: absolute;
-    left: 40px;
-    top: 140px;
+    position: relative;
+    margin-right: 75%;
     color: black;
     font-size: 18px;
     font-weight: 400;
@@ -28,6 +27,8 @@
     font-size: 18px;
     padding-top: 10px;
     color: #3a3b3d;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .chat-container {
@@ -88,4 +89,29 @@
 
 .submit-button:hover {
     background-color: #7b6d91;
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .chat-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lottie-container,
+    .prompt-response-container {
+        width: 100%; /* Adjust width for smaller screens */
+        margin-left: 0; /* Reset margin */
+        margin-right: 0; /* Reset margin */
+    }
+
+    .lottie-container {
+        margin-bottom: 20px; /* Add some space between lottie-container and prompt-response-container */
+        width: 300px;
+    }
+
+    .back-to-recommendations {
+        position: static; /* Reset position */
+        margin-top: 20px; /* Add margin to create space */
+    }
 }

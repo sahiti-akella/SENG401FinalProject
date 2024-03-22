@@ -182,3 +182,37 @@
     }
 }
 
+@media (max-width: 1300px) {
+    .community-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack the items on top of each other */
+        grid-template-rows: auto auto auto auto; /* Create rows for each section */
+    }
+
+    .join-community {
+        grid-row: 1; /* This will make join-community go first */
+        margin-left: 0; /* Adjust the margin as needed */
+        text-align: center;
+    }
+
+    .community-details {
+        grid-row: 2; /* This will place community-details just below join-community */
+    }
+
+    .create-community-description {
+        grid-row: 3; /* This will place create-community-description below community-details */
+        margin-top: 0; /* Adjust the margin as needed */
+        text-align: center;
+    }
+    
+    .create-community-title {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .community-lottie {
+        grid-row: 4; /* This will place community-lottie at the bottom */
+        margin-left: auto; /* Align to the center horizontally */
+        margin-right: auto; /* Align to the center horizontally */
+    }
+}

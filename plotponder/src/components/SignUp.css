@@ -66,3 +66,177 @@ button:hover {
   margin-top: 10%;
   text-align: center;
 }
+
+
+/* Media queries for even smaller screens */
+@media screen and (max-width: 1500px) {
+
+  .signup-title {
+    width: 100%; /* Smooth transition */
+    top: 5%; /* Smooth transition */
+    min-width: 300px; /* Adjust minimum width to prevent squishing */
+    text-align: center;
+
+  }
+
+}
+
+@media screen and (max-width: 1400px) {
+
+  .signup-title {
+    width: 100%; /* Smooth transition */
+    top: 5%; /* Smooth transition */
+    min-width: 300px; /* Adjust minimum width to prevent squishing */
+  }
+
+}
+
+@media screen and (max-width: 1310px) {
+
+  .switch-signup {
+    margin-top: 20% !important; /* Smooth transition */
+  }
+
+  .title-wrapper {
+    font-size: 3vw;
+  }
+
+  .signup-title {
+    width: 75%; /* Smooth transition */
+    top: 5%; /* Smooth transition */
+    min-width: 300px; /* Adjust minimum width to prevent squishing */
+  }
+
+}
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 1264px) {
+  .form-div {
+    width: 45% !important; /* Smooth transition */
+    top: 28%; /* Smooth transition */
+  }
+
+  .signup-title {
+    width: 71%; /* Smooth transition */
+    top: 5%; /* Smooth transition */
+    min-width: 300px; /* Adjust minimum width to prevent squishing */
+  }
+
+  form {
+    margin-top: 20%; /* Smooth transition */
+  }
+
+  .switch-signup {
+    margin-top: 15% !important; /* Smooth transition */
+    min-width: 800px; /* Adjust minimum width to prevent squishing */
+    margin-left: 40%; /* Smooth transition */
+  }
+
+  .title-wrapper {
+    font-size: 3vw;
+  }
+
+  .signin-b {
+    width: 23% !important; /* Smooth transition */
+  }
+
+}
+
+
+/* Media queries for even smaller screens */
+@media screen and (max-width: 910px) {
+  .form-div {
+    width: 53% !important; /* Smooth transition */
+    top: 28%; /* Smooth transition */
+  }
+
+  .signup-title {
+    width: 100%; /* Smooth transition */
+    top: 3%; /* Smooth transition */
+    min-width: 200px; /* Adjust minimum width to prevent squishing */
+  }
+
+  form {
+    margin-top: 10%; /* Smooth transition */
+  }
+
+  .switch-signup {
+    margin-top: 20% !important; /* Smooth transition */
+    min-width: 800px; /* Adjust minimum width to prevent squishing */
+    margin-left: 30%; /* Smooth transition */
+    top: 10%; /* Smooth transition */
+  }
+
+  .signin-b {
+    width: 27% !important; /* Smooth transition */
+  }
+
+  .title-wrapper {
+    font-size: 3vw;
+  }
+
+}
+
+
+/* Media queries for even smaller screens */
+@media screen and (max-width: 763px) {
+  .form-div {
+    width: 60% !important; /* Smooth transition */
+    top: 28%; /* Smooth transition */
+    background-color: white;
+  }
+
+  .signup-title {
+    width: 95%; /* Smooth transition */
+    top: 3%; /* Smooth transition */
+    min-width: 200px; /* Adjust minimum width to prevent squishing */
+  }
+
+  form {
+    margin-top: 10%; /* Smooth transition */
+  }
+
+  .switch-signup {
+    margin-top: 35% !important; /* Smooth transition */
+    min-width: 800px; /* Adjust minimum width to prevent squishing */
+    margin-left: 30%; /* Smooth transition */
+    top: 10%; /* Smooth transition */
+  }
+
+  .signin-b {
+    width: 25% !important; /* Smooth transition */
+  }
+  
+  .title-wrapper {
+    font-size: 3vw;
+  }
+}
+
+/* Media queries for even smaller screens */
+@media screen and (max-width: 513px) {
+  .form-div {
+    width: 60% !important; /* Smooth transition */
+    top: 28%; /* Smooth transition */
+    background-color: white;
+  }
+
+  .switch-signup {
+    margin-top: 50% !important; /* Smooth transition */
+    min-width: 800px; /* Adjust minimum width to prevent squishing */
+    margin-left: 30%; /* Smooth transition */
+    top: 10%; /* Smooth transition */
+  }
+
+  .signin-b {
+    width: 30% !important; /* Smooth transition */
+  }
+
+  .title-wrapper {
+    font-size: 3vw;
+  }
+
+  input {
+    margin-top: 5%;
+  }
+  
+}
