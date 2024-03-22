@@ -1,5 +1,4 @@
 /* useraccount.css */
-.ViewAccount,
 .Recommendations,
 .Community,
 .Settings, 
@@ -17,32 +16,6 @@
   position: relative;
   justify-content: center;
 
-}
-.ViewAccount {
-  left: 1306px;
-  top: 52px;
-  color: #420F1A;
-  font-size: 22px;
-  font-weight: 700;
-  word-wrap: break-word;
-}
-
-.Recommendations {
-  left: 1058px;
-  top: 53px;
-  color: black;
-  font-size: 22px;
-  font-weight: 400;
-  word-wrap: break-word;
-}
-
-.Community {
-  left: 853px;
-  top: 51px;
-  color: black;
-  font-size: 22px;
-  font-weight: 400;
-  word-wrap: break-word;
 }
 
 .Settings {
@@ -84,53 +57,6 @@
   font-weight: 400;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   word-wrap: break-word;
-}
-
-.image1,
-.image2,
-.image3,
-.image4 {
-  position: absolute;
-  width: 176px;
-  height: 282px;
-  top: 395px;
-}
-
-.image1 {
-  left: 80px;
-
-}
-
-.image2 {
-  left: 313px;
-
-}
-
-.image3 {
-  left: 546px;
-
-}
-
-.image4 {
-  left: 779px;
-  
-}
-
-.Rectangle50,
-.Rectangle47,
-.Rectangle48,
-.Rectangle49 {
-  position: absolute;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.Rectangle50 {
-  width: 258px;
-  height: 62px;
-  left: 425px;
-  top: 757px;
-  background: white;
-  border: 1px black solid;
 }
 
 .AddBook-button {
@@ -178,4 +104,27 @@
 .LogOut:hover {
   background-color: #FEE1DD; /* Change color on hover */
   transition: background-color 0.3s ease;
+}
+
+/* new (not working yet)*/
+/* Books container */
+.books {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Add some space between books */
+}
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 1024px) {
+  .books {
+    flex: 0 0 calc(50% - 40px); /* Show 2 items per row */
+  }
+}
+
+/* Media queries for even smaller screens */
+@media screen and (max-width: 768px) {
+  .books {
+    flex: 0 0 calc(50% - 40px); /* Show 2 items per row */
+  }
 }

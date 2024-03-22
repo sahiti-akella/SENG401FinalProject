@@ -6,7 +6,7 @@ import BasicMenu from './BasicMenu';
 const Navbar = () => {
     return (
         <div className="Navbar">
-            <div className="header">
+            <div className="heading">
                 <NavLink to="/Home" className="title-wrapper">PlotPonder</NavLink>
                 <div className="search-wrapper">   
                     <NavLink to="/Recommendations" className="nav-link" activeClassName="active">Recommendations</NavLink>

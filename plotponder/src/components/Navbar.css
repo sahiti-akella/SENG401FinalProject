@@ -10,7 +10,7 @@
     margin-top: -0.3%;
 }
 
-.header {
+.heading {
     display: flex; /* Use flexbox */
     justify-content: space-between; /* Distribute space evenly between items */
     align-items: center; /* Center vertically */

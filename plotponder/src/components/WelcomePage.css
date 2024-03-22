@@ -3,7 +3,6 @@
   height: 100vh; /* 80% of the viewport height */
   position: relative;
   width: 100%; /* 70% of the viewport width */
-  max-width: 1512px; /* Set a maximum width */
 }
 
 .title-wrapper {
@@ -23,7 +22,7 @@
   background-color: white; /* Set background color */
   border-bottom: 1px solid #000000; /* Set border at the bottom */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow to the border */
-  padding: 5vh; /* Adjust padding as needed */
+  padding: 6vh; /* Adjust padding as needed */
 }
 
 .welcome-wrapper {
@@ -45,15 +44,6 @@
   top: 20%; /* Adjust the top position as needed */
   left: 50%; /* Adjust the left position as needed */
   transform: translateX(-50%); /* Center horizontally */
-}
-
-.element {
-  height: 34vw; /* 34% of the viewport width */
-  left: 23.5vw; /* 23.5% of the viewport width */
-  object-fit: cover;
-  position: absolute;
-  top: 29.6vh; /* 29.6% of the viewport height */
-  width: 49.8vw; /* 49.8% of the viewport width */
 }
 
 .signup-button {
@@ -88,4 +78,33 @@
 .signin-button:hover {
   background-color: black; /* Change to your desired hover background color */
   color: white; /* Change to your desired hover font color */
+}
+
+/* Media queries for adjusting font size */
+
+@media screen and (max-width: 768px) {
+  .signup-button,
+  .signin-button,
+  .title-wrapper {
+    font-size: 3vw;
+  }
+
+  .welcome-wrapper {
+    font-size: 4vw;
+  }
+
+
+}
+
+@media screen and (max-width: 480px) {
+  .signup-button,
+  .signin-button,
+  .welcome-wrapper{
+    font-size: 4vw;
+  }
+
+  .title-wrapper {
+    font-size: 5vw !important;
+  }
+
 }
