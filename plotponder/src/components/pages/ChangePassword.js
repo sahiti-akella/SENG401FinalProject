@@ -1,24 +1,28 @@
 import React from "react";
 import "../ChangePassword.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import Navbar from "../Navbar";
 import { sendPasswordResetEmail } from "firebase/auth";
 
 function ChangePassword(props) {
   const navigate = useNavigate();
 
-  const handleChangePass = async(e)=>{
-    e.preventDefault()
-    const emalVal = e.target.email.value;
-    sendPasswordResetEmail(userDatabase,emalVal).then(data=>{
-        alert("Check your gmail")
-        navigate("/")
-    }).catch(err=>{
-        alert(err.code)
-    })
-}
+  const handleChangePass = async (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+
+    // Send password reset email
+    sendPasswordResetEmail(userDatabase, email)
+      .then((data) => {
+        alert("Check email for password reset link");
+        navigate("/");
+      })
+      .catch((err) => {
+        alert(err.code);
+      });
+  };
 
   return (
     <div className="main-div">
@@ -30,15 +34,7 @@ function ChangePassword(props) {
             type="text"
             className="email"
             name="email"
-            placeholder="Email"
-          ></input>
-          <br></br>
-
-          <input
-            type="password"
-            className="password"
-            name="password"
-            placeholder="Password"
+            placeholder="Enter email"
           ></input>
           <br></br>
 

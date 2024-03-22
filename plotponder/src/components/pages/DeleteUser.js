@@ -1,13 +1,12 @@
-import React from "react";
-import "../ChangeEmail.css";
+import React, { useState } from "react";
+import "../SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import Navbar from "../Navbar";
 
-function ChangeEmail(props) {
+function DeleteUser(props) {
   const navigate = useNavigate();
-
+ 
   const handleSignIn = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -18,7 +17,20 @@ function ChangeEmail(props) {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user, "userInfo");
-        navigate("/Home");
+       
+
+        user
+        .delete()
+        .then(() => {
+            // User deleted.
+            console.log("User Account Deleted Successful");
+            window.alert("User Account Deleted Successful");
+            navigate("/")
+        })
+        .catch((error) => {
+            window.alert("Unable to delete atm");
+        });
+
       })
       .catch((error) => {
         if (error.code === "auth/invalid-credential") {
@@ -28,12 +40,15 @@ function ChangeEmail(props) {
         }
       });
   };
-
+ 
+    
   return (
     <div className="main-div">
-     <Navbar />
-      <div className="changeemail-form-div">
-        <div className="change-email-title">Change Email</div>
+      <div className="header">
+        <div className="title-wrapper">PlotPonder</div>
+      </div>
+      <div className="signin-form-div">
+        <div className="signin-title">Verify Delete</div>
         <form onSubmit={(e) => handleSignIn(e)}>
           <input
             type="text"
@@ -50,15 +65,11 @@ function ChangeEmail(props) {
             placeholder="Password"
           ></input>
           <br></br>
-
-          <button>Sign In</button>
+          <button className="button-signin">Delete</button>
         </form>
-        <p className="switch-signin">
-          Don't have an account? <Link to="/SignUp">Sign Up</Link>
-        </p>
       </div>
     </div>
   );
 }
 
-export default ChangeEmail;
+export default DeleteUser;

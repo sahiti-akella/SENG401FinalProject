@@ -92,19 +92,16 @@
   .welcome-wrapper {
     font-size: 4vw;
   }
-
-
 }
 
 @media screen and (max-width: 480px) {
   .signup-button,
   .signin-button,
-  .welcome-wrapper{
+  .welcome-wrapper {
     font-size: 4vw;
   }
 
   .title-wrapper {
     font-size: 5vw !important;
   }
-
 }

@@ -1,117 +1,118 @@
-/* BookBot.css */
-
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .welcome-page {
-    text-align: center;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    font-size: 20px;
-    padding-top: 20px;
+  text-align: center;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 20px;
+  padding-top: 20px;
 }
 
-.back-to-recommendations{
-    position: relative;
-    margin-right: 75%;
-    color: black;
-    font-size: 18px;
-    font-weight: 400;
-    word-wrap: break-word;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    text-decoration: none;
+.back-to-recommendations {
+  position: relative;
+  margin-right: 75%;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  word-wrap: break-word;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  text-decoration: none;
 }
 
 .bookbot-description {
-    font-size: 18px;
-    padding-top: 10px;
-    color: #3a3b3d;
-    margin-left: 5%;
-    margin-right: 5%;
+  font-size: 18px;
+  padding-top: 10px;
+  color: #3a3b3d;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .chat-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 35px;
 }
 
 .lottie-container {
-    width: 35%;
-    height: 40%;
-    margin-left: 5%;
+  width: 35%;
+  height: 40%;
+  margin-left: 5%;
 }
 
 .prompt-response-container {
-    width: 60%;
-    margin-left: 5%;
-    background-color: white;
-    margin-right: 40px;
-    border-radius: 10px;
-    padding: 10px; /* Adjusted padding */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 -6px 8px rgba(0, 0, 0, 0.1); /* Two shadows: one for bottom and one for top */
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    overflow-y: auto; /* Enable vertical overflow scrolling */
-    text-align: center;
+  width: 60%;
+  margin-left: 5%;
+  background-color: white;
+  margin-right: 40px;
+  border-radius: 10px;
+  padding: 10px; /* Adjusted padding */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 -6px 8px rgba(0, 0, 0, 0.1); /* Two shadows: one for bottom and one for top */
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  overflow-y: auto; /* Enable vertical overflow scrolling */
+  text-align: center;
 }
 
-
 .chatgpt-response {
-    white-space: nowrap;
-    animation: typewriter 3s steps(40) 1s forwards; /* Apply typewriter animation */
+  white-space: nowrap;
+  animation: typewriter 3s steps(40) 1s forwards; /* Apply typewriter animation */
 }
 
 .input-form {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .prompt-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    margin-right: 10px;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  margin-right: 10px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
 .submit-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #9b8bb5;
-    color: white;
-    border-radius: 15px;
-    cursor: pointer;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  padding: 10px 20px;
+  border: none;
+  background-color: #9b8bb5;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
 .submit-button:hover {
-    background-color: #7b6d91;
+  background-color: #7b6d91;
 }
 
 /* Media Query for smaller screens */
 @media screen and (max-width: 768px) {
-    .chat-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  .chat-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .lottie-container,
-    .prompt-response-container {
-        width: 100%; /* Adjust width for smaller screens */
-        margin-left: 0; /* Reset margin */
-        margin-right: 0; /* Reset margin */
-    }
+  .lottie-container,
+  .prompt-response-container {
+    width: 100%; /* Adjust width for smaller screens */
+    margin-left: 0; /* Reset margin */
+    margin-right: 0; /* Reset margin */
+  }
 
-    .lottie-container {
-        margin-bottom: 20px; /* Add some space between lottie-container and prompt-response-container */
-        width: 300px;
-    }
+  .lottie-container {
+    margin-bottom: 20px; /* Add some space between lottie-container and prompt-response-container */
+    width: 300px;
+  }
 
-    .back-to-recommendations {
-        position: static; /* Reset position */
-        margin-top: 20px; /* Add margin to create space */
-    }
+  .back-to-recommendations {
+    position: static; /* Reset position */
+    margin-top: 20px; /* Add margin to create space */
+  }
 }

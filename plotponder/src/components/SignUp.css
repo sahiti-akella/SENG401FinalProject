@@ -67,32 +67,25 @@ button:hover {
   text-align: center;
 }
 
-
 /* Media queries for even smaller screens */
 @media screen and (max-width: 1500px) {
-
   .signup-title {
     width: 100%; /* Smooth transition */
     top: 5%; /* Smooth transition */
     min-width: 300px; /* Adjust minimum width to prevent squishing */
     text-align: center;
-
   }
-
 }
 
 @media screen and (max-width: 1400px) {
-
   .signup-title {
     width: 100%; /* Smooth transition */
     top: 5%; /* Smooth transition */
     min-width: 300px; /* Adjust minimum width to prevent squishing */
   }
-
 }
 
 @media screen and (max-width: 1310px) {
-
   .switch-signup {
     margin-top: 20% !important; /* Smooth transition */
   }
@@ -106,7 +99,6 @@ button:hover {
     top: 5%; /* Smooth transition */
     min-width: 300px; /* Adjust minimum width to prevent squishing */
   }
-
 }
 
 /* Media queries for smaller screens */
@@ -139,9 +131,7 @@ button:hover {
   .signin-b {
     width: 23% !important; /* Smooth transition */
   }
-
 }
-
 
 /* Media queries for even smaller screens */
 @media screen and (max-width: 910px) {
@@ -174,9 +164,7 @@ button:hover {
   .title-wrapper {
     font-size: 3vw;
   }
-
 }
-
 
 /* Media queries for even smaller screens */
 @media screen and (max-width: 763px) {
@@ -206,7 +194,7 @@ button:hover {
   .signin-b {
     width: 25% !important; /* Smooth transition */
   }
-  
+
   .title-wrapper {
     font-size: 3vw;
   }
@@ -238,5 +226,4 @@ button:hover {
   input {
     margin-top: 5%;
   }
-  
 }

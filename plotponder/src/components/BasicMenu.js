@@ -1,13 +1,12 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import "./BasicMenu.css";
-import SettingsIcon from '@mui/icons-material/Settings';
-import { signOut, getAuth } from "firebase/auth";
+import SettingsIcon from "@mui/icons-material/Settings";
+import { signOut } from "firebase/auth";
 import { userDatabase } from "./pages/FirebaseConfig";
-import { Link, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -31,20 +30,20 @@ export default function BasicMenu() {
     navigate("/ChangePassword");
   };
 
-  const handleChangeEmail = () => {
-    navigate("/ChangeEmail");
+  const handleDeleteUser = () => {
+    navigate("/DeleteUser");
   };
 
   return (
     <div>
       <Button
         id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
+        aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <SettingsIcon style={{ color: 'black' }} /> 
+        <SettingsIcon style={{ color: "black" }} />
       </Button>
       <Menu
         id="basic-menu"
@@ -52,13 +51,12 @@ export default function BasicMenu() {
         open={open}
         onClose={handleClose}
         MenuListProps={{
-          'aria-labelledby': 'basic-button',
+          "aria-labelledby": "basic-button",
         }}
       >
         <MenuItem onClick={handleSignOut}>Log Out</MenuItem>
-        <MenuItem onClick={handleChangeEmail}>Update Email</MenuItem>
         <MenuItem onClick={handleChangePass}>Update Password</MenuItem>
-        <MenuItem onClick={handleClose}>Delete Account</MenuItem>
+        <MenuItem onClick={handleDeleteUser}>Delete Account</MenuItem>
       </Menu>
     </div>
   );
