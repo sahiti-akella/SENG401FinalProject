@@ -97,19 +97,22 @@ function Account(props) {
         const left = 150 + (col * 300);
 
         return (
-          <React.Fragment key={index}>
-            <img
-              className={`D707c67aA00a45e98620Dd6352530774${index}`}
-              style={{ width: 176, height: 282, left: left, top: top, position: 'absolute' }}
-              src={book.imageURL}
-            />
-            <div className="book-title" style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', fontWeight: 'bolder'}}>{book.bookTitle}</div>
-            <div className="book-author"  style={{ left: left, top: top + 282 + 70, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif'}}>{book.author}</div>
-            <div className="book-rating" style={{ left: left, top: top - 50 , position: 'absolute',  textAlign: 'center', width: 176 }} >
-            <StarRating />
-            </div>
-            <button style={{ left: left + 160, top: top - 10 , position: 'absolute', background: '#9b8bb5', color: 'white', border: 'none', borderRadius: '50%', width: '30px', height: '30px', alignItems: 'center', display: 'flex', justifyContent: 'center'}} onClick={() => handleRemoveBook(book.bookID, index)}> - </button>
-          </React.Fragment>
+          <div className="books">
+            <React.Fragment key={index}>
+              <img
+                className={`D707c67aA00a45e98620Dd6352530774${index}`}
+                style={{ width: 176, height: 282, left: left, top: top, position: 'absolute' }}
+                src={book.imageURL}
+              />
+              <div className="book-title" style={{ left: left, top: top + 282 + 20, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif', fontWeight: 'bolder'}}>{book.bookTitle}</div>
+              <div className="book-author"  style={{ left: left, top: top + 282 + 70, position: 'absolute', fontSize: 15, textAlign: 'center', width: 176, fontFamily: 'Century Gothic, CenturyGothic, AppleGothic, sans-serif'}}>{book.author}</div>
+              <div className="book-rating" style={{ left: left, top: top - 50 , position: 'absolute',  textAlign: 'center', width: 176 }} >
+              <StarRating />
+              </div>
+              <button style={{ left: left + 160, top: top - 10 , position: 'absolute', background: '#9b8bb5', color: 'white', border: 'none', borderRadius: '50%', width: '30px', height: '30px', alignItems: 'center', display: 'flex', justifyContent: 'center'}} onClick={() => handleRemoveBook(book.bookID, index)}> - </button>
+            </React.Fragment>
+
+          </div>
         );
       })}
 
