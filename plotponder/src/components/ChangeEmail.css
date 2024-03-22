@@ -3,7 +3,7 @@
     height: 100%;
   }
   
-  .signin-form-div {
+  .changeemail-form-div {
     background-color: white;
     width: 30%;
     height: 48%;
@@ -13,7 +13,7 @@
     position: absolute;
   }
   
-  .signin-title {
+  .change-email-title {
     background-color: white;
     width: 55%;
     height: 50px;
@@ -62,8 +62,4 @@
     color: black;
   }
   
-  .switch-signin {
-    margin-top: 10%;
-    margin-left: 40%;
-  }
   

@@ -3,6 +3,7 @@ import "../ChangeEmail.css";
 import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Navbar from "../Navbar";
 
 function ChangeEmail(props) {
   const navigate = useNavigate();
@@ -30,11 +31,9 @@ function ChangeEmail(props) {
 
   return (
     <div className="main-div">
-      <div className="header">
-        <div className="title-wrapper">PlotPonder</div>
-      </div>
-      <div className="signin-form-div">
-        <div className="signin-title">Change Email</div>
+     <Navbar />
+      <div className="changeemail-form-div">
+        <div className="change-email-title">Change Email</div>
         <form onSubmit={(e) => handleSignIn(e)}>
           <input
             type="text"
