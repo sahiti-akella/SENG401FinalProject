@@ -30,6 +30,10 @@ export default function BasicMenu() {
     navigate("/ChangePassword");
   };
 
+  const handleDeleteUser = () => {
+    navigate("/DeleteUser");
+  };
+
   return (
     <div>
       <Button
@@ -52,7 +56,7 @@ export default function BasicMenu() {
       >
         <MenuItem onClick={handleSignOut}>Log Out</MenuItem>
         <MenuItem onClick={handleChangePass}>Update Password</MenuItem>
-        <MenuItem onClick={handleClose}>Delete Account</MenuItem>
+        <MenuItem onClick={handleDeleteUser}>Delete Account</MenuItem>
       </Menu>
     </div>
   );
