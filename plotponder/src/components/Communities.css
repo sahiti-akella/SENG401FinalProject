@@ -1,218 +1,219 @@
 .section-title {
-    font-family: Centure Gothic, CenturyGothic, AppleGothic, sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 0em;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 40px;
+  font-family: Centure Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 991px) {
-    .section-title {
-      max-width: 100%;
-      margin-top: 40px;
-      font-size: 40px;
-    }
+  .section-title {
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 40px;
+  }
 }
 
 .join-community {
-    margin-left: 130px;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  margin-left: 130px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
 .create-community-description {
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    margin-top: -80px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  margin-top: -80px;
 }
 
 .community-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 20px; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
 @media (max-width: 991px) {
-    .community-item {
-        max-width: 100%;
-        flex-wrap: wrap;
-        margin-top: 40px;
-        padding: 3vw 5vw;
-    }
+  .community-item {
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding: 3vw 5vw;
+  }
 }
 
 .community-details {
-    display: flex;
-    flex-direction: column;
-    font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
 }
 
 .no-clubs-message {
-    color: grey;
-    font-size: 24px;
-    margin-top: 20px;
-    text-align: center;
-    width: 100%;
+  color: grey;
+  font-size: 24px;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .community-description {
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    font-size: 20px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  font-size: 20px;
 }
 
 .community-link,
 .explore-link {
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    font-size: 20px;
-    border-radius: 50px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px -4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 450px;
-    height: 50px;
-    margin: 7px 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    text-align: center;
-    transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-size: 20px;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    0px -4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 450px;
+  height: 50px;
+  margin: 7px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 @media (max-width: 991px) {
-    .community-link,
-    .explore-link {
-        width: 100%;
-    }
+  .community-link,
+  .explore-link {
+    width: 100%;
+  }
 }
 
 .explore-link {
-    width: 1000px;
-    padding-left: 20px;
-    padding-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 1000px;
+  padding-left: 20px;
+  padding-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .delete-button,
 .join-button {
-    border: none;
-    cursor: pointer;
-    border-radius: 15px;
-    font-size: 20px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .join-button {
-    border: none;
-    cursor: pointer;
-    border-radius: 15px;
-    font-size: 20px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin-left: auto;
-    display: block;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-left: auto;
+  display: block;
 }
 
 .community-link:hover,
 .delete-button:hover,
 .join-button:hover {
-    color: black;
-    background-color: white;
-    transition: background-color 0.3s ease;
+  color: black;
+  background-color: white;
+  transition: background-color 0.3s ease;
 }
 
 .community-entry {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .create-community-title {
-    border-radius: 12px;
-    border: 1px solid #d0d4d9;
-    background-color: #fff;
-    align-self: start;
-    flex-grow: 1;
-    margin-right: 15px;
-    width: 70%;
-    border-radius: 50px;
-    justify-content: center;
-    align-items: start;
-    color: #707070;
-    padding: 16px 20px 16px;
-    font-size: 20px;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  border-radius: 12px;
+  border: 1px solid #d0d4d9;
+  background-color: #fff;
+  align-self: start;
+  flex-grow: 1;
+  margin-right: 15px;
+  width: 70%;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: start;
+  color: #707070;
+  padding: 16px 20px 16px;
+  font-size: 20px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
 }
 
 .create-community-button {
-    border-radius: 70px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    background-color: #9b8bb5;
-    font-size: 20px;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    align-self: center;
-    color: #fff;
-    padding: 0px 18px 2px;
-    margin-top: 1%;
-    cursor: pointer;
-    width: 100px;
-    height: 50px;
-    border: 1px solid rgb(236, 235, 235);
+  border-radius: 70px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: #9b8bb5;
+  font-size: 20px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  align-self: center;
+  color: #fff;
+  padding: 0px 18px 2px;
+  margin-top: 1%;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  border: 1px solid rgb(236, 235, 235);
 }
 
 .create-community-button:hover {
-    color: white;
-    background-color: #7b6d91;
-    transition: background-color 0.3s ease;
+  color: white;
+  background-color: #7b6d91;
+  transition: background-color 0.3s ease;
 }
 
 .community-lottie {
-    margin-top: 100px;
-    width: 600px;
+  margin-top: 100px;
+  width: 600px;
 }
 
 @media (max-width: 991px) {
-    .create-community-button {
-        max-width: 100%;
-        margin-top: 40px;
-    }
+  .create-community-button {
+    max-width: 100%;
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 1300px) {
-    .community-container {
-        display: grid;
-        grid-template-columns: 1fr; /* Stack the items on top of each other */
-        grid-template-rows: auto auto auto auto; /* Create rows for each section */
-    }
+  .community-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack the items on top of each other */
+    grid-template-rows: auto auto auto auto; /* Create rows for each section */
+  }
 
-    .join-community {
-        grid-row: 1; /* This will make join-community go first */
-        margin-left: 0; /* Adjust the margin as needed */
-        text-align: center;
-    }
+  .join-community {
+    grid-row: 1; /* This will make join-community go first */
+    margin-left: 0; /* Adjust the margin as needed */
+    text-align: center;
+  }
 
-    .community-details {
-        grid-row: 2; /* This will place community-details just below join-community */
-    }
+  .community-details {
+    grid-row: 2; /* This will place community-details just below join-community */
+  }
 
-    .create-community-description {
-        grid-row: 3; /* This will place create-community-description below community-details */
-        margin-top: 0; /* Adjust the margin as needed */
-        text-align: center;
-    }
-    
-    .create-community-title {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
+  .create-community-description {
+    grid-row: 3; /* This will place create-community-description below community-details */
+    margin-top: 0; /* Adjust the margin as needed */
+    text-align: center;
+  }
 
-    .community-lottie {
-        grid-row: 4; /* This will place community-lottie at the bottom */
-        margin-left: auto; /* Align to the center horizontally */
-        margin-right: auto; /* Align to the center horizontally */
-    }
+  .create-community-title {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .community-lottie {
+    grid-row: 4; /* This will place community-lottie at the bottom */
+    margin-left: auto; /* Align to the center horizontally */
+    margin-right: auto; /* Align to the center horizontally */
+  }
 }

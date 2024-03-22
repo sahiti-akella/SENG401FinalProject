@@ -68,15 +68,13 @@ button:hover {
   text-align: center;
 }
 
-.forgot-pass{
+.forgot-pass {
   margin-top: -5%;
   margin-left: 50%;
 }
 
-
 /* Media queries for even smaller screens */
 @media screen and (max-width: 1310px) {
-
   .switch-signin {
     margin-top: 20% !important; /* Smooth transition */
   }
@@ -84,7 +82,6 @@ button:hover {
   .title-wrapper {
     font-size: 3vw;
   }
-
 }
 
 /* Media queries for smaller screens */
@@ -117,9 +114,7 @@ button:hover {
   .button-signin {
     width: 23% !important; /* Smooth transition */
   }
-
 }
-
 
 /* Media queries for even smaller screens */
 @media screen and (max-width: 910px) {
@@ -152,9 +147,7 @@ button:hover {
   .title-wrapper {
     font-size: 3vw;
   }
-
 }
-
 
 /* Media queries for even smaller screens */
 @media screen and (max-width: 763px) {
@@ -184,7 +177,7 @@ button:hover {
   .button-signin {
     width: 24% !important; /* Smooth transition */
   }
-  
+
   .title-wrapper {
     font-size: 3vw;
   }

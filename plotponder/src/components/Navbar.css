@@ -1,44 +1,44 @@
 .title-wrapper {
-    background-color: white;
-    color: black;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    font-size: 3vw; /* 3% of the viewport width */
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: normal;
-    text-decoration: none;
-    margin-top: -0.3%;
+  background-color: white;
+  color: black;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 3vw; /* 3% of the viewport width */
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: normal;
+  text-decoration: none;
+  margin-top: -0.3%;
 }
 
 .heading {
-    display: flex; /* Use flexbox */
-    justify-content: space-between; /* Distribute space evenly between items */
-    align-items: center; /* Center vertically */
-    background-color: white; /* Set background color */
-    border-bottom: 1px solid #000000; /* Set border at the bottom */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow to the border */
-    padding: 4vh; /* Adjust padding as needed */
-    height: 1%;
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Distribute space evenly between items */
+  align-items: center; /* Center vertically */
+  background-color: white; /* Set background color */
+  border-bottom: 1px solid #000000; /* Set border at the bottom */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow to the border */
+  padding: 4vh; /* Adjust padding as needed */
+  height: 1%;
 }
 
 .search-wrapper {
-    display: flex; /* Use flexbox */
-    align-items: center; /* Center vertically */
-    gap: 30px; /* Adjust spacing between items */
-    margin-left: auto; /* Push items to the right */
-    margin-top: -1%;
-    margin-bottom: -1%;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  gap: 30px; /* Adjust spacing between items */
+  margin-left: auto; /* Push items to the right */
+  margin-top: -1%;
+  margin-bottom: -1%;
 }
 
 .nav-link.active {
-    font-weight: 700; /* Bold */
+  font-weight: 700; /* Bold */
 }
 
 .nav-link {
-    color: black;
-    font-size: 1.5vw; /* Adjust font-size */
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif; /* Same font-family as title */
-    font-weight: 500; /* Adjust font-weight */
-    word-wrap: break-word;
-    text-decoration: none;
+  color: black;
+  font-size: 1.5vw; /* Adjust font-size */
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif; /* Same font-family as title */
+  font-weight: 500; /* Adjust font-weight */
+  word-wrap: break-word;
+  text-decoration: none;
 }

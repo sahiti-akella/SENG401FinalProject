@@ -29,11 +29,11 @@
 
 .title {
   font-family: Centure Gothic, CenturyGothic, AppleGothic, sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0em;
-    text-align: center;
-    margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 20px;
 }
 @media (max-width: 991px) {
   .title {
@@ -58,7 +58,6 @@
   flex-grow: 1;
   flex-basis: auto;
   font: 36px Inika, sans-serif;
-
 }
 
 @media (max-width: 991px) {
@@ -93,7 +92,6 @@
   line-height: normal;
   width: 75%;
   margin: auto; /* Center the column horizontally */
-
 }
 
 @media (max-width: 991px) {
@@ -147,7 +145,6 @@
   white-space: nowrap;
   font-size: 36px;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-
 }
 @media (max-width: 991px) {
   .post-reply {
@@ -195,7 +192,6 @@
   font-size: 20px;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   margin-right: 79%;
-
 }
 
 .comment-separator {
@@ -241,7 +237,7 @@
 .type-comment {
   border-radius: 50px;
   border: 1px solid #d0d4d9;
-  background-color:#fff;
+  background-color: #fff;
   align-self: start;
   flex-grow: 1;
   width: 1200px !important;
@@ -284,14 +280,14 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.browse-clubs-link{
+.browse-clubs-link {
   position: absolute;
-    left: 40px;
-    top: 150px;
-    color: black;
-    font-size: 18px;
-    font-weight: 400;
-    word-wrap: break-word;
-    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-    text-decoration: none;
+  left: 40px;
+  top: 150px;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  word-wrap: break-word;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  text-decoration: none;
 }

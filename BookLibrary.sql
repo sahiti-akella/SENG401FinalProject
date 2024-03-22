@@ -200,7 +200,7 @@ CREATE TABLE USERS (
 
 INSERT INTO USERS (Username, User_Email)
 VALUES
-('Hooriya', 'hooriya624@gmail.com');
+('?', '?');
 
 -- FAVOURITES
 DROP TABLE IF EXISTS FAVOURITES;
@@ -213,5 +213,4 @@ CREATE TABLE FAVOURITES (
 
 INSERT INTO FAVOURITES(User_ID, Book_ID)
 VALUES
-(1, 1),
-(1, 6);
+(1, 1);

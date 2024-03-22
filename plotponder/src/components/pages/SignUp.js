@@ -16,9 +16,9 @@ function SignUp(props) {
 
     const formData = {
       username: username,
-      email: email
+      email: email,
     };
-    console.log(formData)
+    console.log(formData);
 
     try {
       // Attempt to create a new user
@@ -36,7 +36,10 @@ function SignUp(props) {
       console.log("Display name updated successfully");
 
       // add user account to database
-      const response = await axios.post(`http://localhost:8080/api/v1/account/signup`, formData);
+      const response = await axios.post(
+        `http://localhost:8080/api/v1/account/signup`,
+        formData
+      );
       console.log(response);
 
       if (response.status === 201) {
