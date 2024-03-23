@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 function SignUp(props) {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function SignUp(props) {
       email: email,
     };
     console.log(formData);
-
+    
     try {
       // Attempt to create a new user
       const userCredential = await createUserWithEmailAndPassword(
@@ -53,11 +54,43 @@ function SignUp(props) {
       //navigate("/Account");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
-        window.alert("Email is already in use. Redirecting to sign-in page.");
-        navigate("/SignIn");
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Email is already in use. Redirecting to sign-in page.',
+          confirmButtonText: 'Okay',
+          customClass: {
+            confirmButton: 'swal-confirm-button',
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate("/SignIn");
+          }
+        });        
+      } else if (error.code === "auth/invalid-email") {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Please enter a valid email.',
+          confirmButtonText: 'Okay',
+          customClass: {
+            confirmButton: 'swal-confirm-button',
+          },
+        });
+      } else if (error.code === "auth/weak-password") {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Please enter a password with 6+ characters.',
+          confirmButtonText: 'Okay',
+          customClass: {
+            confirmButton: 'swal-confirm-button',
+          },
+        });
       } else {
         console.error("Error during sign up:", error);
       }
+       
     }
   };
 
@@ -93,7 +126,7 @@ function SignUp(props) {
           ></input>
           <br></br>
 
-          <button className="signin-b">Sign Up</button>
+          <button className="button-signup">Sign Up</button>
         </form>
         <p className="switch-signup">
           Already have an account? <Link to="/SignIn">Sign in</Link>

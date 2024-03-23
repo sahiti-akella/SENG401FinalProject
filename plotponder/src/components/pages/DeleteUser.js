@@ -3,6 +3,7 @@ import "../SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Swal from 'sweetalert2';
 
 function DeleteUser(props) {
   const navigate = useNavigate();
@@ -23,18 +24,43 @@ function DeleteUser(props) {
         .delete()
         .then(() => {
             // User deleted.
-            console.log("User Account Deleted Successful");
-            window.alert("User Account Deleted Successful");
+            console.log("User Account Deleted Successfully");
+            
             navigate("/")
+            Swal.fire({
+              icon: 'success',
+              title: 'PlotPonder Team Will Miss You',
+              text: 'User Account Deleted Successfully',
+              confirmButtonText: 'Okay',
+              customClass: {
+                confirmButton: 'swal-confirm-button',
+              },
+            });  
         })
         .catch((error) => {
-            window.alert("Unable to delete atm");
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Unable to delete atm.',
+              confirmButtonText: 'Okay',
+              customClass: {
+                confirmButton: 'swal-confirm-button',
+              },
+            });  
         });
 
       })
       .catch((error) => {
         if (error.code === "auth/invalid-credential") {
-          window.alert("Invalid password/email or account does not exist");
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Invalid password/email or account does not exist.',
+            confirmButtonText: 'Okay',
+            customClass: {
+              confirmButton: 'swal-confirm-button',
+            },
+          });  
         } else {
           console.error("Error during sign in:", error);
         }

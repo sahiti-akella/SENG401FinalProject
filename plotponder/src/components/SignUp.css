@@ -45,12 +45,16 @@ input {
   font-size: 16px;
 }
 
-button {
+.swal-confirm-button {
+  width: 120px; /* Adjust width as needed */
+}
+
+.button-signup {
   width: 20%;
   padding: 10px;
   border: 1px solid black; /* Add a border */
   border-radius: 5px;
-  background-color: black;
+  background-color: #488282;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -61,6 +65,8 @@ button:hover {
   background-color: white;
   color: black;
 }
+
+
 
 .switch-signup {
   margin-top: 10%;

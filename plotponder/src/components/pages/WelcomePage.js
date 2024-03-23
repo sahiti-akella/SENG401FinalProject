@@ -28,8 +28,8 @@ export const WelcomePage = () => {
       <div className="lottie-animation">
         <Lottie
           options={defaultOptions}
-          height="100%"
-          width="100%"
+          height="60%"
+          width="60%"
           isStopped={isStopped}
           isPaused={isPaused}
         />

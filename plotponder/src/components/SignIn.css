@@ -50,7 +50,7 @@ input {
   padding: 10px;
   border: 1px solid black; /* Add a border */
   border-radius: 5px;
-  background-color: black;
+  background-color:#488282;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -62,6 +62,7 @@ button:hover {
   background-color: white;
   color: black;
 }
+
 
 .switch-signin {
   margin-top: 10%;
@@ -210,3 +211,4 @@ button:hover {
     margin-top: 5%;
   }
 }
+
