@@ -9,8 +9,9 @@
   height: 55%;
   left: 50%;
   transform: translateX(-50%);
-  top: 26%; /* Adjust the top value as needed */
+  top: 25%; /* Adjust the top value as needed */
   position: absolute;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1); 
 }
 
 .signin-title {
@@ -48,7 +49,7 @@ input {
 .button-signin {
   width: 20%;
   padding: 10px;
-  border: 1px solid black; /* Add a border */
+  border: 1px solid #488282; /* Add a border */
   border-radius: 5px;
   background-color:#488282;
   color: white;
