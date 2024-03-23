@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 function DeleteUser(props) {
   const navigate = useNavigate();
@@ -25,7 +26,8 @@ function DeleteUser(props) {
         .then(() => {
             // User deleted.
             console.log("User Account Deleted Successfully");
-            
+            handleDeleteUser(email)
+
             navigate("/")
             Swal.fire({
               icon: 'success',
@@ -66,7 +68,19 @@ function DeleteUser(props) {
         }
       });
   };
- 
+
+  const handleDeleteUser = async (email) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:8080/api/v1/account/delete/${email}`
+      );
+      console.log(response);
+
+      console.log("Deleting user with email:", email);
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
     
   return (
     <div className="main-div">

@@ -293,6 +293,30 @@ public class DatabaseConnection {
         return replies;
     }
 
+    public boolean removeUserFavorites(int userId) {
+        String query = "DELETE FROM FAVOURITES WHERE User_ID = ?";
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
+            preparedStatement.setInt(1, userId);
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected >= 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean deleteUser(int userId) {
+        String query = "DELETE FROM USERS WHERE User_ID = ?";
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(query)) {
+            preparedStatement.setInt(1, userId);
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected >= 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }    
+
     public static void main(String[] args) {
         DatabaseConnection db = new DatabaseConnection();
     }
