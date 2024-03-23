@@ -41,7 +41,7 @@ function ChangePassword(props) {
       <Navbar />
       <div className="changepass-form-div">
         <div className="change-pass-title">Change Password</div>
-        <form onSubmit={(e) => handleChangePass(e)}>
+        <form className="change-pass-form" onSubmit={(e) => handleChangePass(e)}>
           <input
             type="text"
             className="email"
@@ -50,7 +50,7 @@ function ChangePassword(props) {
           ></input>
           <br></br>
 
-          <button>Change Password</button>
+          <button className="change-pass-button">Send Link</button>
         </form>
       </div>
     </div>

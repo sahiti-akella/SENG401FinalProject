@@ -3,7 +3,7 @@
   height: 100%;
 }
 
-.form-div {
+.signup-form-div {
   background-color: white;
   width: 30%;
   height: 59%;
@@ -11,6 +11,7 @@
   transform: translateX(-50%);
   top: 24%; /* Adjust the top value as needed */
   position: absolute;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1); 
 }
 
 .signup-title {
@@ -18,6 +19,7 @@
   width: 31%;
   height: 50px;
   left: 50%;
+  margin-top: 5%;
   transform: translateX(-50%);
   top: 10%; /* Adjust the top value as needed */
   position: absolute;
@@ -28,7 +30,7 @@
   word-wrap: break-word;
 }
 
-form {
+.signup-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +54,7 @@ input {
 .button-signup {
   width: 20%;
   padding: 10px;
-  border: 1px solid black; /* Add a border */
+  border: 1px solid #488282; /* Add a border */
   border-radius: 5px;
   background-color: #488282;
   color: white;

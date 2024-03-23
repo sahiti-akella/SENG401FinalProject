@@ -99,9 +99,9 @@ function SignUp(props) {
       <div className="header">
         <div className="title-wrapper">PlotPonder</div>
       </div>
-      <div className="form-div">
+      <div className="signup-form-div">
         <div className="signup-title">Sign Up</div>
-        <form onSubmit={(e) => handleSignUp(e)}>
+        <form className="signup-form" onSubmit={(e) => handleSignUp(e)}>
           <input
             type="text"
             className="username"
