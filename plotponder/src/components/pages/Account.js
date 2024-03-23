@@ -177,7 +177,7 @@ function Account(props) {
 
         <Link
           to={{
-            pathname: "/Account/AddBook",
+            pathname: "/AddBook",
             state: { userEmail: email }, // Pass the user email as state
           }}
           className="AddBook-button"
