@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import Navbar from "../Navbar";
 import { sendPasswordResetEmail } from "firebase/auth";
+import Swal from 'sweetalert2';
 
 function ChangePassword(props) {
   const navigate = useNavigate();
@@ -16,8 +17,19 @@ function ChangePassword(props) {
     // Send password reset email
     sendPasswordResetEmail(userDatabase, email)
       .then((data) => {
-        alert("Check email for password reset link");
-        navigate("/");
+        Swal.fire({
+          icon: 'success',
+          title: 'Sent',
+          text: 'Check email for password reset link',
+          confirmButtonText: 'Okay',
+          customClass: {
+            confirmButton: 'swal-confirm-button',
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate("/");
+          }
+        });      
       })
       .catch((err) => {
         alert(err.code);

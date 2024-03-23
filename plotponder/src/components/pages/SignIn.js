@@ -3,6 +3,7 @@ import "../SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Swal from 'sweetalert2';
 
 function SignIn(props) {
   const navigate = useNavigate();
@@ -21,7 +22,16 @@ function SignIn(props) {
       })
       .catch((error) => {
         if (error.code === "auth/invalid-credential") {
-          window.alert("Invalid password/email or account does not exist");
+          
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Invalid password/email or account does not exist.',
+            confirmButtonText: 'Okay',
+            customClass: {
+              confirmButton: 'swal-confirm-button',
+            },
+          });  
         } else {
           console.error("Error during sign in:", error);
         }
