@@ -48,10 +48,8 @@ function SignUp(props) {
         navigate("/SignIn");
       } else {
         console.error("Failed to sign up user");
-        // Handle failure case (e.g., display an error message)
       }
 
-      //navigate("/Account");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         Swal.fire({
@@ -84,7 +82,6 @@ function SignUp(props) {
       } else {
         console.error("Error during sign up:", error);
       }
-       
     }
   };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "../addbook.css";
-import Navbar from "../Navbar";
+import "../AddBook.css";
+import Navbar from "./Navbar";
 import { getAuth } from "firebase/auth";
 import axios from "axios";
 import Swal from 'sweetalert2';
@@ -128,7 +128,7 @@ export default function AddBook() {
       <div className="MacbookPro14UserAccount">
         <div className="available-books"> Available Books</div>
         <div className="back-to-bookshelf">
-          <Link to="/Account"> {"\u2190"} Back to Bookshelf</Link>
+          <Link to="/Bookshelf"> {"\u2190"} Back to Bookshelf</Link>
         </div>
 
         <input

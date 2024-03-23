@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Lottie from "react-lottie";
 import bookBotAnimation from "../../Bookbot.json";
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import "../BookBot.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -28,15 +28,11 @@ function BookBot() {
       <Navbar />
       <div className="welcome-page">
         <div className="welcome-message">
-          <h2 className="welcome" >Welcome to BookBot</h2>
+          <h2 className="welcome">Welcome to BookBot</h2>
           <button onClick={() => navigate("/Recommendations")} className="back-to-recommendations">
-          {"\u2190"} Go Back
+            {"\u2190"} Go Back
           </button>
         </div>
-        
-          
-       
-
         <div className="bookbot-description">
           Discover your next literary obsession with BookBot, your ultimate
           guide to personalized book and TV show recommendations! Simply enter a

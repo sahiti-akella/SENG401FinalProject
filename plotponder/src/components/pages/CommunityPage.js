@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import "../CommunityPage.css";
 import { getAuth } from "firebase/auth";
 import axios from "axios";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../Recommendations.css";
 import { Link } from "react-router-dom";
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 
 function Recommendations(props) {
   const [randomBooks, setRandomBooks] = useState([]);
