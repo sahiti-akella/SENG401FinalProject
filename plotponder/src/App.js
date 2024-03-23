@@ -34,7 +34,7 @@ function App() {
           {/* Other Pages */}
           <Route path="/Recommendations" element={<Recommendations />} />
           <Route path="/Account" element={<Account />} />
-          <Route path="/Account/AddBook" element={<AddBook />} />
+          <Route path="/AddBook" element={<AddBook />} />
           <Route path="/Recommendations/BookBot" element={<BookBot />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
