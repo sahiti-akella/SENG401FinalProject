@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import "../CommunityPage.css";
 import { getAuth } from "firebase/auth";
@@ -112,6 +112,7 @@ const CommunityPage = ({ props }) => {
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [commentModalPostId, setCommentModalPostId] = useState(null);
   const [deleteModalPostId, setDeleteModalPostId] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const auth = getAuth();
@@ -292,9 +293,10 @@ const CommunityPage = ({ props }) => {
         <div className="title">
           <h1>{params.title}</h1>
         </div>
-        <div className="browse-clubs-link">
-          <Link to="/Community"> {"\u2190"} Browse Clubs</Link>
-        </div>
+        <button onClick={() => navigate("/Community")} className="browse-clubs-link">
+            {"\u2190"} Browse Clubs
+          </button>
+        
         <div className="comments-and-club-navigator">
           <div className="div-12">
             <div className="column">

@@ -155,7 +155,7 @@ function Bookshelf(props) {
                     left: left + 160,
                     top: top - 10,
                     position: "absolute",
-                    background: "#9b8bb5",
+                    background: "#52ab90",
                     color: "white",
                     border: "none",
                     borderRadius: "50%",
