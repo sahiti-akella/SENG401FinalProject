@@ -24,7 +24,7 @@ function Recommendations(props) {
     } catch (error) {
       console.error("Error fetching random books:", error);
     }
-  };
+  }; 
 
   return (
     <div>
@@ -33,9 +33,7 @@ function Recommendations(props) {
         <div className="user-rec-title">Your Recommendations</div>
         <div className="rec-description">
           <div className="rec-text">
-            Here's a diverse assortment of reads selected from our extensive
-            book database. These titles are curated to offer a variety of genres
-            and themes. Dive in and explore the world of literature! And for
+            Dive in and explore the world of literature! And for
             personalized recommendations tailored to your preferences, don't
             hesitate to consult our BookBot—it's equipped to help you discover
             your next favorite book! Happy reading!

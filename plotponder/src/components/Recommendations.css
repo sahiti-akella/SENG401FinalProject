@@ -3,28 +3,29 @@
 .books {
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap to the next line */
-  gap: 40px;
+  gap: 30px;
   justify-content: center; /* Center items horizontally */
+  margin-top: -3%;
 }
 
 .Recommendation {
   display: inline-block;
   margin-top: 60px;
   position: relative;
+  
 }
 
 .recommendations-container {
   width: 100%;
   position: absolute;
-  background: white;
+  padding-bottom: 5%;
   margin: 0 auto;
-  margin-top: 40px;
+  background-color: #daefdc;
 }
 
 .user-rec-title {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 36px;
-  font-weight: 700;
   letter-spacing: 0em;
   text-align: center;
   margin-top: 50px;
@@ -33,7 +34,6 @@
 .rec-description {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 20px;
-  font-weight: 400;
   letter-spacing: 0em;
   text-align: center;
   margin-top: 40px;
@@ -46,8 +46,8 @@
 }
 
 .rectangle-rec {
-  width: 380px;
-  height: 550px;
+  width: 240px;
+  height: 400px;
   margin-left: auto; /* Adjust margin to auto */
   margin-right: auto; /* Adjust margin to auto */
   position: relative;
@@ -59,51 +59,52 @@
 
 .ask-bookbot {
   color: black;
+  background-color: white;
   font-size: 20px;
-  font-weight: 400;
   word-wrap: break-word;
   text-decoration: none;
-  padding: 20px;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
   border-radius: 60px;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-  border: 1px solid black;
   transition: background-color 0.3s;
 }
 
 .ask-bookbot:hover {
-  background-color: #9b8bb5;
+  background-color: #52ab90;
+  color: white;
 }
 
 .book-image {
-  width: 176px;
-  height: 282px;
-  margin-top: 25%;
-  margin-left: 27%;
+  width: 170px;
+  height: 262px;
+  margin-top: 13%;
+  margin-left: 14%;
   position: absolute;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 2);
 }
 
 .book-title {
-  width: 307px;
-  left: 10%;
-  top: 75%;
+  width: 100%;
+  margin-top: 130%;
   position: absolute;
   text-align: center;
   color: black;
-  font-size: 24px;
-  font-family: "Inika";
-  font-weight: 700;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   word-wrap: break-word;
 }
 
 .author {
-  width: 307px;
-  left: 10%;
-  top: 90%;
+  width: 100%;
+  margin-top: 155%;
   position: absolute;
   text-align: center;
   color: black;
-  font-size: 20px;
-  font-family: "Inika";
+  font-size: 16px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   word-wrap: break-word;
 }
 

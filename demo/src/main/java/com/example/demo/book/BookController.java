@@ -34,7 +34,7 @@ public class BookController {
         books = databaseConnection.getAllBooks();
         if (books != null) {
             Collections.shuffle(books);
-            List<Book> randomBooks = books.subList(0, Math.min(3, books.size()));
+            List<Book> randomBooks = books.subList(0, Math.min(5, books.size()));
             return new ResponseEntity<>(randomBooks, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

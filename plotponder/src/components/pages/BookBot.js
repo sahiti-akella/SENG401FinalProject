@@ -5,10 +5,12 @@ import bookBotAnimation from "../../Bookbot.json";
 import Navbar from "../Navbar";
 import "../BookBot.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function BookBot() {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,22 +28,20 @@ function BookBot() {
       <Navbar />
       <div className="welcome-page">
         <div className="welcome-message">
-          <h2>Welcome to BookBot! 🤖</h2>
+          <h2 className="welcome" >Welcome to BookBot</h2>
+          <button onClick={() => navigate("/Recommendations")} className="back-to-recommendations">
+          {"\u2190"} Go Back
+          </button>
         </div>
-        <div className="back-to-recommendations">
-          <Link to="/Recommendations">
-            {" "}
-            {"\u2190"} Back to Recommendations{" "}
-          </Link>
-        </div>
+        
+          
+       
 
         <div className="bookbot-description">
           Discover your next literary obsession with BookBot, your ultimate
-          guide to personalized book and TV show recommendations! Utilizing
-          cutting-edge AI technology, BookBot seamlessly integrates with
-          OpenAI's ChatGPT, ensuring each suggestion is finely tuned to your
-          unique interests. Simply enter a book name, and let BookBot work its
-          magic, delivering tailored recommendations in seconds.
+          guide to personalized book and TV show recommendations! Simply enter a
+          book name, and let BookBot work its magic, delivering tailored
+          recommendations in seconds.
         </div>
       </div>
       <div className="chat-container">

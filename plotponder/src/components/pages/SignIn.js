@@ -28,9 +28,7 @@ function SignIn(props) {
             title: 'Oops...',
             text: 'Invalid password/email or account does not exist.',
             confirmButtonText: 'Okay',
-            customClass: {
-              confirmButton: 'swal-confirm-button',
-            },
+            confirmButtonColor: '#488282',
           });  
         } else {
           console.error("Error during sign in:", error);
@@ -45,7 +43,7 @@ function SignIn(props) {
       </div>
       <div className="signin-form-div">
         <div className="signin-title">Sign In</div>
-        <form onSubmit={(e) => handleSignIn(e)}>
+        <form className="signin-form" onSubmit={(e) => handleSignIn(e)}>
           <input
             type="text"
             className="email"
