@@ -93,4 +93,27 @@ public class UserAccountController {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
     }
+
+    @DeleteMapping("/delete/{userEmail}")
+    public ResponseEntity<Void> deleteUserAccount(@PathVariable String userEmail) {
+        int userId = databaseConnection.getUserId(userEmail);
+        if (userId != -1) {
+            // First, remove user's favorite books
+            boolean favoritesDeleted = databaseConnection.removeUserFavorites(userId);
+            if (favoritesDeleted) {
+                // Then, delete the user from the database
+                boolean userDeleted = databaseConnection.deleteUser(userId);
+                if (userDeleted) {
+                    return new ResponseEntity<>(HttpStatus.OK);
+                } else {
+                    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+                }
+            } else {
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }
