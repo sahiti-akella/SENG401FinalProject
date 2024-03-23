@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "../useraccount.css";
+import "../Bookshelf.css";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import StarRating from "./StarRating";
 import axios from "axios";
 
-function Account(props) {
+function Bookshelf(props) {
   const navigate = useNavigate();
 
   const [displayName, setDisplayName] = useState("");
@@ -189,4 +189,4 @@ function Account(props) {
   );
 }
 
-export default Account;
+export default Bookshelf;

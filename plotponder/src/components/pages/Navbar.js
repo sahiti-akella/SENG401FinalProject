@@ -1,18 +1,18 @@
 import React from "react";
-import "./Navbar.css";
+import "../Navbar.css";
 import { NavLink } from "react-router-dom";
-import BasicMenu from "./BasicMenu";
+import BasicMenu from "../BasicMenu";
 
 const Navbar = () => {
   return (
     <div className="Navbar">
       <div className="heading">
         <div className="search-wrapper">
-          <NavLink to="/Home" className="nav-link-title">
+          <NavLink to="/Homepage" className="nav-link-title">
             PlotPonder
           </NavLink>
           <NavLink
-            to="/Home"
+            to="/Homepage"
             className="nav-link"
             activeClassName="active"
           >
@@ -39,7 +39,7 @@ const Navbar = () => {
           >
             Explore Clubs
           </NavLink>
-          <NavLink to="/Account" className="nav-link" activeClassName="active">
+          <NavLink to="/Bookshelf" className="nav-link" activeClassName="active">
             Account
           </NavLink>
           <BasicMenu />

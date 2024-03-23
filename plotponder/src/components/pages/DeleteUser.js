@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Swal from 'sweetalert2';
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import axios from 'axios';
 
 function DeleteUser(props) {

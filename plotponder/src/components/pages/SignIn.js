@@ -18,7 +18,7 @@ function SignIn(props) {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user, "userInfo");
-        navigate("/Home");
+        navigate("/Homepage");
       })
       .catch((error) => {
         if (error.code === "auth/invalid-credential") {

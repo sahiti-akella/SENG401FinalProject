@@ -2,7 +2,7 @@ import React from "react";
 import "../ChangePassword.css";
 import { useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
-import Navbar from "../Navbar";
+import Navbar from "./Navbar";
 import { sendPasswordResetEmail } from "firebase/auth";
 import Swal from 'sweetalert2';
 
