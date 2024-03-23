@@ -76,6 +76,16 @@ button:hover {
   margin-left: 50%;
 }
 
+.nav-link-title {
+  color: black;
+  font-size: 3vw; /* Adjust font-size */
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif; /* Same font-family as title */
+  font-weight: 500; /* Adjust font-weight */
+  word-wrap: break-word;
+  text-decoration: none;
+  left: 0;
+}
+
 /* Media queries for even smaller screens */
 @media screen and (max-width: 1310px) {
   .switch-signin {

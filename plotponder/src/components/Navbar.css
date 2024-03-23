@@ -19,12 +19,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow to the border */
   padding: 4vh; /* Adjust padding as needed */
   height: 1%;
+  position: relative;
 }
 
 .search-wrapper {
   display: flex; /* Use flexbox */
   align-items: center; /* Center vertically */
-  gap: 30px; /* Adjust spacing between items */
+  gap: 60px; /* Adjust spacing between items */
   margin-left: auto; /* Push items to the right */
   margin-top: -1%;
   margin-bottom: -1%;
@@ -41,4 +42,14 @@
   font-weight: 500; /* Adjust font-weight */
   word-wrap: break-word;
   text-decoration: none;
+}
+
+.nav-link-title {
+  color: black;
+  font-size: 3vw; /* Adjust font-size */
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif; /* Same font-family as title */
+  font-weight: 500; /* Adjust font-weight */
+  word-wrap: break-word;
+  text-decoration: none;
+  left: 0;
 }

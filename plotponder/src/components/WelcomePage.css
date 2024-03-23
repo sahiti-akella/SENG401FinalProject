@@ -18,6 +18,16 @@
   top: 2vh; /* 3.7% of the viewport height */
 }
 
+.nav-link-title {
+  color: black;
+  font-size: 3vw; /* Adjust font-size */
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif; /* Same font-family as title */
+  font-weight: 500; /* Adjust font-weight */
+  word-wrap: break-word;
+  text-decoration: none;
+  left: 0;
+}
+
 .header {
   display: flex; /* Use flexbox */
   justify-content: space-between; /* Distribute space evenly between items */

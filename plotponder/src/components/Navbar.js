@@ -7,10 +7,10 @@ const Navbar = () => {
   return (
     <div className="Navbar">
       <div className="heading">
-        <NavLink to="/Home" className="title-wrapper">
-          PlotPonder
-        </NavLink>
         <div className="search-wrapper">
+          <NavLink to="/Home" className="nav-link-title">
+            PlotPonder
+          </NavLink>
           <NavLink
             to="/Home"
             className="nav-link"
