@@ -6,7 +6,7 @@ import Recommendations from './components/pages/Recommendations';
 import BookBot from './components/pages/BookBot';
 import SignIn from './components/pages/SignIn';
 import SignUp from './components/pages/SignUp';
-import AddBook from './components/pages/AddBook';
+import AddBooks from './components/pages/AddBooks';
 import Homepage from './components/pages/Homepage';
 import Communities from './components/pages/Communities';
 import CommunityPage from './components/pages/CommunityPage';
@@ -34,7 +34,7 @@ function App() {
           {/* Other Pages */}
           <Route path="/Recommendations" element={<Recommendations />} />
           <Route path="/Bookshelf" element={<Bookshelf />} />
-          <Route path="/AddBook" element={<AddBook />} />
+          <Route path="/AddBooks" element={<AddBooks />} />
           <Route path="/Recommendations/BookBot" element={<BookBot />} />
           <Route path="/SignIn" element={<SignIn />} />
           <Route path="/SignUp" element={<SignUp />} />
