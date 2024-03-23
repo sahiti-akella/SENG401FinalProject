@@ -177,7 +177,7 @@ function Bookshelf(props) {
 
         <Link
           to={{
-            pathname: "/AddBook",
+            pathname: "/AddBooks",
             state: { userEmail: email }, // Pass the user email as state
           }}
           className="AddBook-button"

@@ -26,7 +26,7 @@ const Navbar = () => {
             Recommendations
           </NavLink>
           <NavLink
-            to="/AddBook"
+            to="/AddBooks"
             className="nav-link"
             activeClassName="active"
           >
