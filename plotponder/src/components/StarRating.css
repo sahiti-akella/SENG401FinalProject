@@ -6,7 +6,7 @@
   cursor: pointer;
   transition: color 200ms;
 }
-
+  
 .app {
   display: flex;
   justify-content: center;
