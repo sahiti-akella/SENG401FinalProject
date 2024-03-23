@@ -1,7 +1,7 @@
 import React from "react";
 import "../Navbar.css";
 import { NavLink } from "react-router-dom";
-import BasicMenu from "../BasicMenu";
+import BasicMenu from "./BasicMenu";
 
 const Navbar = () => {
   return (
@@ -40,7 +40,7 @@ const Navbar = () => {
             Explore Clubs
           </NavLink>
           <NavLink to="/Bookshelf" className="nav-link" activeClassName="active">
-            Account
+            Bookshelf
           </NavLink>
           <BasicMenu />
         </div>

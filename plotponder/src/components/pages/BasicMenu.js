@@ -4,7 +4,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { signOut } from "firebase/auth";
-import { userDatabase } from "./pages/FirebaseConfig";
+import { userDatabase } from "./FirebaseConfig";
 import { useNavigate } from "react-router-dom";
 
 export default function BasicMenu() {

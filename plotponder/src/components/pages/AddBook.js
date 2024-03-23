@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../AddBook.css";
 import Navbar from "./Navbar";
 import { getAuth } from "firebase/auth";
@@ -14,6 +14,7 @@ export default function AddBook() {
   const [searchQuery, setSearchQuery] = useState("");
   const [addedBooks, setAddedBooks] = useState([]);
   const [favoriteBooks, setFavoriteBooks] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const auth = getAuth();
@@ -127,9 +128,9 @@ export default function AddBook() {
       <Navbar />
       <div className="MacbookPro14UserAccount">
         <div className="available-books"> Available Books</div>
-        <div className="back-to-bookshelf">
-          <Link to="/Bookshelf"> {"\u2190"} Back to Bookshelf</Link>
-        </div>
+        <button onClick={() => navigate("/Bookshelf")} className="back-to-bookshelf">
+            {"\u2190"} Your Bookshelf
+          </button>
 
         <input
           className="search-bar"

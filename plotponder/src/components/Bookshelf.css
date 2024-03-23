@@ -1,4 +1,9 @@
-/* useraccount.css */
+body, html {
+  background-color: #daefdc;
+  margin: 0; 
+  padding: 0; 
+}
+
 .Recommendations,
 .Community,
 .Settings,
@@ -70,7 +75,8 @@
   text-decoration: none;
   z-index: 1; /* Ensure text is on top of the background */
   display: inline-block; /* Ensures that the border wraps around the text */
-  border: 1px solid black;
+  border: 1px solid #52ab90;
+  background-color: white;
   padding: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
@@ -80,7 +86,8 @@
 }
 
 .AddBook-button:hover {
-  background-color: #9b8bb5; /* Set the background color on hover */
+  background-color: #52ab90; /* Set the background color on hover */
+  color: white;
 }
 
 .LogOut {

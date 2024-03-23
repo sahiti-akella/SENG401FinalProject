@@ -1,3 +1,9 @@
+body, html {
+  background-color: #daefdc;
+  margin: 0; 
+  padding: 0; 
+}
+
 .main-div {
   background-color: #daefdc;
   height: 100vh; /* 80% of the viewport height */
