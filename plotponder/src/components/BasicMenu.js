@@ -2,7 +2,6 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import "./BasicMenu.css";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { signOut } from "firebase/auth";
 import { userDatabase } from "./pages/FirebaseConfig";
@@ -43,7 +42,7 @@ export default function BasicMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <SettingsIcon style={{ color: "black" }} />
+        <SettingsIcon style={{ color: "#488282" }} />
       </Button>
       <Menu
         id="basic-menu"

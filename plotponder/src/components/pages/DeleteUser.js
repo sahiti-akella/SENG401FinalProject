@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../SignIn.css";
+import "../DeleteUser.css";
 import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -32,23 +32,19 @@ function DeleteUser(props) {
             navigate("/")
             Swal.fire({
               icon: 'success',
-              title: 'PlotPonder Team Will Miss You',
+              title: 'We Will Miss You...',
               text: 'User Account Deleted Successfully',
               confirmButtonText: 'Okay',
-              customClass: {
-                confirmButton: 'swal-confirm-button',
-              },
+              confirmButtonColor: '#488282',
             });  
         })
         .catch((error) => {
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
-              text: 'Unable to delete atm.',
+              text: 'Unable to delete at the moment.',
               confirmButtonText: 'Okay',
-              customClass: {
-                confirmButton: 'swal-confirm-button',
-              },
+              confirmButtonColor: '#488282',
             });  
         });
 
@@ -60,9 +56,7 @@ function DeleteUser(props) {
             title: 'Oops...',
             text: 'Invalid password/email or account does not exist.',
             confirmButtonText: 'Okay',
-            customClass: {
-              confirmButton: 'swal-confirm-button',
-            },
+            confirmButtonColor: '#488282',
           });  
         } else {
           console.error("Error during sign in:", error);
@@ -86,9 +80,9 @@ function DeleteUser(props) {
   return (
     <div className="main-div">
       <Navbar />
-      <div className="signin-form-div">
-        <div className="signin-title">Verify Delete</div>
-        <form onSubmit={(e) => handleSignIn(e)}>
+      <div className="delete-form-div">
+        <div className="delete-title">Delete Account</div>
+        <form className="delete-form" onSubmit={(e) => handleSignIn(e)}>
           <input
             type="text"
             className="email"
@@ -104,7 +98,7 @@ function DeleteUser(props) {
             placeholder="Password"
           ></input>
           <br></br>
-          <button className="button-signin">Delete</button>
+          <button className="button-delete">Delete</button>
         </form>
       </div>
     </div>

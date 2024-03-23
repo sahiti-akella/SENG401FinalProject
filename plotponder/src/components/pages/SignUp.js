@@ -59,9 +59,7 @@ function SignUp(props) {
           title: 'Oops...',
           text: 'Email is already in use. Redirecting to sign-in page.',
           confirmButtonText: 'Okay',
-          customClass: {
-            confirmButton: 'swal-confirm-button',
-          },
+          confirmButtonColor: '#488282',
         }).then((result) => {
           if (result.isConfirmed) {
             navigate("/SignIn");
@@ -73,9 +71,7 @@ function SignUp(props) {
           title: 'Oops...',
           text: 'Please enter a valid email.',
           confirmButtonText: 'Okay',
-          customClass: {
-            confirmButton: 'swal-confirm-button',
-          },
+          confirmButtonColor: '#488282',
         });
       } else if (error.code === "auth/weak-password") {
         Swal.fire({
@@ -83,9 +79,7 @@ function SignUp(props) {
           title: 'Oops...',
           text: 'Please enter a password with 6+ characters.',
           confirmButtonText: 'Okay',
-          customClass: {
-            confirmButton: 'swal-confirm-button',
-          },
+          confirmButtonColor: '#488282',
         });
       } else {
         console.error("Error during sign up:", error);

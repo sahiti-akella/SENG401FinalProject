@@ -9,7 +9,7 @@
   height: 59%;
   left: 50%;
   transform: translateX(-50%);
-  top: 24%; /* Adjust the top value as needed */
+  top: 25%; /* Adjust the top value as needed */
   position: absolute;
   box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1); 
 }
@@ -45,10 +45,6 @@ input {
   border-radius: 5px;
   box-sizing: border-box;
   font-size: 16px;
-}
-
-.swal-confirm-button {
-  width: 120px; /* Adjust width as needed */
 }
 
 .button-signup {

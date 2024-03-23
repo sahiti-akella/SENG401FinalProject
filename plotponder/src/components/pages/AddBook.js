@@ -4,6 +4,7 @@ import "../addbook.css";
 import Navbar from "../Navbar";
 import { getAuth } from "firebase/auth";
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 export default function AddBook() {
   const [books, setBooks] = useState([]);
@@ -75,7 +76,13 @@ export default function AddBook() {
   const handleAddBook = async (bookID) => {
     if (addedBooks.includes(bookID)) {
       console.log("Book already added");
-      alert("This book is already in your favorites.");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'This book has already been added.',
+        confirmButtonText: 'Okay',
+        confirmButtonColor: '#488282',
+      });
       return;
     }
     const formData = {

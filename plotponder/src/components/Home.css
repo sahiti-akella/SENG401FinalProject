@@ -1,18 +1,16 @@
 .homepage-div {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-  margin: 0 auto; /* This centers the div horizontally */
+  
   width: 100%; /* Adjust this value as needed */
-  height: 100%;
-  padding: 20px; /* Adds space on the left and right sides */
+  
   align-items: center;
   text-align: center;
-  padding-top: 40px;
-  background-color: #8ac294;
+  
+  background-color: #daefdc;
 }
 
 .homepage-message {
   font-size: 40px;
-  font-weight: bold;
   margin-bottom: 20px;
   overflow: hidden; /* Hides overflow text for typewriter effect */
   white-space: nowrap; /* Prevents text from wrapping */
@@ -21,8 +19,9 @@
 
 .description {
   font-size: 20px;
-  padding-top: 10px;
-  color: #3a3b3d;
+  color: black;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .lottie-box {
@@ -30,32 +29,32 @@
   align-items: center;
   justify-content: center;
   padding-top: 20px; /* Adjust as needed */
-  margin-bottom: 70px; /* Add space between Lottie and button */
+  margin-bottom: 1%; /* Add space between Lottie and button */
 }
 
 .lottie {
-  width: 270px;
-  height: 270px;
+  width: 300px;
+  height: 300px;
 }
 
 .get-started-button {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   font-size: 20px;
-  font-weight: bold;
   padding: 10px 40px; /* Adjust padding as needed */
-  background-color: #9b8bb5; /* Button background color */
-  color: #fff; /* Button text color */
+  background-color: white; /* Button background color */
+  color:black; /* Button text color */
   border: none;
   border-radius: 50px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds drop shadow */
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition effect */
   height: 60px;
-  width: 300px;
+  width: 220px;
 }
 
 .get-started-button:hover {
-  background-color: #7b6d91; /* Button background color on hover */
+  background-color: #52ab90; /* Button background color on hover */
+  color: white;
 }
 
 /* Typewriter animation */

@@ -12,6 +12,13 @@ const Navbar = () => {
         </NavLink>
         <div className="search-wrapper">
           <NavLink
+            to="/Home"
+            className="nav-link"
+            activeClassName="active"
+          >
+            Home
+          </NavLink>
+          <NavLink
             to="/Recommendations"
             className="nav-link"
             activeClassName="active"
