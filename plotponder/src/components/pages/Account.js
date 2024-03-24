@@ -66,6 +66,7 @@ function Account(props) {
       const updatedBooks = [...favoriteBooks];
       updatedBooks.splice(index, 1);
       setFavoriteBooks(updatedBooks);
+      localStorage.removeItem(bookID);
     } catch (error) {
       console.error("Error removing book from favorites:", error);
     }
@@ -141,14 +142,14 @@ function Account(props) {
                 <div
                   className="book-rating"
                   style={{
-                    left: left,
-                    top: top - 50,
+                    left: left + 20,
+                    top: top + 400,
                     position: "absolute",
                     textAlign: "center",
                     width: 176,
                   }}
                 >
-                  <StarRating />
+                  <StarRating bookKey={book.bookID} defaultRating={localStorage.getItem(book.bookID)}/>
                 </div>
                 <button
                   style={{
