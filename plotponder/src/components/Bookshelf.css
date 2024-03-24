@@ -70,7 +70,7 @@ body, html {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   position: relative;
   margin-left: 42%;
-  margin-top: 50px;
+  margin-top: 25%;
   word-wrap: break-word;
   text-decoration: none;
   z-index: 1; /* Ensure text is on top of the background */
