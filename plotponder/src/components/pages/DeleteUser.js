@@ -72,6 +72,17 @@ function DeleteUser(props) {
       console.log(response);
 
       console.log("Deleting user with email:", email);
+      // Remove user's ratings from localStorage
+      const keysToDelete = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key.startsWith(`rating_${email}_`)) {
+          keysToDelete.push(key);
+        }
+      }
+      keysToDelete.forEach((key) => {
+        localStorage.removeItem(key);
+      });
     } catch (error) {
       console.error("Error deleting user:", error);
     }
