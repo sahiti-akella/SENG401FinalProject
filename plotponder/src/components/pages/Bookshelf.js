@@ -66,6 +66,7 @@ function Bookshelf(props) {
       const updatedBooks = [...favoriteBooks];
       updatedBooks.splice(index, 1);
       setFavoriteBooks(updatedBooks);
+      localStorage.setItem(`rating_${email}_${bookID}`, null);
       localStorage.removeItem(`rating_${email}_${bookID}`);
 
       // Shift the remaining ratings in localStorage
