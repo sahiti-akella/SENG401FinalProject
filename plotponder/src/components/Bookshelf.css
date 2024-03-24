@@ -63,14 +63,19 @@ body, html {
   word-wrap: break-word;
 }
 
+.AddBook-button-container{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 250px;
+}
+
 .AddBook-button {
   color: black; /* Set the text color explicitly */
   font-size: 24px;
   font-weight: 400;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
   position: relative;
-  margin-left: 42%;
-  margin-top: 25%;
   word-wrap: break-word;
   text-decoration: none;
   z-index: 1; /* Ensure text is on top of the background */

@@ -174,6 +174,7 @@ function Bookshelf(props) {
           );
         })}
 
+    <div className="AddBook-button-container">
         <Link
           to={{
             pathname: "/AddBooks",
@@ -185,6 +186,7 @@ function Bookshelf(props) {
         </Link>
       </div>
     </div>
+  </div>
   );
 }
 
