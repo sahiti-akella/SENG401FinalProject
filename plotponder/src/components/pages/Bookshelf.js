@@ -108,7 +108,6 @@ function Bookshelf(props) {
                   src={book.imageURL}
                 />
                 <div
-                  className="book-title"
                   style={{
                     left: left,
                     top: top + 282 + 20,
