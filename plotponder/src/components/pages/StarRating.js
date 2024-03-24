@@ -25,6 +25,7 @@ const StarRating = ({ bookKey, defaultRating, userEmail }) => {
             <input
               type="radio"
               name={`rating_${userEmail}_${bookKey}`}
+              className="radiob"
               value={ratingValue}
               onClick={() => handleClick(ratingValue)}
               checked={rating === ratingValue} // Check if rating matches ratingValue
