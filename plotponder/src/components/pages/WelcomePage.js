@@ -22,7 +22,7 @@ export const WelcomePage = () => {
   return (
     <div className="main-div">
       <div className="header">
-        <div className="nav-link-title">PlotPonder</div>
+        <div className="title-wrapper">PlotPonder</div>
       </div>
       <div className="welcome-wrapper">Welcome to PlotPonder..</div>
       <div className="lottie-animation">

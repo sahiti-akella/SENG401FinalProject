@@ -15,7 +15,7 @@ body, html {
   background-color: white;
   color: black;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-  font-size: 3vw; /* 3% of the viewport width */
+  font-size: 2.5vw; /* 3% of the viewport width */
   font-weight: 500;
   left: 4.5vw; /* 4.5% of the viewport width */
   letter-spacing: 0;
@@ -108,7 +108,7 @@ body, html {
   .signup-button,
   .signin-button,
   .title-wrapper {
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
 
   .welcome-wrapper {

@@ -8,7 +8,7 @@ body, html {
   background-color: white;
   color: black;
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-  font-size: 3vw; /* 3% of the viewport width */
+  font-size: 2.5vw; /* 3% of the viewport width */
   font-weight: 500;
   letter-spacing: 0;
   line-height: normal;
@@ -25,13 +25,13 @@ body, html {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow to the border */
   padding: 4vh; /* Adjust padding as needed */
   height: 1%;
-  position: relative;
+  /*position: relative;*/
 }
 
 .search-wrapper {
   display: flex; /* Use flexbox */
   align-items: center; /* Center vertically */
-  gap: 60px; /* Adjust spacing between items */
+  gap: 30px; /* Adjust spacing between items */
   margin-left: auto; /* Push items to the right */
   margin-top: -1%;
   margin-bottom: -1%;

@@ -39,7 +39,7 @@ function SignIn(props) {
   return (
     <div className="main-div">
       <div className="header">
-        <div className="nav-link-title">PlotPonder</div>
+        <div className="title-wrapper">PlotPonder</div>
       </div>
       <div className="signin-form-div">
         <div className="signin-title">Sign In</div>

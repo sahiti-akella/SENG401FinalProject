@@ -75,6 +75,10 @@ body, html {
   transition: background-color 0.3s ease; /* Smooth transition effect */
 }
 
+.AddBook:hover {
+  cursor: pointer;
+}
+
 .AddBook:nth-child(odd) {
   width: 176px;
 }
