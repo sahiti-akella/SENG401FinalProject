@@ -73,7 +73,7 @@ function Bookshelf(props) {
         const currentBookID = updatedBooks[i+1].bookID;
         const ratingValue = localStorage.getItem(`rating_${email}_${currentBookID}`);
         localStorage.removeItem(`rating_${email}_${currentBookID}`);
-        localStorage.setItem(`rating_${email}_${i}`, ratingValue);
+        localStorage.setItem(`rating_${email}_${currentBookID}`, ratingValue);
       }
     } catch (error) {
       console.error("Error removing book from favorites:", error);
