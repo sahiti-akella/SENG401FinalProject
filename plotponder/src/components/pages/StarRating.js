@@ -1,44 +1,45 @@
-import React,  { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import "../StarRating.css";
 
-
-const StarRating = (item) => {
-  const [rating, setRating] = useState(null);
+const StarRating = ({ bookKey, defaultRating, userEmail }) => {
+  const [rating, setRating] = useState(defaultRating || null);
   const [hover, setHover] = useState(null);
 
-  const defaultVal = item.defaultRating;
-  
+  useEffect(() => {
+    const storedRating = localStorage.getItem(`rating_${userEmail}_${bookKey}`);
+    setRating(storedRating || defaultRating || null);
+  }, [bookKey, userEmail]); // Re-render when bookKey changes
+
+  const handleClick = (ratingValue) => {
+    setRating(ratingValue);
+    localStorage.setItem(`rating_${userEmail}_${bookKey}`, ratingValue);
+  };
 
   return (
-<>
-
     <div className="app">
-      {[...Array(5)].map((star, i) => {
-        const ratingValue = i + 1;
-
+      {[...Array(5)].map((_, index) => {
+        const ratingValue = index + 1;
         return (
-          <label>
+          <label key={index}>
             <input
               type="radio"
-              name="rating"
-              className="radiob"
+              name={`rating_${userEmail}_${bookKey}`}
               value={ratingValue}
-              onClick={() => {setRating(ratingValue); localStorage.setItem(item.bookKey, ratingValue); }}
+              onClick={() => handleClick(ratingValue)}
+              checked={rating === ratingValue} // Check if rating matches ratingValue
             />
             <FaStar
               className="star"
-              color={ratingValue <= (hover || rating || defaultVal) ? "#ffc107" : "#85878c"}
+              color={ratingValue <= (hover || rating) ? "#ffc107" : "#85878c"}
               size={25}
               onMouseEnter={() => setHover(ratingValue)}
               onMouseLeave={() => setHover(null)}
             />
           </label>
-         
         );
       })}
     </div>
-    </>
   );
 };
 

@@ -66,7 +66,15 @@ function Bookshelf(props) {
       const updatedBooks = [...favoriteBooks];
       updatedBooks.splice(index, 1);
       setFavoriteBooks(updatedBooks);
-      localStorage.removeItem(bookID);
+      localStorage.removeItem(`rating_${email}_${bookID}`);
+
+      // Shift the remaining ratings in localStorage
+      for (let i = index + 1; i < updatedBooks.length + 1; i++) {
+        const currentBookID = updatedBooks[i+1].bookID;
+        const ratingValue = localStorage.getItem(`rating_${email}_${currentBookID}`);
+        localStorage.removeItem(`rating_${email}_${currentBookID}`);
+        localStorage.setItem(`rating_${email}_${i}`, ratingValue);
+      }
     } catch (error) {
       console.error("Error removing book from favorites:", error);
     }
@@ -148,7 +156,7 @@ function Bookshelf(props) {
                     width: 176,
                   }}
                 >
-                  <StarRating bookKey={book.bookID} defaultRating={localStorage.getItem(book.bookID)}/>
+                  <StarRating bookKey={book.bookID} defaultRating={localStorage.getItem(book.bookID)} userEmail={email}/>
                 </div>
                 <button
                   style={{
