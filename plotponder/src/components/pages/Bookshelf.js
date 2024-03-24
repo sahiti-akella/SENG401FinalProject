@@ -163,6 +163,7 @@ function Bookshelf(props) {
                     alignItems: "center",
                     display: "flex",
                     justifyContent: "center",
+                    cursor: "pointer",
                   }}
                   onClick={() => handleRemoveBook(book.bookID, index)}
                 >
