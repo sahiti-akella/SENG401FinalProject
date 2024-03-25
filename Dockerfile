@@ -14,7 +14,7 @@ WORKDIR /build/demo
 RUN mvn clean install
 
 # Stage 2: create a Spring Boot image
-FROM maven:3.8.4-openjdk-17-slim
+FROM openjdk:17-jdk-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -26,4 +26,4 @@ COPY --from=builder /build/demo/target/*.jar /app/app.jar
 EXPOSE 8080
 
 # Command to run the application
-CMD ["mvn", "spring-boot:run"]
+CMD ["java", "-jar", "app.jar"]

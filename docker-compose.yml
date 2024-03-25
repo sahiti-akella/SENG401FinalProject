@@ -1,6 +1,7 @@
 version: '3.7'
 
 services:
+# Spring Boot
   spring-boot-app:
     build:
       context: .
@@ -8,20 +9,21 @@ services:
     ports:
       - "8080:8080"
 
+# Express (BookBot server)
   express-server:
     build:
-      context: .
+      context: ./plotponder 
       dockerfile: Dockerfile-express
     ports:
       - "8020:8020"
-    depends_on:
-      - spring-boot-app
+    volumes:
+      - ./plotponder:/app
 
+# React
   node-server:
     build:
-      context: ./plotponder  # Adjusted context to plotponder directory
-      dockerfile: Dockerfile-node
+      context: ./plotponder  
+      dockerfile: Dockerfile-react
     ports:
       - "3000:3000"
-    depends_on:
-      - express-server
+    stdin_open: true
