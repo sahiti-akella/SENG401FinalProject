@@ -1,0 +1,20 @@
+# Use a Node.js image
+FROM node:16
+
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY ./plotponder/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application
+COPY ./plotponder .
+
+# Expose port 8020
+EXPOSE 8020
+
+# Command to run the server
+CMD ["node", "src/components/server.js"]

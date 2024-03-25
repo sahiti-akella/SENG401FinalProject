@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  spring-boot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+  express-server:
+    build:
+      context: .
+      dockerfile: Dockerfile-express
+    ports:
+      - "8020:8020"
+    depends_on:
+      - spring-boot-app
+
+  node-server:
+    build:
+      context: ./plotponder  # Adjusted context to plotponder directory
+      dockerfile: Dockerfile-node
+    ports:
+      - "3000:3000"
+    depends_on:
+      - express-server
