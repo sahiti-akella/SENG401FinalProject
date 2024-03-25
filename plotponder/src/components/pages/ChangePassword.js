@@ -2,7 +2,6 @@ import React from "react";
 import "../ChangePassword.css";
 import { useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
-import Navbar from "./Navbar";
 import { sendPasswordResetEmail } from "firebase/auth";
 import Swal from 'sweetalert2';
 
@@ -38,7 +37,9 @@ function ChangePassword(props) {
 
   return (
     <div className="main-div">
-      <Navbar />
+      <div className="header">
+        <div className="title-wrapper">PlotPonder</div>
+      </div>
       <div className="changepass-form-div">
         <div className="change-pass-title">Change Password</div>
         <form className="change-pass-form" onSubmit={(e) => handleChangePass(e)}>
