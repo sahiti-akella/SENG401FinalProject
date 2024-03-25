@@ -129,7 +129,7 @@ VALUES
 ('The Fall of Five', 'Pittacus Lore', 3, 2013, 'https://m.media-amazon.com/images/I/91RDx0pZ8cL._AC_UF350,350_QL50_.jpg'),
 ('The Revenge of Seven', 'Pittacus Lore', 3, 2014, 'https://m.media-amazon.com/images/I/71Azrthm5PL._AC_UF1000,1000_QL80_.jpg'),
 ('The Fate of Ten', 'Pittacus Lore', 3, 2016, 'https://m.media-amazon.com/images/I/91qhLUdRl5L._AC_UF1000,1000_QL80_.jpg'),
-('Among The Free', 'Margaret Peterson Haddix', 3, 2006, 'https://m.media-amazon.com/images/I/618zYzBKw8L._AC_UF1000,1000_QL80_.jpg'),
+('Among The Free', 'Margaret Haddix', 3, 2006, 'https://m.media-amazon.com/images/I/618zYzBKw8L._AC_UF1000,1000_QL80_.jpg'),
 ('The Breadwinner', 'Deborah Ellis', 2, 2000, 'https://m.media-amazon.com/images/I/719cTCBHW1L._AC_UF1000,1000_QL80_.jpg'),
 ('The Giving Tree', 'Shel Silverstein', 2, 1964, 'https://m.media-amazon.com/images/I/71wiGMKadmL._AC_UF1000,1000_QL80_.jpg'),
 ('The Perks of Being a Wallflower', 'Stephen Chbosky', 13, 1999, 'https://m.media-amazon.com/images/I/61KSi8OvgVL._AC_UF1000,1000_QL80_.jpg'),
