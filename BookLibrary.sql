@@ -4,42 +4,6 @@ USE LIBRARY;
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
 
--- AUTHORS IN THE DATABASE
-DROP TABLE IF EXISTS AUTHORS;
-CREATE TABLE AUTHORS (
-	Author_ID int not null AUTO_INCREMENT,
-    Author_Name varchar(60),
-    PRIMARY KEY (Author_ID)
-);
-
-INSERT INTO AUTHORS(Author_Name)
-VALUES 
-('Rick Riordan'), 
-('JK Rowling'), 
-('Suzanne Collins'), 
-('Marissa Meyer'), 
-('Jane Austen'), 
-('Arthur Conan Doyle'), 
-('Adalyn Grace'),
-('James Dashner'),
-('Oscar Wilde'),
-('Stephen King'),
-('F. Scott Fitzgerald'),
-('Herman Melville'),
-('Emily Henry'),
-('Alice Oseman'),
-('Yuval Noah Harari'),
-('Stieg Larsson'),
-('Jennette McCurdy'),
-('Rupi Kaur'),
-('John Green'),
-('Markus Zusak'),
-('Lois Lowry'),
-('Becky Albertalli'),
-('Jerry Spinelli'),
-('ND Stevenson'),
-('Michelle Obama');
-
 DROP TABLE IF EXISTS GENRES;
 CREATE TABLE GENRES
 (
