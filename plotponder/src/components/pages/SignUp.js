@@ -86,42 +86,51 @@ function SignUp(props) {
   };
 
   return (
-    <div className="main-div">
-      <div className="header">
-        <div className="title-wrapper">PlotPonder</div>
-      </div>
-      <div className="signup-form-div">
-        <div className="signup-title">Sign Up</div>
-        <form className="signup-form" onSubmit={(e) => handleSignUp(e)}>
-          <input
-            type="text"
-            className="username"
-            name="username"
-            placeholder="Username"
-          ></input>
-          <br></br>
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+        <div className="header">
+          <div className="title-wrapper">PlotPonder</div>
+        </div>
+          <div className="card signup-form-div">
+            <div className="card-body">
+              <h2 className="card-title text-center">Sign Up</h2>
 
-          <input
-            type="text"
-            className="email"
-            name="email"
-            placeholder="Email"
-          ></input>
-          <br></br>
-
-          <input
-            type="password"
-            className="password"
-            name="password"
-            placeholder="Password"
-          ></input>
-          <br></br>
-
-          <button className="button-signup">Sign Up</button>
-        </form>
-        <p className="switch-signup">
-          Already have an account? <Link to="/SignIn">Sign in</Link>
-        </p>
+              <form className="signup-form justify-content-center"  onSubmit={(e) => handleSignUp(e)}>
+                <div className="mb-3 text-center">
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="username"
+                    placeholder="Username"
+                  />
+                </div>
+                <div className="mb-3 text-center">
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div className="mb-3 text-center">
+                  <input
+                    type="password"
+                    className="form-control"
+                    name="password"
+                    placeholder="Password"
+                  />
+                </div>
+                <p className="text-center mt-3">
+                  Already have an account? <Link to="/SignIn">Sign in</Link>
+                </p>
+                <div className="d-grid gap-2">
+                  <button className="btn btn-primary" type="submit">Sign Up</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
