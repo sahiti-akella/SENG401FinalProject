@@ -24,7 +24,10 @@ export const WelcomePage = () => {
       <div className="header">
         <div className="title-wrapper">PlotPonder</div>
       </div>
-      <div className="welcome-wrapper">Welcome to PlotPonder..</div>
+      <div className="welcome-wrapper">Welcome to PlotPonder – a hub for book enthusiasts! 
+     </div>
+     <div className="welcome-description">  Whether you're eager to curate your own bookshelf or connect with fellow
+       readers, we've got you covered.</div>
       <div className="lottie-animation">
         <Lottie
           options={defaultOptions}

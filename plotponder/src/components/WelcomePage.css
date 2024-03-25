@@ -57,11 +57,26 @@ body, html {
   line-height: normal;
   position: absolute;
   top: 16vh; /* 16% of the viewport height */
+  text-align: center;
+}
+
+.welcome-description{
+  color: black;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 1.5vw; /* 2% of the viewport width */
+  font-weight: 400;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 30vh; /* 30% of the viewport height */
+  text-align: center;
 }
 
 .lottie-animation {
   position: absolute;
-  top: 23%; /* Adjust the top position as needed */
+  top: 35%; /* Adjust the top position as needed */
   left: 50%; /* Adjust the left position as needed */
   transform: translateX(-50%); /* Center horizontally */
 }
@@ -76,7 +91,7 @@ body, html {
   height: 8.8vh; /* 8.8% of the viewport height */
   left: 55%; /* 53% of the viewport width */
   position: absolute;
-  top: 70vh; /* 70% of the viewport height */
+  top: 80vh; /* 70% of the viewport height */
   width: 20vw; /* 29% of the viewport width */
 }
 
@@ -90,7 +105,7 @@ body, html {
   height: 8.8vh; /* 8.8% of the viewport height */
   left: 25%; /* 21.4% of the viewport width */
   position: absolute;
-  top: 70vh; /* 70% of the viewport height */
+  top: 80vh; /* 70% of the viewport height */
   width: 20vw; /* 24.4% of the viewport width */
 }
 
@@ -111,6 +126,11 @@ body, html {
     font-size: 2.5vw;
   }
 
+  .signup-button,
+  .signin-button{
+    top: 70vh;
+  }
+
   .welcome-wrapper {
     font-size: 4vw;
   }
@@ -121,6 +141,11 @@ body, html {
   .signin-button,
   .welcome-wrapper {
     font-size: 4vw;
+  }
+
+  .signup-button,
+  .signin-button{
+    top: 60vh;
   }
 
   .title-wrapper {
