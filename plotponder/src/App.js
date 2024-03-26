@@ -25,7 +25,7 @@ function App() {
       <div> {/* Wrap everything in a div */}
         <Routes>
           {/* Home Page */}
-          <Route path="/" element={<WelcomePage />} />
+          <Route path="/" element={<Homepage />} />
 
           {/* Communities Page */}
           <Route path="/community" element={<Communities communities={communityList} addCommunity={addCommunity} />} />
@@ -40,7 +40,10 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/Homepage" element={<Homepage />} />
           <Route path="/ChangePassword" element={<ChangePassword />} />
+          <Route path="/SignIn/ChangePassword" element={<ChangePassword />} />
           <Route path="/DeleteUser" element={<DeleteUser />} />
+          <Route path="/WelcomePage" element={<WelcomePage />} />
+
           
           
           {/* Catch-all route for unmatched paths */}

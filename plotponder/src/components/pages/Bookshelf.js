@@ -85,7 +85,7 @@ function Bookshelf(props) {
     <div>
       <Navbar />
       <div className="MacbookPro14UserAccount">
-        <div className="HiUsername">Hi, {displayName}! 👋 </div>
+        <div className="HiUsername">Welcome, {displayName}! </div>
         <div className="account-description">
           To add books to your personal bookshelf, simply click on the "Add
           Books" button to get started. Once clicked, you'll be directed to a
@@ -95,7 +95,7 @@ function Bookshelf(props) {
           discover new literary adventures!
         </div>
 
-        <div className="YourRatings">Your Bookshelf</div>
+        <div className="YourRatings">Your Books</div>
 
         {favoriteBooks.map((book, index) => {
           const row = Math.floor(index / 4);

@@ -1,12 +1,23 @@
 import React from "react";
 import "../ChangePassword.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { sendPasswordResetEmail } from "firebase/auth";
 import Swal from 'sweetalert2';
+import Navbar from "./Navbar";
 
 function ChangePassword(props) {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Extracting the state from location
+  const fromSignIn = location.state ? location.state.fromSignIn : true;
+
+  const showNavbar = fromSignIn && location.pathname !== "/SignIn/ChangePassword";
+
+  console.log(location.pathname);
+  console.log(showNavbar)
+  console.log(fromSignIn); 
 
   const handleChangePass = async (e) => {
     e.preventDefault();
@@ -37,9 +48,13 @@ function ChangePassword(props) {
 
   return (
     <div className="main-div">
-      <div className="header">
-        <div className="title-wrapper">PlotPonder</div>
-      </div>
+      {showNavbar ? (
+        <Navbar />
+      ) : (
+        <div className="header">
+          <div className="title-wrapper">Plotponder</div>
+        </div>
+      )}
       <div className="changepass-form-div">
         <div className="change-pass-title">Change Password</div>
         <form className="change-pass-form" onSubmit={(e) => handleChangePass(e)}>

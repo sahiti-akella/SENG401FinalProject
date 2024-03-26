@@ -2,13 +2,12 @@ import React from "react";
 import Lottie from "react-lottie";
 import homepageAnimation from "../../HomepageAnimation.json"; // Import your Lottie animation JSON file
 import "../Homepage.css";
-import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 
 const GetStartedButton = () => {
   const navigate = useNavigate();
   return (
-    <button onClick={() => navigate("/Bookshelf")} className="get-started-button">
+    <button onClick={() => navigate("/WelcomePage")} className="get-started-button">
       Get Started &#x2192;
     </button>
   );
@@ -17,7 +16,9 @@ const GetStartedButton = () => {
 const Homepage = () => {
   return (
     <div>
-      <Navbar />
+      <div className="header">
+        <div className="title-wrapper">PlotPonder</div>
+      </div>
       <div className="homepage-div">
         <div className="homepage-message">
           <p> Welcome to PlotPonder! </p>
