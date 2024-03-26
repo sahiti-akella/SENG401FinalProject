@@ -2,6 +2,7 @@ import React from "react";
 import "../Navbar.css";
 import { NavLink } from "react-router-dom";
 import BasicMenu from "./BasicMenu";
+import { FaHome } from "react-icons/fa";
 
 const Navbar = () => {
   return (
