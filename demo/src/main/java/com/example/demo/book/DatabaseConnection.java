@@ -11,9 +11,12 @@ public class DatabaseConnection {
     // private static final String JDBC_URL = "jdbc:mysql://localhost/LIBRARY";
     // private static final String USERNAME = "root";
     // private static final String PASSWORD = "password";
-    private static final String JDBC_URL = "jdbc:mysql://sql-db:3307/BOOKLIBRARY";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "password";
+    // private static final String JDBC_URL = "jdbc:mysql://sql-db:3306/LIBRARY";
+    // private static final String USERNAME = "root";
+    // private static final String PASSWORD = "password";
+    private static final String JDBC_URL = "jdbc:mysql://sql-db:3307/LIBRARY";
+    private static final String USERNAME = "myappuser"; // Updated username
+    private static final String PASSWORD = "mypassword"; // Updated password
     private static final int MAX_RETRIES = 3;
     private static final long RETRY_INTERVAL_MS = 5000; // 5 seconds
 

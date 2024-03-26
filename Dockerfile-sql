@@ -2,12 +2,12 @@
 FROM mysql:latest
 
 # Set the root password for MySQL
-ENV MYSQL_ROOT_PASSWORD=password
+# ENV MYSQL_ROOT_PASSWORD=password
 
-# Create a database and user
-ENV MYSQL_DATABASE=BOOKLIBRARY
-ENV MYSQL_USER=root
-ENV MYSQL_PASSWORD=password
+# # Create a database and user
+# ENV MYSQL_DATABASE=BOOKLIBRARY
+# ENV MYSQL_USER=root
+# ENV MYSQL_PASSWORD=password
 
 # Copy the SQL script that initializes the database schema
 COPY BookLibrary.sql /docker-entrypoint-initdb.d/

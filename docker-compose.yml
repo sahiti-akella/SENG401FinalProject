@@ -3,22 +3,28 @@ version: '3.7'
 services:
 # SQL
   sql-db:
-    build:
-      context: .
-      dockerfile: Dockerfile-sql
+    image: mysql:latest
     ports:
       - "3307:3307"
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: BOOKLIBRARY
-      MYSQL_USER: root
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: LIBRARY
+      MYSQL_USER: myappuser
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d
 
 # Spring Boot
   spring-boot-app:
     build:
       context: ./demo
       dockerfile: Dockerfile-springboot
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://sql-db:3306/LIBRARY
+      SPRING_DATASOURCE_USERNAME: myappuser
+      SPRING_DATASOURCE_PASSWORD: mypassword
+      SPRING_JPA_SHOW_SQL: "true"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     ports:
       - "8080:8080"
     depends_on:
