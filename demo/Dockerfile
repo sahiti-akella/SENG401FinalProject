@@ -1,0 +1,23 @@
+# Use a base image with Java 17 and Maven installed
+FROM maven:3.8.4-openjdk-17-slim AS build
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the Maven project file
+COPY pom.xml .
+
+# Download dependencies
+RUN mvn dependency:go-offline
+
+# Copy the application source code
+COPY src ./src
+
+# Package the application
+RUN mvn package -DskipTests
+
+# Expose the port the application runs on
+EXPOSE 8080
+
+# Define the command to run the application
+CMD ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
