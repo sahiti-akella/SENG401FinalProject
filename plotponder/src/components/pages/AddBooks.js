@@ -158,6 +158,7 @@ export default function AddBook() {
                   left: left,
                   top: top,
                   position: "absolute",
+                  boxShadow: "0 2px 6px rgba(0, 0, 0, 0.2)",
                 }}
                 src={book.imageURL}
               />
@@ -199,6 +200,8 @@ export default function AddBook() {
                   left: left + 2,
                   top: top + 300 + 20 + 55,
                   position: "absolute",
+                  fontSize: 15,
+                  padding: 10, 
                 }}
               >
                 {isBookAdded ? "Added" : "+ Add Book"}

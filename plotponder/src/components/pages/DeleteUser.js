@@ -5,6 +5,7 @@ import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import Navbar from "./Navbar";
 
 function DeleteUser(props) {
   const navigate = useNavigate();
@@ -89,9 +90,7 @@ function DeleteUser(props) {
     
   return (
     <div className="main-div">
-     <div className="header">
-        <div className="title-wrapper">PlotPonder</div>
-      </div>
+     <Navbar />
       <div className="delete-form-div">
         <div className="delete-title">Delete Account</div>
         <form className="delete-form" onSubmit={(e) => handleSignIn(e)}>

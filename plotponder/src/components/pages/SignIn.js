@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { userDatabase } from "./FirebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 function SignIn(props) {
   const navigate = useNavigate();
@@ -18,18 +18,17 @@ function SignIn(props) {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user, "userInfo");
-        navigate("/Homepage");
+        navigate("/Bookshelf");
       })
       .catch((error) => {
         if (error.code === "auth/invalid-credential") {
-          
           Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Invalid password/email or account does not exist.',
-            confirmButtonText: 'Okay',
-            confirmButtonColor: '#488282',
-          });  
+            icon: "error",
+            title: "Oops...",
+            text: "Invalid password/email or account does not exist.",
+            confirmButtonText: "Okay",
+            confirmButtonColor: "#488282",
+          });
         } else {
           console.error("Error during sign in:", error);
         }
@@ -61,7 +60,11 @@ function SignIn(props) {
           <br></br>
 
           <p className="forgot-pass">
-            <Link to="/ChangePassword">Forgot Password?</Link>
+            <Link
+              to={{ pathname: "/SignIn/ChangePassword" }}
+            >
+              Forgot Password?
+            </Link>
           </p>
           <button className="button-signin">Sign In</button>
         </form>
