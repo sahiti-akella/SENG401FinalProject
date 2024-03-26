@@ -8,20 +8,54 @@ import org.springframework.stereotype.Service;
 public class DatabaseConnection {
     private Statement stmt;
     private Connection dbConnection;
-    private static final String JDBC_URL = "jdbc:mysql://localhost/LIBRARY";
+    // private static final String JDBC_URL = "jdbc:mysql://localhost/LIBRARY";
+    // private static final String USERNAME = "root";
+    // private static final String PASSWORD = "password";
+    private static final String JDBC_URL = "jdbc:mysql://sql-db:3307/BOOKLIBRARY";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "password";
+    private static final int MAX_RETRIES = 3;
+    private static final long RETRY_INTERVAL_MS = 5000; // 5 seconds
 
     public DatabaseConnection() {
-        try {
-            this.dbConnection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
-            this.stmt = dbConnection.createStatement();
-            System.out.println("Connection is not null: " + (dbConnection != null));
+        boolean connected = false;
+        int retries = 0;
 
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        while (!connected && retries < MAX_RETRIES) {
+            try {
+                this.dbConnection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+                this.stmt = dbConnection.createStatement();
+                System.out.println("Connection is not null: " + (dbConnection != null));
+                connected = true;
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                retries++;
+                System.out.println("Retry attempt " + retries + " to connect to the database.");
+                try {
+                    Thread.sleep(RETRY_INTERVAL_MS);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        if (!connected) {
+            System.err.println("Failed to establish connection to the database after " + MAX_RETRIES + " retries.");
+        } else {
+            System.err.println("Databse connection successful");
         }
     }
+
+    // public DatabaseConnection() {
+    //     try {
+    //         this.dbConnection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+    //         this.stmt = dbConnection.createStatement();
+    //         System.out.println("Connection is not null: " + (dbConnection != null));
+
+    //     } catch (SQLException ex) {
+    //         ex.printStackTrace();
+    //     }
+    // }
 
     public ArrayList<Book> getAllBooks() {
         ArrayList<Book> books = new ArrayList<>();

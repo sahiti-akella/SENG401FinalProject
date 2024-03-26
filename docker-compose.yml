@@ -1,13 +1,28 @@
 version: '3.7'
 
 services:
+# SQL
+  sql-db:
+    build:
+      context: .
+      dockerfile: Dockerfile-sql
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: BOOKLIBRARY
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+
 # Spring Boot
   spring-boot-app:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./demo
+      dockerfile: Dockerfile-springboot
     ports:
       - "8080:8080"
+    depends_on:
+      - sql-db
 
 # Express (BookBot server)
   express-server:
@@ -27,3 +42,4 @@ services:
     ports:
       - "3000:3000"
     stdin_open: true
+
