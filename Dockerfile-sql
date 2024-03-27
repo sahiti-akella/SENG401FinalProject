@@ -6,8 +6,6 @@ FROM mysql:latest
 
 # # Create a database and user
 ENV MYSQL_DATABASE=LIBRARY
-# ENV MYSQL_USER=root
-# ENV MYSQL_PASSWORD=password
 
 # Copy the SQL script that initializes the database schema
 COPY BookLibrary.sql /docker-entrypoint-initdb.d/

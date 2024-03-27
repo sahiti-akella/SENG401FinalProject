@@ -4,13 +4,11 @@ services:
 # SQL
   sql-db:
     image: mysql:latest
-    ports:
-      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: LIBRARY
-      # MYSQL_USER: root
-      # MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"
     volumes:
       - ./BookLibrary.sql:/docker-entrypoint-initdb.d/BookLibrary.sql
 
@@ -20,11 +18,11 @@ services:
       context: ./demo
       dockerfile: Dockerfile-springboot
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://sql-db:3307/LIBRARY
+      SPRING_DATASOURCE_URL: jdbc:mysql://sql-db:3306/LIBRARY
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: password
-      SPRING_JPA_SHOW_SQL: "true"
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      # SPRING_JPA_SHOW_SQL: "true"
+      # SPRING_JPA_HIBERNATE_DDL_AUTO: update
     ports:
       - "8080:8080"
     depends_on:
