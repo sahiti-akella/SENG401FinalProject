@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="Navbar">
       <div className="heading">
-        <NavLink to="/Homepage" className="title-wrapper">
+        <NavLink to="/Bookshelf" className="title-wrapper">
           PlotPonder
         </NavLink>
         <div className="search-wrapper">
