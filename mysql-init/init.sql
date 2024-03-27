@@ -1,3 +1,0 @@
-CREATE USER 'myappuser'@'%' IDENTIFIED BY 'mypassword';
-GRANT ALL PRIVILEGES ON LIBRARY.* TO 'myappuser'@'%';
-FLUSH PRIVILEGES;
