@@ -2,8 +2,11 @@
 
 ## How do I run the application?
 
+** Note that API keys have been removed for security reasons **
+
 ### First: ###
 - On MySQL, run the BookLibrary.sql file and connect to the library database
+- Open a new terminal and complete the one of the following depending on your OS
 
 **On Windows:**
 
@@ -18,7 +21,11 @@
 - In the terminal, run mvn spring-boot:run
 
 ### Second: ###
-- Navigate to the /plotponder directory
+- To run the ChatGPT API for the Bookbot, open a new terminal and navigate to the /plotponder directory
+- run: node src/components/server.js
+
+### Third: ###
+- In a new directory, navigate to the /plotponder directory
 - In the terminal, run npm start to start up the application
 
 ## Group 36 Team Members
