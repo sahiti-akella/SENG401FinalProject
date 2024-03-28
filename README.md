@@ -25,8 +25,8 @@
 - run: node src/components/server.js
 
 ### Third: ###
-- In a new directory, navigate to the /plotponder directory
-- In the terminal, run npm start to start up the application
+- In a new terminal, navigate to the /plotponder directory
+- Run npm start to start up the application
 
 ## Group 36 Team Members
 Hooriya Amjad
