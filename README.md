@@ -3,7 +3,7 @@
 ## How do I run the application?
 
 ### First: ###
-- on MySQL, run the BookLibrary.sql file and connect to the library database
+- On MySQL, run the BookLibrary.sql file and connect to the library database
 
 **On Windows:**
 
@@ -14,12 +14,12 @@
 **On Mac:**
 
 - Navigate to the /demo directory
-- in the terminal, run mvn clean install
-- in the terminal, run mvn spring-boot:run
+- In the terminal, run mvn clean install
+- In the terminal, run mvn spring-boot:run
 
 ### Second: ###
-- navigate to the /plotponder directory
-- in the terminal, run npm start to start up the application
+- Navigate to the /plotponder directory
+- In the terminal, run npm start to start up the application
 
 ## Group 36 Team Members
 Hooriya Amjad
