@@ -3,7 +3,7 @@
 ## How do I run the application?
 
 ### First: ###
->on MySQL, run the BookLibrary.sql file and connect to the library database
+- on MySQL, run the BookLibrary.sql file and connect to the library database
 
 **On Windows:**
 
